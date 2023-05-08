@@ -2,7 +2,8 @@
 A Multiprocessor Implementation of the Kohlbecker 65816 Breakout Board
 
 Features:
-* Two WDC 65C816 processors share alternating clock cycles: no bus contention.
+* WDC 65C816 processors share alternating clock cycles: no bus contention.
+* Up to three auxiliary processors.
 * On reset, RDY line of secondary processor is held low by a VIA under control of the primary.
 * On reset, primary copies EEPROM into shadow RAM in the upper 32K of its Bank 0, then enters Native mode. The E line goes low, which banks out the ROM and speeds up the clock.
 * Entering native mode, primary loads instructions and initial state into the data bank mapped as bank 0 to the secondary processor, and brings RDY high on CPU1 via the dedicated VIA.

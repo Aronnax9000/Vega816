@@ -10,7 +10,7 @@ Features:
 * Memory is mapped so that each processor sees a 64K offset (one data bank) into shared memory with respect to its predecessor. Each CPU therefore has its own Bank 0.
 * Dedicated VIA 65C22 for bus, CPU control, and SPI operations.
 * Dedicated VIA 65C22 for front panel operations.
-* Dedicated ACIA W65C51N for RS-232 console operation.
+* Dedicated Dual ACIA W65C51N for RS-232 console and paper tape operation.
 * Support for up to 8 additional VIAs with IRQs fully software steerable across four timesliced CPUs.
 * Software IRQ prioritization for up to seven independent IRQ handlers, per processor.
 * IRQ Priority routing. When VPB is low, the LSB of the base address supplied by the processor is summed with twice the priority value before delivery to the bus for vector lookup. Lower number means higher priority.

@@ -10,7 +10,7 @@ Features:
 * Dedicated VIA 65C22 for bus, CPU control, and SPI operations.
 * Dedicated VIA 65C22 for front panel operations.
 * Dedicated ACIA W65C51N for RS-232 console operation.
-* Software IRQ steering for add on peripherals (shared VIAs, etc.).
+* Software IRQ steering for up to seven add on peripherals (shared VIAs, etc.).
 * IRQ Priority routing. When VPB is low, the LSB of the base address supplied by the processor is rewritten according to the priority of the interrupt received.
 
 Here is the interrupt vector table for the 65816, augmented to show the

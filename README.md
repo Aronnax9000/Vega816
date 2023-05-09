@@ -2,7 +2,14 @@
 A Multiprocessor Implementation of the Kohlbecker 65816 Breakout Board
 
 Two kinds of multiprocessing concurrency:
-* Time-slice multiprocessi
+* Time-slice multiprocessing
+* Cycle steal multiprocessing.
+
+Time-slice multiprocessing may also be built to respect "dynamic logic", access to the bus on the rising edge by one device, and on the falling edge by the other.
+
+Supported clock speeds:
+NTSC: 14.31818 MHz x2 = 28.63636 MHz x2 = 57.27272 MHz.
+PAL: 17.734475 MHz x2 = 35.46895 MHz x2 = 70.9379 MHz.
 
 Features:
 * Twin WDC 65C816 processors share alternating clock cycles: no bus contention.

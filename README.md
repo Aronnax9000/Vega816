@@ -16,9 +16,10 @@ Two kinds of multiprocessing concurrency:
 Time-slice multiprocessing may also be built to respect "dynamic logic", access to the bus on the rising edge by one device, and on the falling edge by the other.
 
 Supported clock speeds:
-NTSC: 14.31818 MHz x2 = 28.63636 MHz x2 = 57.27272 MHz.
-PAL: 17.734475 MHz x2 = 35.46895 MHz x2 = 70.9379 MHz.
-
+```
+NTSC: 14.31818  MHz x2 = 28.63636 MHz x2 = 57.27272 MHz.
+PAL:  17.734475 MHz x2 = 35.46895 MHz x2 = 70.9379 MHz.
+```
 Features:
 * Twin WDC 65C816 processors share alternating clock cycles: no bus contention.
 * VIC-II style DMA takes place on the primary clock cycle, stealing cycles from primary processor.

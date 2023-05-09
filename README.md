@@ -1,5 +1,9 @@
-# Vega 816 SMP
-A Multiprocessor Implementation of the Kohlbecker 65816 Breakout Board
+# Vega BB816 SMP
+A Multiprocessed Implementation of the Kohlbecker 65816 Breakout Board.
+
+Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board preserves and exposes all of the 65C816's control, address, and data lines. Almost all signals (except VDA and VPA) are provided on a convenient row of breakout pins, and the exceptions are exposed in labeled traces on the PCB.
+
+The goal of the Vega project is to apply the Kohlbecker breakout board in a multiple-processor environment, supporting up to four 65C816 CPUs, but with a view towards providing a generally useful bus mastering interface upon which a community of 65XX aware devices might operate.
 
 Two kinds of multiprocessing concurrency:
 * Time-slice multiprocessing

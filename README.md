@@ -1,7 +1,11 @@
 # VegaSMP BB816 
 A Multiprocessed Implementation of the Kohlbecker 65816 Breakout Board.
 
-Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board preserves and exposes all of the 65C816's control, address, and data lines. Almost all signals (except VDA and VPA) are provided on a convenient row of breakout pins, and the exceptions are exposed in labeled traces on the PCB.
+Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board preserves and exposes all of the 65C816's control, address, and data lines. Almost all signals are provided on a convenient row of breakout pins: the only two exceptions are exposed in labeled connection points on the PCB.
+
+The 65816 processor, new in 1983, offered features never exploited in its only two to-market implemntations, the Super NES and Apple IIgs.
+
+* The ABORT feature provided the capability for the 65816 to be used in the design of secure multi-uer operating systems, with security enforced in hardware
 
 The goal of the Vega project is to apply the Kohlbecker breakout board in a multiple-processor environment, supporting up to four 65C816 CPUs, but with a view towards providing a generally useful bus mastering interface upon which a community of 65XX aware devices might operate.
 

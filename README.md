@@ -1,5 +1,8 @@
-# Vega SMP
+# Vega 816 SMP
 A Multiprocessor Implementation of the Kohlbecker 65816 Breakout Board
+
+Two kinds of multiprocessing concurrency:
+* Time-slice multiprocessi
 
 Features:
 * Twin WDC 65C816 processors share alternating clock cycles: no bus contention.
@@ -31,7 +34,7 @@ $00FFFC RESET
 ```
 
 # Physical Design
-* Bus Mastering: Four Kohlbecker 65816 breakout style slots with auxiliary connections for VDA/VPA. Each slot is capable of bus mastering. (e.g. VIC-II or DMA controller).
+* Bus Mastering: Four Kohlbecker 65816 breakout style slots with auxiliary connections for VDA/VPA. Each slot is capable of bus mastering. (e.g. VIC-II or DMA controller). Slots 0 and 2 are on CLK0 and slots 1 and 3 are on CLK1. The normal usage pattern is for device 2 to perform DMA operations during VDA+VPA low from device 0, and similarly, device 3 during VDA+VPA low on device 1.
 
 * Four expansion slots supporting two devices apiece (e.g. two VIAs) with independently routable/prioritized IRQs. Expansion ports are memory mapped to $0280 to $02FF, 16 bytes per device, 32 bytes per card.
 
@@ -41,7 +44,8 @@ Bus Master Slot Settings
 7 6 5 4 3 2 1 0
 T               Timeslice (0 = CLK0, 1 = CLK1)
   D             DMA only (monitor VDA/VPA of master, only go if low).
-    P           Puppy bit: can anti-RDY the master on this timeslice.
+    P           Puppy bit: anti-RDY the master on this timeslice while running.
+      K         taKe control of the clock while RDY.
               R RDY (Enable).
 
 Expansion Slot Settings

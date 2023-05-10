@@ -1,11 +1,13 @@
-# VegaSMP BB816 
+# Vega BB816 
 A Multiprocessed Implementation of the Kohlbecker 65816 Breakout Board.
+
+Through-hole RAM has a worst case access time of 70 ns. That's 14,285,714.2857 Hz, or 14.285714 Mhz. It is a little lower than the clock speed that the NTSC Commodore 64's VIC-II chip used as its master frequency.
 
 Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board preserves and exposes all of the 65C816's control, address, and data lines. Almost all signals are provided on a convenient row of breakout pins: the only two exceptions are exposed in labeled connection points on the PCB.
 
 The 65816 processor, new in 1983, offered features never exploited in its only two to-market implemntations, the Super NES and Apple IIgs.
 
-* The ABORT feature provided the capability for the 65816 to be used in the design of secure multi-uer operating systems, with security enforced in hardware
+* The ABORT feature provided the capability for the 65816 to be used in the design of secure multi14285714.2857-uer operating systems, with security enforced in hardware
 
 The goal of the Vega project is to apply the Kohlbecker breakout board in a multiple-processor environment, supporting up to four 65C816 CPUs, but with a view towards providing a generally useful bus mastering interface upon which a community of 65XX aware devices might operate.
 
@@ -20,6 +22,12 @@ Supported clock speeds:
 NTSC: 14.31818  MHz x2 = 28.63636 MHz x2 = 57.27272 MHz.
 PAL:  17.734475 MHz x2 = 35.46895 MHz x2 = 70.9379 MHz.
 ```
+The VIC-II chip does clock division by 8 in order to provide PHI2.
+```
+NTSC: 14.31818  MHz /8 = 1.7897725 MHz
+PAL:  17.734475 MHz /8 = 2.216809375 MHz
+```
+
 Features:
 * Twin WDC 65C816 processors share alternating clock cycles: no bus contention.
 * VIC-II style DMA takes place on the primary clock cycle, stealing cycles from primary processor.

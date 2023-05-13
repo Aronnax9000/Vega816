@@ -11,7 +11,9 @@ The 65816 features hardware support for these external features:
 
 The present design aims to implement all of these features (protected memory operation, caching, interrupt prioritization, and DMA operations) based on the Kohlbecker BB816 breakout board. 
 
-Two processors are arranged in a cycle steal configuration.
+Each bus mastering device can attach its own data bus to either DMA data bus. Address translation insures that each channel sees the two 512 K RAM segments in the opposite order in address space. In other words, Bank 0 for channel B begins at the 512K point for channel A, and vice versa. 
+
+At startup, the primary CPU is set to DMA channel A, which talks to the lower 512K of physical RAM. The secondary CPU is set to DMA channel B, seeing the upper 512K of physical memory as beginning at its own address 0. 
 
 Through-hole RAM has a worst case access time of . It is a little lower than the clock speed that the Commodore 64's VIC-II chip used as its master frequency. (NTSC: 14.31818, PAL:  17.734475 MHz)
 

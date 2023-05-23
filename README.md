@@ -1,5 +1,13 @@
-# Vega BB816 
-A Multiprocessed Implementation of the Kohlbecker 65816 Breakout Board.
+# Vega816 - Dual 65C816 Computer with Vector Pull rewrite
+Based on Adrien Kohlbecker's BB816 project.
+
+##DMA Breakout
+
+The DMA Breakout board takes one BB816 CPU breakout board and directs its communications to and from one of two channels, called DMA 0 and DMA 1. Connectors are provided for a DMA controller, and Vector Pull address rewriting.
+
+###DMA Controller
+
+###Vector Pull address rewriting
 
 Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board demultiplexes exposes all of the 65C816's control, address, and data lines. All signals are provided on a convenient row of breakout pins, plus two connections provided for VDA and VPA outputs.
 

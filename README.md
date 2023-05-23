@@ -3,7 +3,9 @@ Based on Adrien Kohlbecker's BB816 project.
 
 ## DMA Breakout
 
-The DMA Breakout board takes one BB816 CPU breakout board and directs its communications to and from one of two channels, called DMA 0 and DMA 1. Connectors are provided for a DMA controller, and Vector Pull address rewriting.
+The DMA Breakout board takes one BB816 CPU breakout board and directs its communications to and from one of two channels, called DMA 0 and DMA 1. The boards may be stacked so that two CPUs may share access to either DMA channel.
+
+Connectors are provided for a DMA controller, and Vector Pull address rewriting controller. 
 
 ### DMA Controller
 

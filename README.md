@@ -13,12 +13,12 @@ Connectors are provided for a DMA controller, and Vector Pull address rewriting 
 The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
 ```
 Address Function Last Octet (binary)
-$00FFE4 COP    0x1110 0100
-$00FFE6 BRK    0x1110 0110
-$00FFE8 ABORT  0x1110 1000
-$00FFEA NMI    0x1110 1010
-$00FFEE IRQ    0x1110 1110
-$00FFFC RESET  0x1111 1100
+$00FFE4 COP      0x1110 0100
+$00FFE6 BRK      0x1110 0110
+$00FFE8 ABORT    0x1110 1000
+$00FFEA NMI      0x1110 1010
+$00FFEE IRQ      0x1110 1110
+$00FFFC RESET    0x1111 1100
 ```
 The datasheet also specifies that when the 65C816 is addressing an interrupt vector, it pulls its VPB line low. This is to allow the system to override the fetched interrupt vector with any other. 
 

@@ -10,9 +10,28 @@ Connectors are provided for a DMA controller, and Vector Pull address rewriting 
 ### DMA Controller
 
 ### Vector Pull address rewriting
+The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
+```
+Address Function Last Octet (binary)
+$00FFE4 COP	   0x1110 0100
+$00FFE6 BRK    0x1110 0110
+$00FFE8 ABORT  0x1110 1000
+$00FFEA NMI    0x1110 1010
+$00FFEE IRQ    0x1110 1110
+$00FFFC RESET  0x1111 1100
+```
+The datasheet also specifies that when the 65C816 is addressing an interrupt vector, it pulls its VPB line low. This is to allow the system to override the fetched interrupt vector with any other. 
 
-Adrien Kohlbecker has developed a breakout circuit board for the WDC 65C816 microprocessor. The breakout board demultiplexes exposes all of the 65C816's control, address, and data lines. All signals are provided on a convenient row of breakout pins, plus two connections provided for VDA and VPA outputs.
+Note that the last nybble of each of the standard vector is unique, and therefore a test of these four bits suffices to uniquely identify the vector being pulled.
 
+Note also the gap of 12 bytes between the IRQ vector and the RESET vector. Since each vector occupies two bytes, this gap provides sufficient space to specify six (6) additional vectors. 
+
+
+
+
+The DMA Breakout uses the state of VBP to detect when an IRQ 
+
+## Notes
 The 65816 features hardware support for these external features:
 * Protected memory operations using ABORTB.
 * Independent external caching of instructions (VPA) and data (VDA).
@@ -61,15 +80,17 @@ Features:
 Here is the interrupt vector table for the 65816, augmented to show the
 extra vectors
 ```
+$00FFE4 COP	
+$00FFE6 BRK
 $00FFE8 ABORT 
 $00FFEA NMI 
-$00FFEE IRQ0 
-$00FFF0 IRQ1 
-$00FFF2 IRQ2 
-$00FFF4 IRQ3 
-$00FFF6 IRQ4 
-$00FFF8 IRQ5 
-$00FFFA IRQ6 
+$00FFEE IRQ 0 
+$00FFF0 IRQ 1 
+$00FFF2 IRQ 2 
+$00FFF4 IRQ 3 
+$00FFF6 IRQ 4 
+$00FFF8 IRQ 5 
+$00FFFA IRQ 6 
 $00FFFC RESET 
 ```
 

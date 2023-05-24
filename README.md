@@ -26,10 +26,25 @@ Note that the last nybble of each of the standard vector is unique, and therefor
 
 Note also the gap of 12 bytes between the IRQ vector and the RESET vector. Since each vector occupies two bytes, this gap provides sufficient space to specify six (6) additional vectors. 
 
+```
+$00FFE4 COP	
+$00FFE6 BRK
+$00FFE8 ABORT 
+$00FFEA NMI 
+$00FFEE IRQ 0 
+$00FFF0 IRQ 1 
+$00FFF2 IRQ 2 
+$00FFF4 IRQ 3 
+$00FFF6 IRQ 4 
+$00FFF8 IRQ 5 
+$00FFFA IRQ 6 
+$00FFFC RESET 
+```
 
 
+The DMA Breakout uses the state of VBP to detect when a vector pull is initiated, and bits A1-A3 to detect when the vector pull was initiated via IRQ. If so, the board requests an address offset between 0-6 to be added to A1-A3. This results in the addition of six additional IRQ vectors for a total of seven:
 
-The DMA Breakout uses the state of VBP to detect when an IRQ 
+
 
 ## Notes
 The 65816 features hardware support for these external features:
@@ -79,20 +94,7 @@ Features:
 
 Here is the interrupt vector table for the 65816, augmented to show the
 extra vectors
-```
-$00FFE4 COP	
-$00FFE6 BRK
-$00FFE8 ABORT 
-$00FFEA NMI 
-$00FFEE IRQ 0 
-$00FFF0 IRQ 1 
-$00FFF2 IRQ 2 
-$00FFF4 IRQ 3 
-$00FFF6 IRQ 4 
-$00FFF8 IRQ 5 
-$00FFFA IRQ 6 
-$00FFFC RESET 
-```
+
 
 # Physical Design
 * Bus Mastering: Four Kohlbecker 65816 breakout style slots with auxiliary connections for VDA/VPA. Each slot is capable of bus mastering. (e.g. VIC-II or DMA controller). Slots 0 and 2 are on CLK0 and slots 1 and 3 are on CLK1. The normal usage pattern is for device 2 to perform DMA operations during VDA+VPA low from device 0, and similarly, device 3 during VDA+VPA low on device 1.

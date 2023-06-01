@@ -135,6 +135,21 @@ RDY_IN
 ABORTB
 VA
 ```
+Since the DMA controller will dispatch requests from up to two CPUs, CPU A and CPU B, the signals are distinguished within the controller with these designations:
+
+Inputs
+```
+DMA_REQ_A DMA_REQ_A
+RDY_IN_A  RDY_IN_B
+ABORTB_A  ABORTB_B
+VA_A      VA_B
+```
+Since the DMA channels are cross-mapped in address range between the two CPUs, so that each CPU's DMA 0 corresponds to the lower part of its address space with respect to DMA 1, the outputs are:
+```
+DMA_0_A  = DMA_1_B
+DMA_1_A  = DMA_0_B
+```
+This cross mapping, which takes place in the connector wiring of the DMA Controller board, means that two identically configured units may be connected as CPU A or CPU B, provided that their DMA buffer modules are connected with the sense of DMA 0 and DMA 1 reversed.
 
 
 The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well as an additional input, DMA_REQB. If one CPU asserts DMA_REQB, the controller checks the VA line from the opposite CPU. If it is not active, the controller asserts DMA

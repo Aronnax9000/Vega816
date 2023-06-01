@@ -175,20 +175,3 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 
 
 
-
-
-
-
-## Notes
-The 65816 features hardware support for these external features:
-* Protected memory operations using ABORTB.
-* Independent external caching of instructions (VPA) and data (VDA).
-* Interrupt prioritization, via vector rewriting when VPB is active. (Seven apparently reserved contiguous vectors for IRQ $FFEE-$FFFA).
-* Cycle steal DMA (VPA and VDA, and RDY).
-
-The present design aims to implement all of these features (protected memory operation, caching, interrupt prioritization, and DMA operations) based on the Kohlbecker BB816 breakout board. 
-
-Each bus mastering device can attach its own data bus to either DMA data bus. Address translation insures that each channel sees the two 512 K RAM segments in the opposite order in address space. In other words, Bank 0 for channel B begins at the 512K point for channel A, and vice versa. 
-
-At startup, the primary CPU is set to DMA channel A, which talks to the lower 512K of physical RAM. The secondary CPU is set to DMA channel B, seeing the upper 512K of physical memory as beginning at its own address 0. 
-

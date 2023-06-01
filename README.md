@@ -109,7 +109,11 @@ $FFFA NMI
 $FFFC RESB
 $FFFE BRK/IRQ 0
 ```
+## Dual DMA Channel to Dual CPU IRQ Dispatch with 0-7 Priority
 
+Devices mapped within either DMA channel may issue IRQ against either CPU. The W65C816 supports Vector Pull Rewrite through its VPB line. The dispatcher uses two 74LS348 8-to-3 Priority Encoders to receive IRQs from up to two DMA channels, and routes the IRQ signal to one of two CPUs. The priority is encoded as a three bit number and placed on outputs Y0-Y2. 
+
+IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. For DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. This architecture mirrors the concept of each DMA channel being the home channel for a particular processor. 
 
 ## DMA Controller
 

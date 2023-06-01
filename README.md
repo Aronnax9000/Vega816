@@ -12,9 +12,9 @@ Finally, a reference System Controller based on the W65C22 VIA is presented, all
 
 ## Limitation of the Design
 
-The chief limitation of the present design is that it supports a maximum of two CPUs running against a maximum of two DMA channels. It is easy to imagine future directions. Additional CPU buffers, could be added to each processor in order to implement caching. In those cases when the CPU is attempting to reach address space within a busy DMA channel, a DMA controller could direct the CPU to a DMA channel representing cache. 
+The chief limitation of the present design is that it supports a maximum of two CPUs running against a maximum of two DMA channels. It is easy to imagine future directions. Additional CPU buffers, could be added to each processor in order to implement caching. In those cases when the CPU is attempting to reach address space within a busy DMA channel, a DMA controller could direct the CPU to a DMA channel representing cache. The fact that VPA and VDA are given treatment through the CPU Buffer board design, despite being offered only as test pins on the BB816 breakout board, is intended to facilitate exploration of that possibility in future designs, as maintaining separate caches for program code and program data will improve cache efficiency.
 
-If the design were expanded to offer two bits of the bank address to the DMA controller instead of one, the address space could be sliced into up to four DMA channels, so that four CPUs could share the same address space. Such an architecture would lend itself to "Connection Machine" type multiprocessor topologies, with each CPU sharing address space with three of its neighbors. 
+If the design were expanded to offer two separate bits of the bank address to the DMA controller instead of one, the address space could be sliced into up to four DMA channels, so that four CPUs could share the same address space. Such an architecture would lend itself to "Connection Machine" type multiprocessor topologies, with each CPU sharing address space with three of its neighbors. 
 
 ## CPU Buffer Board
 

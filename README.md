@@ -51,6 +51,10 @@ Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull control
 
 The connector for the external Vector Pull Rewrite controller provides the E signal from the CPU, so that the Vector Pull Rewrite controller can know which scheme of vector pull (W65C02, W65C816) is being used.
 
+### CAVEAT: Offset of 7 triggers RESB interrupt handler
+
+Please note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode.
+
 ### Details of Vector Pull address rewriting
 The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
 ```

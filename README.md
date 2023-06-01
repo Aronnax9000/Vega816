@@ -10,7 +10,9 @@ Memory modules are provided to provide RAM and ROM services. ROM can be separate
 
 An Expansion Bus board may be set, via jumper, to any of three pages in Bank Zero for the board's DMA channel: $0200, $0400, or $0600. The board splits its page of I/O address space across 4 expansion slots, each of which spans 64 bytes (1/4th) of the breakout's assigned page of address space, providing further address decoding into chip select signals for up to four devices per slot on 16 byte boundaries. The address decoder provides a signal to inhibit the selection of RAM within the assigned address range of the expansion bus. The Programmable Interrupt Controller (PIC) uses the page of RAM immediately above the assigned page of I/O address space in order to store each device's IRQ priority and target CPU, so the address decoder will assert Chip Select not just for the address space of any 16 byte device, but also for the corresponding range in the page above it. For example, the Chip Select line for a device mapped at $0240-$024F is also active for $0340-$034F.
 
-The Programmable Interrupt Controller performs further subdivision of the 16 byte device granularity of the Expansion Bus into 8 byte device address spaces, such as used by the W65C51 ACIA. 
+The Programmable Interrupt Controller performs further subdivision of the 16 byte device granularity of the Expansion Bus into 8 byte device address spaces, such as used by the W65C51 ACIA.
+
+Since the complete system supports two DMA channels, each with three two-page ranges reserved for I/O, supporting up to one PIC per each of four 64 byte expansion slot and each PIC supports up to eight devices per double-page, the complete system can support up to 2x3x4x8 = 
 
 Finally, a reference System Controller based on the W65C22 VIA is presented, allowing software control over system hardware, such as clock speed, CPU and DMA control. 
 

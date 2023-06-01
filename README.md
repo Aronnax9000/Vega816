@@ -10,6 +10,12 @@ Memory modules are provided to provide RAM and ROM services. ROM can be separate
 
 Finally, a reference System Controller based on the W65C22 VIA is presented, allowing software control over system hardware, such as clock speed, CPU and DMA control. 
 
+## Limitation of the Design
+
+The chief limitation of the present design is that it supports a maximum of two CPUs running against a maximum of two DMA channels. It is easy to imagine future directions. Additional CPU buffers, could be added to each processor in order to implement caching. In those cases when the CPU is attempting to reach address space within a busy DMA channel, a DMA controller could direct the CPU to a DMA channel representing cache. 
+
+If the design were expanded to offer two bits of the bank address to the DMA controller instead of one, the address space could be sliced into up to four DMA channels, so that four CPUs could share the same address space. Such an architecture would lend itself to "Connection Machine" type multiprocessor topologies, with each CPU sharing address space with three of its neighbors. 
+
 ## CPU Buffer Board
 
 The CPU Buffer board provides two straight-wired connectors for the BB816 CPU breakout board, called "the CPU end", and buffers communications between the two of them and dual output connectors with the same pinout, called "the DMA end".

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "BB816")(type "KiCad")(uri "${KIPRJMOD}/BB816.kicad_sym")(options "")(descr ""))
+  (lib (name "Vega816")(type "KiCad")(uri "${KIPRJMOD}/Vega816.kicad_sym")(options "")(descr ""))
+)

@@ -139,7 +139,7 @@ Since the DMA controller will dispatch requests from up to two CPUs, CPU A and C
 
 Inputs
 ```
-DMA_REQ_A DMA_REQ_A
+DMA_REQB_A DMA_REQB_A
 RDY_IN_A  RDY_IN_B
 ABORTB_A  ABORTB_B
 VA_A      VA_B
@@ -150,6 +150,15 @@ DMA_0_A  = DMA_1_B
 DMA_1_A  = DMA_0_B
 ```
 This cross mapping, which takes place in the connector wiring of the DMA Controller board, means that two identically configured units may be connected as CPU A or CPU B, provided that their DMA buffer modules are connected with the sense of DMA 0 and DMA 1 reversed.
+
+The "home" channel for a CPU is the DMA channel containing that CPU's Bank Zero.
+
+Here are the possible scenarios for DMA arbitration:
+
+1. Both CPUs are asserting valid address, each against their own home DMA channels. CPU A is using DMA 0, and CPU B is using DMA 1.
+2. Both CPUs are asserting valid address, against the opposite CPU's home DMA channel. CPU A is asserting against DMA 1, and CPU B is asserting against DMA 0.
+3. Both CPUs are asserting valid address against the same DMA channel. CPU A is asserting against DMA 0, and so is CPU B.
+4. Both CPUs are asserting valid address against the same DMA channel. CPU A is asserting against DMA 1, and so is CPU B.
 
 
 The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well as an additional input, DMA_REQB. If one CPU asserts DMA_REQB, the controller checks the VA line from the opposite CPU. If it is not active, the controller asserts DMA

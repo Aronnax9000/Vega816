@@ -17,15 +17,28 @@ If we assign each DMA channel its own address space, we can use address decoding
 
 The W65C816's VPB (Vector Pull) line also allows rewriting of the address asserted by the CPU when it is pulling an interrupt vector. It is convenient to provide hardware to intercept and rewrite the vector pull address as part of the same adapter.
 
-Control of the communication is deferred to other hardware. Typically, one of the address lines will be used 
+The DMA Control shim provides movable jumpers for each of the bits A16-A23. Any of the bits may be selected as DMA_REQ. Once the jumper has been set to select one of those lines, it is connected as the DMA_REQ output, and disconnected from output to the DMA end, and is in fact pulled low on the DMA end (10K resistor), in order to map the request into a lower part of the DMA channel's address space.
+
+The jumper offers the user a choice of granularity of DMA channel address mapping, in multiple of 2 increments from 64K (single bank, the minimum granularity) to 4M maximum. This allows for the address space to be contiguous across all DMA channels, depending on installed memory sizes. Ordinarily, this jumper should be set to the size of the maximum address space serviced by the hardware on either DMA channel, e.g. the total installed memory on that channel, or half the total memory across the two channels.
+
+### Vector Pull Rewrite
+
+A 74HC283 is used to add an offset to A1-A4 equal to the three bit number provided as input by Y0-Y2. This takes place only when VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector has been received. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
+```
+$00FFEE IRQ 0 
+$00FFF0 IRQ 1 
+$00FFF2 IRQ 2 
+$00FFF4 IRQ 3 
+$00FFF6 IRQ 4 
+$00FFF8 IRQ 5 
+$00FFFA IRQ 6 
+$00FFFC RESET 
+```
+Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull controller is installed.
 
 ## DMA Controller
 
 The DMA Controller is intended to control the multiplexing of one or two CPUs (called CPU A and CPU B) onto one or two communication channels (called DMA 0 and DMA 1).
-
-At powerup, the DMA0B output is low, 
-
-
 
 The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well as an additional input, DMA_REQB. If one CPU asserts DMA_REQB, the controller checks the VA line from the opposite CPU. If it is not active, the controller asserts DMA
 
@@ -62,7 +75,7 @@ $00FFFC RESET
 ```
 
 
-The DMA Breakout uses the state of VBP to detect when a vector pull is initiated, and bits A1-A3 to detect when the vector pull was initiated via IRQ. If so, the board requests an address offset between 0-6 to be added to A1-A3. This results in the addition of six additional IRQ vectors for a total of seven:
+
 
 
 

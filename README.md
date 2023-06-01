@@ -87,11 +87,30 @@ $00FFFC RESET
 If an offset 0-6 is added to A1-A3, (leaving A0 as found), then the vector fetched will be as shown above, going forward from IRQ0.
 
 ### Effect of Vector Pull Rewrite in Emulation (65C02) Mode
+The 6502's IRQ vector, like its 65816 counterpart, has 0x111x in the last nybble, so it is detected by the Vector Pull Rewrite Shim, which provides a copy of the E bit to any attached Vector Pull Rewrite Controller. 
 ```
-$FFFE BRK/IRQ 
-$FFFC RESB
 $FFFA NMI
+$FFFC RESB
+$FFFE BRK/IRQ 
 ```
+Unlike the 65816's IRQ vector, the 6502 IRQ vector occurs at the very top of its page, so additions of 1-7 to the bits may force A4 to overflow to 0 (no carry). In particular, $FFFE + $02 = $FFE0, etc. This means the augmented
+IRQ vector map for the 6502 looks like this:
+
+```
+$FFE0 BRK/IRQ 1
+$FFE2 BRK/IRQ 2
+$FFE4 BRK/IRQ 3
+$FFE6 BRK/IRQ 4
+$FFE8 BRK/IRQ 5
+$FFEA BRK/IRQ 6
+$FFEC BRK/IRQ 7
+...
+$FFFA NMI
+$FFFC RESB
+$FFFE BRK/IRQ 0
+```
+
+
 ## DMA Controller
 
 The DMA Controller is intended to control the multiplexing of one or two CPUs (called CPU A and CPU B) onto one or two communication channels (called DMA 0 and DMA 1). The two channels are cross-mapped in address space from the point of view of opposite processors, depending on a selected granularity. For example, if 64 KB (single bank) granularity is selected, when CPU A requests Bank 0, the DMA controller will connect it to DMA channel 0, whereas if CPU A requests Bank 1, the controller will connect it to DMA channel 1. The situation is reversed for CPU B. The controller will direct its requests for Bank 0 to DMA channel 1, and requests for Bank 1 to DMA channel 0.

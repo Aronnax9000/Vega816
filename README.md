@@ -1,11 +1,13 @@
 # Vega816 - Dual 65C816 Computer with Vector Pull rewrite
 Based on Adrien Kohlbecker's BB816 project.
 
-## DMA Breakout
+## CPU Buffer Board
 
-The DMA Breakout board takes one BB816 CPU breakout board and directs its communications to and from one of two channels, called DMA 0 and DMA 1. The boards may be stacked so that two CPUs may share access to either DMA channel.
+The CPU Buffer board provides two straight-wired connectors for the BB816 CPU breakout board, called "the CPU end", and buffers communications between the two of them and dual output connectors with the same pinout, called "the DMA end".
 
-Connectors are provided for a DMA controller, and Vector Pull address rewriting controller. 
+The extra straight wired connectors are included for ease of stacking the boards, both on the CPU end, and on the DMA end, in a multiplexed configuration, to implement shared memory multiprocessing. 
+
+The circuit uses a 74AHCT245 octal bus transceiver for bi-directional communication for the 8 data lines, and seven 74HC541 octal buffers for the remaining signals provided by Adrien's W65C816 breakout board, including VPA and VDA. One of the buffers is allocated to CPU inputs (NMIB, IRQB, ABORTB, RDY_IN, etc), buffering signals from the DMA end. The others buffer lines from the CPU end onto the DMA end.
 
 ### DMA Controller
 

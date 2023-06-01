@@ -99,7 +99,7 @@ $00FFFC RESET
 If an offset 0-6 is added to A1-A3, (leaving A0 as found), then the vector fetched will be as shown above, going forward from IRQ0.
 
 ### Effect of Vector Pull Rewrite in Emulation (65C02) Mode
-The 6502's IRQ vector, like its 65816 counterpart, has 0x111x in the last nybble, so it is detected by the Vector Pull Rewrite Shim, which provides a copy of the E bit to any attached Vector Pull Rewrite Controller. 
+The 6502's IRQ vector, like its 65816 counterpart, has 0x111x in the last nybble, so it is detected by the Vector Pull Rewrite Shim. 
 ```
 $FFFA NMI
 $FFFC RESB
@@ -127,7 +127,7 @@ Devices mapped within either DMA channel may issue IRQ against either CPU. The W
 
 The priority is encoded as a three bit number and placed on outputs Y0-Y2, where it may be used to rewrite the address of the vector pull. For example, the Vector Pull Rewrite Shim (described above) will add the offset on Y0-Y2, multiplied by two, to the low byte of the vector pull. 
 
-IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. For DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. This architecture mirrors the concept of each DMA channel being the home channel for a particular processor. 
+IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. For DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. 
 
 ## DMA Controller
 

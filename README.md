@@ -23,7 +23,7 @@ The jumper offers the user a choice of granularity of DMA channel address mappin
 
 ### Vector Pull Rewrite
 
-A 74HC283 is used to add an offset to A1-A4 equal to the three bit number provided as input by Y0-Y2. This takes place only when VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector has been received. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
+A 74HC283 is used to add an offset to A1-A4 equal to the three bit number provided as input by Y0-Y2. This takes place only when VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector is being fetched by the processor. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
 ```
 $00FFEE IRQ 0 
 $00FFF0 IRQ 1 

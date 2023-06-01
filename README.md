@@ -36,6 +36,8 @@ The circuit uses a 74AHCT245 octal bus transceiver for bi-directional communicat
 
 The bus transceiver and buffers' output enable lines are tied together and provided as an input called DMAB, so that a single signal suffices to turn communication on and off.
 
+![CPU Buffer Board](schematics/Vega816-CPU Buffer Module.svg)
+
 ## DMA Control Shim and Vector Pull Rewrite Shim
 
 If we assign each DMA channel its own address space, we can use address decoding in order to select which DMA channel is to be accessed by a particular CPU. In order to do that, we need to intercept the address lines from the CPU, pass decoding information to the DMA controller, and potentially rewrite the address being asserted by the CPU, before granting the CPU buffer access to the correct DMA channel.

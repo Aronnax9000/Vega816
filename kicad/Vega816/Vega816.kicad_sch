@@ -1393,6 +1393,9 @@
     (path "/1d5da02e-6501-44ce-9666-30defc901973/4212803e-cf10-48eb-9f15-2d457e33f380"
       (reference "R16") (unit 1) (value "10K") (footprint "")
     )
+    (path "/1defbe63-3888-4768-83f8-93e13be4ca60/c704cbbe-e57c-4287-ac30-25735541d498"
+      (reference "R?") (unit 1) (value "1 K") (footprint "")
+    )
     (path "/e79064d8-3d63-448f-a23e-3316e7854f4a/ae50ce7b-540b-4254-943b-409e5b369390"
       (reference "RN1") (unit 1) (value "10K") (footprint "Resistor_THT:R_Array_SIP9")
     )

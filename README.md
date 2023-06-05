@@ -1,6 +1,6 @@
 # Vega816 - Dual 65C816 Computer with Vector Pull rewrite
 
-My goal is to demonstrate symmetrical multiprocessing and dual channel DMA with the W65C816 processor, beginning with Adrien Kohlbecker's fine BB816 CPU breakout board. 
+My goal is to demonstrate symmetrical multiprocessing and dual channel DMA with the W65C816 processor, beginning with Adrien Kohlbecker's fine W65C816 CPU breakout board, documented by Adrien at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [his YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
 The system also includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ from any device to one or the other connected CPU.
 

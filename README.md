@@ -231,4 +231,4 @@ The 64-byte expansion slots provided by the Expansion Bus may be broken out into
 
 These sample breakouts show a complete breakout of one port into 1x64, 2x32, 4x16 and 8x8 byte device ports. Also shown is a reduction of this most general breakout into a sample breakout capable of supporting 3 VIAs and 2 ACIAs.
 
-![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)
+![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port%20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)

@@ -203,6 +203,12 @@ The 16 byte range chip select signals are raised high for both the I/O page with
 The IRQ Multiplexer takes the 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs), and multiplexes them for dispatch by the IRQ Dispatch board.
 Vega816-Quad IO Bus + IRQ Multiplexer
 ![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%20IO%20Bus%20+%20IRQ%20Multiplexer.svg)
+## Combining IRQs from Multiple Expansion Bus Controllers
+If more than one page of I/O device space is needed per DMA channel, the 16 active low IRQ lines from each controller must be demultiplexed so that any one of the bus controllers may assert any IRQ to either processor. A sample demultiplexer is provided that uses NAND gates to combine the 16-line IRQ output from two expansion boards onto one 16-line IRQ input channel for use by the IRQ Dispatcher. 
+
+Demultiplexers for combining IRQs from more than one expansion bus may be designed using quad input or eight input NAND gates, or the existing dual input demultiplexer circuit may be used as input to another identical two-to-one demultiplexer.
+
+![Dual 16-line IRQ Demultiplxer](schematics/Vega816-Eight-To-One%20IRQ%20Multiplexer.svg)
 ## Programmable Interrupt Controller (PIC)
 
 A 64-byte expansion slot may include a programmable interrupt controller. The PIC subdivides the 64 byte address range into eight 8-byte device I/O spaces, two for each of the 16-byte address ranges decoded by the expansion bus controller and supplied to the PIC as chip select lines. 

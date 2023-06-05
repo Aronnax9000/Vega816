@@ -6846,7 +6846,7 @@
     (effects (font (size 3 3)) (justify left bottom))
     (uuid 7c652616-0ca9-44ab-9962-cd0a5187795b)
   )
-  (text "4 MB RAM + 32 KB EEPROM Module" (at 29.21 43.18 0)
+  (text "16 MB Memory Decoder + Bus" (at 29.21 43.18 0)
     (effects (font (size 10 10)) (justify left bottom))
     (uuid cbde07a5-234b-4970-b114-4c8738a2e0c7)
   )

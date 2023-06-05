@@ -224,3 +224,9 @@ Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed f
 ## 4 MB RAM + 32 K EEPROM Module
 
 ![4 MB RAM + 32 K EEPROM Module](schematics/Vega816-4%20MB%20RAM%20+%2032%20KB%20ROM%20Memory%20Module.svg)
+
+## Expansion Port to 64, 32, 16, 8 bit device ports
+
+The 64-byte expansion slots provided by the Expansion Bus may be broken out into individual device I/O ports spanning 64, 32, 16, or 8 bytes of address space. The four 16-byte chip select lines are further decoded by the programmable interrupt controller down to two 8-byte chip select lines per 16 byte range.
+
+![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)

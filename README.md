@@ -201,10 +201,11 @@ Devices which wish to subdivide a 16 byte address space (such as the 8 register 
 The 16 byte range chip select signals are raised high for both the I/O page within that 16 byte range, as well as for that range in the page immediately above it. E.g., if a device is mapped to $0210-$021F, then the chip select for that device is also active for the range $0310-$031F. This allows access to latches used to store programmable interrupt configuration, and potentially other metadata used in controlling the device.
 
 The IRQ Multiplexer takes the 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs), and multiplexes them for dispatch by the IRQ Dispatch board.
-
+Vega816-Quad IO Bus + IRQ Multiplexer
+![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%20IO%20Bus%20+%20IRQ%20Multiplexer.svg)
 ## Programmable Interrupt Controller (PIC)
 
 A 64-byte expansion slot may include a programmable interrupt controller. The PIC subdivides the 64 byte address range into eight 8-byte device I/O spaces, two for each of the 16-byte address ranges decoded by the expansion bus controller and supplied to the PIC as chip select lines. 
 
 Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed for each of up to eight devices, by writing to latches which shadow the device I/O space in the next higher page of address space. Four octal latches, at address offsets +$100, +$104, +$108 and +$10C offsets from the corresponding 16 byte I/O address ranges are provided. Each octal latch stores programmable interrupt information for up to two 8 byte devices: the low nybble for an eight byte device at offset +$00 from the base I/O address, and the high nybble for an eight byte device at offset $08 from the base I/O address. The low bit of the nybble determines the target CPU. The high three bits specify the priority from 0-7.
-![CPU Buffer Board](schematics/Vega816-8%20Device%20Programmable%20Interrupt%20Controller.svg)
+![PIC (Programmable Interrupt Controller](schematics/Vega816-8%20Device%20Programmable%20Interrupt%20Controller.svg)

@@ -232,3 +232,39 @@ The 64-byte expansion slots provided by the Expansion Bus may be broken out into
 These sample breakouts show a complete breakout of one port into 1x64, 2x32, 4x16 and 8x8 byte device ports. Also shown is a reduction of this most general breakout into a sample breakout capable of supporting 3 VIAs and 2 ACIAs.
 
 ![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port%20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)
+
+## Device Port External Breakouts
+A single 64, 32, or 16 byte device port may be further adapted to serve multiple devices of smaller address range. This approach introduces an extra address decoding delay compared with the above approach of adapting expansion bus directly.
+
+![Device Port External Breakouts](schematics/Vega816-64%20->%2032,%2016,%208%20byte%20External%20Device%20Breakouts.svg)
+
+## Expansion Port Devices
+
+### W65C22 VIA Port (16 byte device)
+
+This device presents the 20 outward facing lines of a VIA port, plus power and ground.
+
+![VIA Port](schematics/Vega816-W65C22%20VIA%20Port.svg)
+
+### W65C51N ACIA  Port (8 byte device)
+
+This device supplies an RS-232 serial port.
+
+![ACIA Port](schematics/Vega816-W65C51%20ACIA%20RS-232.svg)
+
+## VIA Port Devices
+
+### 2x16 Character Display and front panel switches
+
+![2x16 Character Display](schematics/Vega816-%202%20x%2016%20Character%20Display.svg)
+
+### System Controller / SPI Controller
+
+The System Controller / SPI Controller is a VIA port device providing software control over system hardware.
+
+Port A controls clock speed, CPU B RDY_IN and DMA priority control, and EEPROM banking on each of the DMA channels.
+
+Port B provides SPI communication, with SCK, MISO, MOSI lines, and three chip select lines, which in turn drive a 74AHC138 3-to-8 controller to select one of eight external SPI devices. PB6 and PB7 are reserved for pulse generation and pulse counting purposes (see W65C22 datasheet).
+
+![System and SPI Controller](schematics/Vega816-System%20Controller.svg)
+Vega816-System Controller

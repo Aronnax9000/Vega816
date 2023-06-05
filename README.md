@@ -36,7 +36,7 @@ The circuit uses a 74AHCT245 octal bus transceiver for bi-directional communicat
 
 The bus transceiver and buffers' output enable lines are tied together and provided as an input called DMAB, so that a single signal suffices to turn communication on and off.
 
-![CPU Buffer Board](schematics/Vega816-CPU%20Buffer%20Module.svg)
+![CPU Buffer Board](schematics/CPU%20Buffer.svg)
 
 ## DMA Control Shim and Vector Pull Rewrite Shim
 

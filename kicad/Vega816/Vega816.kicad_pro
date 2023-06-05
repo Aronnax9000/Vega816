@@ -367,7 +367,7 @@
     ],
     [
       "cc3bbfdf-4c3a-49f1-8abd-c114e88ea070",
-      "W65C51 ACIA (RS-232)"
+      "W65C51 ACIA RS-232"
     ],
     [
       "1d5da02e-6501-44ce-9666-30defc901973",
@@ -376,6 +376,10 @@
     [
       "da4391ea-e835-4058-a9cf-70dacb01f4fb",
       "Two-To-One IRQ Multiplexer"
+    ],
+    [
+      "92de43a6-3837-4a70-9dd4-4ad733be3add",
+      "System Controller"
     ]
   ],
   "text_variables": {}

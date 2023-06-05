@@ -215,3 +215,12 @@ A 64-byte expansion slot may include a programmable interrupt controller. The PI
 
 Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed for each of up to eight devices, by writing to latches which shadow the device I/O space in the next higher page of address space. Four octal latches, at address offsets +$100, +$104, +$108 and +$10C offsets from the corresponding 16 byte I/O address ranges are provided. Each octal latch stores programmable interrupt information for up to two 8 byte devices: the low nybble for an eight byte device at offset +$00 from the base I/O address, and the high nybble for an eight byte device at offset $08 from the base I/O address. The low bit of the nybble determines the target CPU. The high three bits specify the priority from 0-7.
 ![PIC (Programmable Interrupt Controller](schematics/Vega816-8%20Device%20Programmable%20Interrupt%20Controller.svg)
+
+
+## 16 MB Memory Decoder and Bus
+
+![16 MB Memory Decoder and Bus](schematics/Vega816-16MB%20Memory%20Decoder%20+%20Memory%20Bus.svg)
+
+## 4 MB RAM + 32 K EEPROM Module
+
+![4 MB RAM + 32 K EEPROM Module](schematics/Vega816-4%20MB%20RAM%20+%2032%20KB%20ROM%20Memory%20Module.svg)

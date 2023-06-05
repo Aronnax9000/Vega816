@@ -278,9 +278,10 @@ A typical startup sequence would consist of these steps:
 * CPU A copies EEPROM on DMA 1 to underlying RAM, or otherwise populates RAM underlying the DMA 1 ROM area.
 * CPU A banks out EEPROMs for both read and write
 * CPU A sets high clock speed for CPU A and CPU B
+* If desired, CPU B is given DMA priority (e. g. for video processing).
 * CPU A asserts RDY_IN on CPU B, permitting CPU B to start processing with CPU B's RESET vector.
+
 
 Port B provides SPI communication, with SCK, MISO, MOSI lines, and three chip select lines, which in turn drive a 74AHC138 3-to-8 controller to select one of eight external SPI devices. PB6 and PB7 are reserved for pulse generation and pulse counting purposes (see W65C22 datasheet).
 
 ![System and SPI Controller](schematics/Vega816-System%20Controller.svg)
-Vega816-System Controller

@@ -229,4 +229,6 @@ Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed f
 
 The 64-byte expansion slots provided by the Expansion Bus may be broken out into individual device I/O ports spanning 64, 32, 16, or 8 bytes of address space. The four 16-byte chip select lines are further decoded by the programmable interrupt controller down to two 8-byte chip select lines per 16 byte range.
 
+These sample breakouts show a complete breakout of one port into 1x64, 2x32, 4x16 and 8x8 byte device ports. Also shown is a reduction of this most general breakout into a sample breakout capable of supporting 3 VIAs and 2 ACIAs.
+
 ![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)

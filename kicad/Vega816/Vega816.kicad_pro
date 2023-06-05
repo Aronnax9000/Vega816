@@ -372,6 +372,10 @@
     [
       "1d5da02e-6501-44ce-9666-30defc901973",
       "W65C22 VIA Port"
+    ],
+    [
+      "da4391ea-e835-4058-a9cf-70dacb01f4fb",
+      "Eight-To-One IRQ Multiplexer"
     ]
   ],
   "text_variables": {}

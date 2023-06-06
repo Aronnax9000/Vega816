@@ -14,6 +14,29 @@
 * [Dual DMA Channel to Dual CPU Priority IRQ Dispatcher](#dual-dma-channel-to-dual-cpu-priority-irq-dispatcher)
 * [DMA Controller](#dma_controller)
 * [Single Page I/O Bus](#single-page-i-o-bus)
+    * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
+* [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
+
+* [16 MB Memory Decoder and Bus](#16-mb-memory-decoder-and-bus)
+* [4 MB RAM + 32 K EEPROM Module](#4-mb-ram-32-k-eeprom-module)
+* [Expansion Port to Single Device Ports](#expansion-port-to-single-device)
+* [Single Device Port Breakouts](#single-device-port-breakouts)
+* [Devices](#devices)
+    * [W65C22 VIA Port](#w65c22-via-port)
+    * [W65C51N ACIA (RS-232)](#w65c51n-acia-rs-232)
+* [VIA Port Devices](#via-port-devices)
+    * [2x16 Character Display and front panel switches](#2x16-character-display-and-front-panel-switches)
+    * [System Controller / SPI Controller](#system-controller-spi-controller)
+
+
+
+
+
+
+
+
+
+
 
  
     
@@ -221,7 +244,9 @@ The 16 byte range chip select signals are raised high for both the I/O page with
 The IRQ Multiplexer takes the 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs), and multiplexes them for dispatch by the IRQ Dispatch board.
 Vega816-Quad IO Bus + IRQ Multiplexer
 ![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%20IO%20Bus%20+%20IRQ%20Multiplexer.svg)
-## Combining IRQs from Multiple Expansion Bus Controllers
+
+### Combining IRQs from Multiple Expansion Bus Controllers
+
 If more than one page of I/O device space is needed per DMA channel, the 16 active low IRQ lines from each controller must be demultiplexed so that any one of the bus controllers may assert any IRQ to either processor. A sample demultiplexer is provided that uses NAND gates to combine the 16-line IRQ output from two expansion boards onto one 16-line IRQ input channel for use by the IRQ Dispatcher. 
 
 Demultiplexers for combining IRQs from more than one expansion bus may be designed using quad input or eight input NAND gates, or the existing dual input demultiplexer circuit may be used as input to another identical two-to-one demultiplexer.
@@ -243,7 +268,7 @@ Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed f
 
 ![4 MB RAM + 32 K EEPROM Module](schematics/Vega816-4%20MB%20RAM%20+%2032%20KB%20ROM%20Memory%20Module.svg)
 
-## Expansion Port to 64, 32, 16, 8 bit device ports
+## Expansion Port to Single Device Ports
 
 The 64-byte expansion slots provided by the Expansion Bus may be broken out into individual device I/O ports spanning 64, 32, 16, or 8 bytes of address space. The four 16-byte chip select lines are further decoded by the programmable interrupt controller down to two 8-byte chip select lines per 16 byte range.
 
@@ -251,20 +276,20 @@ These sample breakouts show a complete breakout of one port into 1x64, 2x32, 4x1
 
 ![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port%20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)
 
-## Device Port External Breakouts
+## Single Device Port Breakouts
 A single 64, 32, or 16 byte device port may be further adapted to serve multiple devices of smaller address range. This approach introduces an extra address decoding delay compared with the above approach of adapting expansion bus directly.
 
 ![Device Port External Breakouts](schematics/Vega816-64%20->%2032,%2016,%208%20byte%20External%20Device%20Breakouts.svg)
 
 ## Expansion Port Devices
 
-### W65C22 VIA Port (16 byte device)
+### W65C22 VIA Port
 
 This device presents the 20 outward facing lines of a VIA port, plus power and ground.
 
 ![VIA Port](schematics/Vega816-W65C22%20VIA%20Port.svg)
 
-### W65C51N ACIA  Port (8 byte device)
+### W65C51N ACIA (RS-232)
 
 This device supplies an RS-232 serial port.
 

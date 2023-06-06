@@ -355,11 +355,11 @@
     ],
     [
       "c8c771df-7dcc-45f6-b525-febf6b559971",
-      "Expansion Port to 64, 32, 16, 8 bit device ports"
+      "Expansion Port Breakouts"
     ],
     [
       "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "64 -> 32, 16, 8 byte External Device Breakouts"
+      "Single Device Breakouts"
     ],
     [
       "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
@@ -379,7 +379,7 @@
     ],
     [
       "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "System Controller"
+      "System Controller + 8 Channel SPI"
     ]
   ],
   "text_variables": {}

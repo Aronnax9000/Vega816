@@ -380,6 +380,14 @@
     [
       "92de43a6-3837-4a70-9dd4-4ad733be3add",
       "System Controller + 8 Channel SPI"
+    ],
+    [
+      "29762812-026e-4c57-a387-2cd47b8787e4",
+      "C64 CIA (VIA) #1"
+    ],
+    [
+      "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
+      "Eater PS2 Interface"
     ]
   ],
   "text_variables": {}

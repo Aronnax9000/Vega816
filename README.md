@@ -12,7 +12,7 @@
     * [Details of Vector Pull address rewriting](#details-of-vector-pull-address-rewriting)
     * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
 * [Dual DMA Channel to Dual CPU Priority IRQ Dispatcher](#dual-dma-channel-to-dual-cpu-priority-irq-dispatcher)
-* [DMA Controller](#dma_controller)
+* [DMA Controller](#dma-controller)
 * [Single Page I/O Bus](#single-page-i-o-bus)
     * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
 * [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
@@ -27,6 +27,8 @@
 * [VIA Port Devices](#via-port-devices)
     * [2x16 Character Display and front panel switches](#2x16-character-display-and-front-panel-switches)
     * [System Controller / SPI Controller](#system-controller-spi-controller)
+    * [Ben Eater PS/2 Interface](#ben-eater-ps-2-interface)
+    * [Commodore 64 CIA (VIA) #1](#commodore-64-cia-via-1)
 
     
 ## Functional Description
@@ -260,7 +262,7 @@ Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed f
 
 ![4 MB RAM + 32 K EEPROM Module](schematics/Vega816-4%20MB%20RAM%20+%2032%20KB%20ROM%20Memory%20Module.svg)
 
-## Expansion Port to Single Device Ports
+## Expansion Port to Single Device
 
 The 64-byte expansion slots provided by the Expansion Bus may be broken out into individual device I/O ports spanning 64, 32, 16, or 8 bytes of address space. The four 16-byte chip select lines are further decoded by the programmable interrupt controller down to two 8-byte chip select lines per 16 byte range.
 
@@ -273,7 +275,7 @@ A single 64, 32, or 16 byte device port may be further adapted to serve multiple
 
 ![Device Port External Breakouts](schematics/Vega816-64%20->%2032,%2016,%208%20byte%20External%20Device%20Breakouts.svg)
 
-## Expansion Port Devices
+## Devices
 
 ### W65C22 VIA Port
 
@@ -320,3 +322,11 @@ A typical startup sequence would consist of these steps:
 Port B provides SPI communication, with SCK, MISO, MOSI lines, and three chip select lines, which in turn drive a 74AHC138 3-to-8 controller to select one of eight external SPI devices. PB6 and PB7 are reserved for pulse generation and pulse counting purposes (see W65C22 datasheet).
 
 ![System and SPI Controller](schematics/Vega816-System%20Controller.svg)
+
+### Ben Eater PS/2 Interface
+
+![Ben Eater PS/2 Interface](schematics/Vega816-Eater%20PS2%20Interface.svg)
+
+### Commodore 64 CIA (VIA) #1
+
+![Commodore 64 CIA (VIA) #1](schematics/Vega816-C64%20CIA%20%28VIA%29%20%231.svg)

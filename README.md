@@ -1,5 +1,24 @@
 # Vega816 - Dual 65C816 Computer with Vector Pull rewrite
 
+## Table of Contents
+
+* [Functional Description](#functional-description)
+    * [Limitations of the Design](#limitations-of-the-design)
+* [CPU Buffer Board](#cpu-buffer-board)
+* [DMA Control and Vector Pull Rewrite Shim](#dma-control-and-vector-pull-rewrite-shim)
+    * [DMA Control Shim](#dma-control-shim)
+    * [Vector Pull Rewrite Shim](#vector-pull-rewrite-shim)
+    * [CAVEAT: Offset of 7 triggers RESB interrupt handler](#caveat-offset-of-7-triggers-resb-interrupt-handler)
+    * [Details of Vector Pull address rewriting](#details-of-vector-pull-address-rewriting)
+    * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
+* [Dual DMA Channel to Dual CPU Priority IRQ Dispatcher](#dual-dma-channel-to-dual-cpu-priority-irq-dispatcher)
+* [DMA Controller](#dma_controller)
+* [Single Page I/O Bus](#single-page-i-o-bus)
+
+ 
+    
+## Functional Description
+
 My goal is to demonstrate symmetrical multiprocessing and dual channel DMA with the W65C816 processor, beginning with Adrien Kohlbecker's fine W65C816 CPU breakout board, documented by Adrien at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [his YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
 The system also includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ from any device to one or the other connected CPU.
@@ -16,15 +35,13 @@ Since the complete system supports two DMA channels, each with three two-page ra
 
 Finally, a reference System Controller based on the W65C22 VIA is presented, allowing software control over system hardware, such as clock speed, CPU and DMA control. 
 
-## Limitations of the Design
+### Limitations of the Design
 
-The chief limitation of the present design is that it supports a maximum of two CPUs running against a maximum of two DMA channels. It is easy to imagine future directions. Additional CPU buffers, could be added to each processor in order to implement caching. In those cases when the CPU is attempting to reach address space within a busy DMA channel, a DMA controller could direct the CPU to a DMA channel representing cache. The fact that VPA and VDA are given treatment through the CPU Buffer board design, despite being offered only as test pins on the BB816 breakout board, is intended to facilitate exploration of that possibility in future designs, as maintaining separate caches for program code and program data will improve cache efficiency.
+A maximum of two CPUs are supported running against a maximum of two DMA channels. 
 
-If the design were expanded to offer two separate bits of the bank address to the DMA controller instead of one, the address space could be sliced into up to four DMA channels, so that four CPUs could share the same address space. Such an architecture would lend itself to "Connection Machine" type multiprocessor topologies, with each CPU sharing address space with three of its neighbors.
+Introducing additional CPUs and DMA channels (say three, or four, of each) also necessarily increases the complexity of not only the DMA controller, but the programmable interrupt controller as well, requiring additional state and logic to route an IRQ among the increased number of CPUs sharing the channel. A benefit of this increase would be to introduce the possibilities of arbitrarily larger multiprocessor topologies in one or two dimensions.
 
-Such an expansion would also necessitate a rework of the Programmable Interrupt Controller, as a device on any given DMA channel might be expected to direct IRQs to any one of four different CPUs.
-
-The complicated logic presented here introduces timing delays which I have not yet modeled. These delays must certainly introduce limitations to the maximum clock speed of a 65816 based computer.
+A good deal of signal demultiplexing that is now performed with NAND gates could probably be done more simply using diode logic.
 
 ## CPU Buffer Board
 
@@ -38,7 +55,7 @@ The bus transceiver and buffers' output enable lines are tied together and provi
 
 ![CPU Buffer Board](schematics/CPU%20Buffer.svg)
 
-## DMA Control Shim and Vector Pull Rewrite Shim
+## DMA Control and Vector Pull Rewrite Shim
 
 If we assign each DMA channel its own address space, we can use address decoding in order to select which DMA channel is to be accessed by a particular CPU. In order to do that, we need to intercept the address lines from the CPU, pass decoding information to the DMA controller, and potentially rewrite the address being asserted by the CPU, before granting the CPU buffer access to the correct DMA channel.
 
@@ -46,6 +63,7 @@ The W65C816's VPB (Vector Pull) line also allows rewriting of the address assert
 
 Together, the DMA Control Shim and the Vector Pull Rewrite Shim provide facilities for DMA control and Vector Pull Rewrite to be performed by external hardware. 
 ![CPU Buffer Board](schematics/Vega816-Vector%20Pull%20+%20Dual%20Channel%20DMA%20Control%20Shim.svg)
+
 ### DMA Control Shim
 
 The DMA Control shim provides movable jumpers for each of the bits A16-A23. Any of the bits may be selected as DMA_REQ. Once the jumper has been set to select one of those lines, it is connected as the DMA_REQ output, and disconnected from output to the DMA end, and is in fact pulled low on the DMA end (10K resistor), in order to map the request into a lower part of the DMA channel's address space.
@@ -131,7 +149,7 @@ $FFFA NMI
 $FFFC RESB
 $FFFE BRK/IRQ 0
 ```
-## Dual DMA Channel to Dual CPU IRQ Dispatcher with 0-7 Priority
+## Dual DMA Channel to Dual CPU Priority IRQ Dispatcher
 
 Devices mapped within either DMA channel may issue IRQ against either CPU. The W65C816 supports Vector Pull Rewrite through its VPB line. The dispatcher uses two 74LS348 8-to-3 Priority Encoders to receive IRQs from up to two DMA channels, and routes the IRQ signal to one of two CPUs. If multiple IRQs are asserted against the same processor, the IRQ with the lowest priority wins. 
 
@@ -183,7 +201,7 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 ![CPU Buffer Board](schematics/Vega816-Dual%20Channel%20DMA%20Controller.svg)
 
 
-## Quad 64-byte device I/O Bus and IRQ Multiplexer
+## Single Page I/O Bus
 The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with the page above it, which can be used by a programmable interrupt controller to store metadata such as IRQ priority, and which CPU is to receive IRQs from a given device. 
 
 Jumpers are used to locate the I/O address space on any even-numbered page boundary between $0000-$7E00, although, in order to avoid the default page zero and stack areas at $0000 and $01000, it is advisable to avoid these two pages, with $0200-$7E00 being the most acceptable range. This allows for up to 63 choices of I/O page, per DMA channel. A system with two DMA channels could therefore support 2 x 63 x 256 = 32256 bytes of I/O register area, enough for 2,016 VIAs or 4,032 ACIA RS-232 ports, for use in controlling factories or large scale bulletin board system (BBS) installations over dial-up modem.

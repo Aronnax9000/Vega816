@@ -828,10 +828,10 @@
     (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/3af58c11-a82b-444b-b625-2438f0722ce9"
       (reference "#PWR0218") (unit 1) (value "GND") (footprint "")
     )
-    (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
+    (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
       (reference "#PWR0219") (unit 1) (value "VCC") (footprint "")
     )
-    (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
+    (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
       (reference "#PWR0219") (unit 1) (value "VCC") (footprint "")
     )
     (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/6b35bf76-8348-4716-9b6c-ed4d4c6238ba"
@@ -958,6 +958,9 @@
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/5714f333-99c5-4595-9bfa-1c6ad2995156"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/57e861b1-9f81-48fd-a43f-37f48f585837"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/6764ea29-a5ac-4b62-97b6-dbe8c640cccf"
@@ -1335,10 +1338,10 @@
     (path "/62ed1553-24d1-4dfa-9198-957c21fb6721/9ae86ee7-1cef-46f9-a150-90a941f533e4"
       (reference "J101") (unit 1) (value "+$00") (footprint "")
     )
-    (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
+    (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
       (reference "J102") (unit 1) (value "VIA Port") (footprint "")
     )
-    (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
+    (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
       (reference "J102") (unit 1) (value "VIA Port") (footprint "")
     )
     (path "/cc3bbfdf-4c3a-49f1-8abd-c114e88ea070/a3474789-ba64-4337-98c2-dfc17b85a004"

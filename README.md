@@ -28,35 +28,27 @@
     * [2x16 Character Display and front panel switches](#2x16-character-display-and-front-panel-switches)
     * [System Controller / SPI Controller](#system-controller-spi-controller)
 
-
-
-
-
-
-
-
-
-
-
- 
     
 ## Functional Description
 
-My goal is to demonstrate symmetrical multiprocessing and dual channel DMA with the W65C816 processor, beginning with Adrien Kohlbecker's fine W65C816 CPU breakout board, documented by Adrien at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [his YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
+The Vega816 is a modular architecture for implementing symmetrical multiprocessing (SMP) with the Western Design Center W65C816 Microprocessor (aka 65816). The project takes as its starting point the 65816 breakout board designed by Adrien Kohlbecker, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
-The system also includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ from any device to one or the other connected CPU.
+The system also includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ interrupts from any device to one or the other connected CPU, at any of 8 different levels of priority (0-7, lower number is higher priority). If multiple interrupts are asserted at once, the interrupt with lowest priority wins.
+When the target CPU fetches the interrupt vector, the system adds an offset to the low byte of the fetch equal to twice the priority number (since an interrupt vector is two bytes in length).
 
-The interrupt handling system features hardware Vector Pull rewrite support for up to seven levels of IRQ prioritization, programmable per device (seven + RESB). The PIC architecture offers support for I/O devices with 8, 16, 32, and 64 byte address space requirements (e.g. VIA, ACIA, SID, VIC). Multiple PICs may be installed to support any number of devices whose combined address space will fit within that DMA channel's Bank 0. 
+I/O address decoding is provided on 8-byte boundaries. Devices may span up to eight such 8-byte address ranges, for a maximum device address width of 64 bytes.
 
 Memory modules are provided to provide RAM and ROM services. ROM can be separately banked in for read or write, or completely banked out for higher clock speeds.
 
-An Expansion Bus board may be set, via jumper, to any of three pages in Bank Zero for the board's DMA channel: $0200, $0400, or $0600. The board splits its page of I/O address space across 4 expansion slots, each of which spans 64 bytes (1/4th) of the breakout's assigned page of address space, providing further address decoding into chip select signals for up to four devices per slot on 16 byte boundaries. The address decoder provides a signal to inhibit the selection of RAM within the assigned address range of the expansion bus. The Programmable Interrupt Controller (PIC) uses the page of RAM immediately above the assigned page of I/O address space in order to store each device's IRQ priority and target CPU, so the address decoder will assert Chip Select not just for the address space of any 16 byte device, but also for the corresponding range in the page above it. For example, the Chip Select line for a device mapped at $0240-$024F is also active for $0340-$034F.
+Single Page I/O Bus boards perform address decoding to provide four 64-byte expansion slots, each provided with four chip select signals on 16 B boundaries. Programmable Interrupt Controllers introduce a further layer of address decoding to 8 byte boundaries.
+
+A Single Page I/O board may be set, via jumper, to occupy any even-numbered page in the lowest 32 KB of its DMA channel's address space (i.e., any even numbered page between page $00 and page $7E). The next higher odd-numbered page is used by one or more programmable interrupt controllers to store programmed IRQ priority levels and CPU targets for each device.
 
 The Programmable Interrupt Controller performs further subdivision of the 16 byte device granularity of the Expansion Bus into 8 byte device address spaces, such as used by the W65C51 ACIA.
 
-Since the complete system supports two DMA channels, each with three two-page ranges reserved for I/O, supporting up to one PIC per each of four 64 byte expansion slot and each PIC supports up to eight devices per double-page, the complete system can support up to 2x3x4x8 = 
+Sample devices are provided, such as the ACIA (RS-232 serial port), and a VIA Port exposing the outward-facing pins of a W65C22 VIA in a standard connector format.
 
-Finally, a reference System Controller based on the W65C22 VIA is presented, allowing software control over system hardware, such as clock speed, CPU and DMA control. 
+Finally, a reference System Controller based on the VIA Port is presented, allowing software control over system hardware, such as clock speed, CPU, EEPROM banking, and DMA control. 
 
 ### Limitations of the Design
 

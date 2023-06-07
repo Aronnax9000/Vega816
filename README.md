@@ -58,7 +58,7 @@ A maximum of two CPUs are supported running against a maximum of two DMA channel
 
 Introducing additional CPUs and DMA channels (say three, or four, of each) also necessarily increases the complexity of not only the DMA controller, but the programmable interrupt controller as well, requiring additional state and logic to route an IRQ among the increased number of CPUs sharing the channel. A benefit of this increase would be to introduce the possibilities of arbitrarily larger multiprocessor topologies in one or two dimensions.
 
-A good deal of signal demultiplexing that is now performed with NAND gates could probably be done more simply using diode logic.
+A good deal of signal demultiplexing that is now performed with NAND gates could probably be done more simply using diode logic, perhaps using 1N5817 Schottky diodes.
 
 ## CPU Buffer Board
 

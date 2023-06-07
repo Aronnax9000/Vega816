@@ -8,227 +8,243 @@
   )
 
 
-  (text "Vega 816 SMP Computer System" (at 13.97 20.955 0)
+  (text "Single Devices" (at 132.08 69.85 0)
+    (effects (font (size 3 3)) (justify left bottom))
+    (uuid 3cdf6538-b950-48ca-b480-91384b92b8ae)
+  )
+  (text "Vega 816 SMP Computer System" (at 13.97 23.495 0)
     (effects (font (size 5 5)) (justify left bottom))
     (uuid 8382d42a-f47b-4609-969d-5d7e91023fd0)
   )
-  (text "Memory and Expansion Bus" (at 93.98 36.83 0)
+  (text "Memory and Expansion Bus" (at 68.58 30.48 0)
     (effects (font (size 3 3)) (justify left bottom))
     (uuid c53ebe39-4612-4113-b192-e1b10727992a)
   )
-  (text "VIA Port Devices" (at 184.15 123.19 0)
+  (text "VIA Port Devices" (at 196.85 116.84 0)
     (effects (font (size 3 3)) (justify left bottom))
     (uuid c5c1bc6d-6e05-4a36-adcf-f66383105a75)
   )
-  (text "Expansion Bus Breakout" (at 161.29 36.83 0)
+  (text "Expansion Bus Breakout" (at 130.81 36.83 0)
     (effects (font (size 3 3)) (justify left bottom))
     (uuid e2f26104-2094-4244-9bf2-8588abbad2d4)
   )
-  (text "Dual Channel DMA \nVector Pull Rewrite\n" (at 31.75 40.64 0)
+  (text "Dual Channel DMA \nVector Pull Rewrite\n" (at 17.78 35.56 0)
     (effects (font (size 3 3)) (justify left bottom))
     (uuid f72402e7-2dba-4e4c-a667-d639f88b5afa)
   )
 
-  (sheet (at 163.83 96.52) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 130.81 73.66) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 1d5da02e-6501-44ce-9666-30defc901973)
-    (property "Sheet name" "W65C22 VIA Port" (id 0) (at 163.83 95.8084 0)
+    (property "Sheet name" "W65C22 VIA Port" (id 0) (at 130.81 72.9484 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/VIAPort.kicad_sch" (id 1) (at 163.83 111.0746 0)
+    (property "Sheet file" "Accessories/VIAPort.kicad_sch" (id 1) (at 130.81 88.2146 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 33.02 49.53) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 19.05 44.45) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 1defbe63-3888-4768-83f8-93e13be4ca60)
-    (property "Sheet name" "CPU Buffer Module" (id 0) (at 33.02 48.8184 0)
+    (property "Sheet name" "CPU Buffer Module" (id 0) (at 19.05 43.7384 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "DMA/CPU Buffer/CPU Buffer.kicad_sch" (id 1) (at 33.02 64.0846 0)
+    (property "Sheet file" "DMA/CPU Buffer/CPU Buffer.kicad_sch" (id 1) (at 19.05 59.0046 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 209.55 129.54) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 219.71 143.51) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 29762812-026e-4c57-a387-2cd47b8787e4)
-    (property "Sheet name" "C64 CIA (VIA) #1" (id 0) (at 209.55 128.8284 0)
+    (property "Sheet name" "C64 CIA (VIA) #1" (id 0) (at 219.71 142.7984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/C64VIA1.kicad_sch" (id 1) (at 209.55 144.0946 0)
+    (property "Sheet file" "Accessories/C64VIA1.kicad_sch" (id 1) (at 219.71 158.0646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 95.25 97.79) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 69.85 91.44) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 54837992-108e-4ec4-a58c-85b54747d8e9)
-    (property "Sheet name" "16MB Memory Decoder + Memory Bus" (id 0) (at 95.25 97.0784 0)
+    (property "Sheet name" "16MB Memory Decoder + Memory Bus" (id 0) (at 69.85 90.7284 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "MemoryExpansionBus/16MB_Expansion_Bus.kicad_sch" (id 1) (at 95.25 112.3446 0)
+    (property "Sheet file" "MemoryExpansionBus/16MB_Expansion_Bus.kicad_sch" (id 1) (at 69.85 105.9946 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 165.1 73.66) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 163.83 41.91) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 62ed1553-24d1-4dfa-9198-957c21fb6721)
-    (property "Sheet name" "Single Device Breakouts" (id 0) (at 165.1 72.9484 0)
+    (property "Sheet name" "Single Device Breakouts" (id 0) (at 163.83 41.1984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/Accessories.kicad_sch" (id 1) (at 165.1 88.2146 0)
+    (property "Sheet file" "Accessories/Accessories.kicad_sch" (id 1) (at 163.83 56.4646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 95.25 49.53) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 69.85 43.18) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 68d08e53-bf1d-4bd4-80f6-7565ca1a852f)
-    (property "Sheet name" "Quad IO Bus + IRQ Multiplexer" (id 0) (at 95.25 48.8184 0)
+    (property "Sheet name" "Quad IO Bus + IRQ Multiplexer" (id 0) (at 69.85 42.4684 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "MemoryExpansionBus/irq_multiplex.kicad_sch" (id 1) (at 95.25 64.0846 0)
+    (property "Sheet file" "MemoryExpansionBus/irq_multiplex.kicad_sch" (id 1) (at 69.85 57.7346 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 161.29 151.13) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 219.71 123.19) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 6d2f5bba-0441-4d26-89b8-f88f2d1642ea)
-    (property "Sheet name" " 2 x 16 Character Display" (id 0) (at 161.29 150.4184 0)
+    (property "Sheet name" " 2 x 16 Character Display" (id 0) (at 219.71 122.4784 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/VIADevices.kicad_sch" (id 1) (at 161.29 165.6846 0)
+    (property "Sheet file" "Accessories/VIADevices.kicad_sch" (id 1) (at 219.71 137.7446 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 161.29 129.54) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 173.99 123.19) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 92de43a6-3837-4a70-9dd4-4ad733be3add)
-    (property "Sheet name" "System Controller + 8 Channel SPI" (id 0) (at 161.29 128.8284 0)
+    (property "Sheet name" "System Controller + 8 Channel SPI" (id 0) (at 173.99 122.4784 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/SystemController.kicad_sch" (id 1) (at 161.29 144.0946 0)
+    (property "Sheet file" "Accessories/SystemController.kicad_sch" (id 1) (at 173.99 137.7446 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 33.02 97.79) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 19.05 92.71) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 992038d2-7a0d-4571-a879-69ca48280cef)
-    (property "Sheet name" "Dual Channel DMA Controller" (id 0) (at 33.02 97.0784 0)
+    (property "Sheet name" "Dual Channel DMA Controller" (id 0) (at 19.05 91.9984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "DMA/DMAController.kicad_sch" (id 1) (at 33.02 112.3446 0)
+    (property "Sheet file" "DMA/DMAController.kicad_sch" (id 1) (at 19.05 107.2646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 209.55 151.13) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 173.99 144.78) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid 9dc3bdfa-2e2a-43bc-a79b-c872557afd12)
-    (property "Sheet name" "Eater PS2 Interface" (id 0) (at 209.55 150.4184 0)
+    (property "Sheet name" "Eater PS2 Interface" (id 0) (at 173.99 144.0684 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/EaterPS2Interface.kicad_sch" (id 1) (at 209.55 165.6846 0)
+    (property "Sheet file" "Accessories/EaterPS2Interface.kicad_sch" (id 1) (at 173.99 159.3346 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 95.25 121.92) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 69.85 115.57) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid b26cb0b2-9258-4c88-a063-c7c14fc5646d)
-    (property "Sheet name" "4 MB RAM + 32 KB ROM Memory Module" (id 0) (at 95.25 121.2084 0)
+    (property "Sheet name" "4 MB RAM + 32 KB ROM Memory Module" (id 0) (at 69.85 114.8584 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "MemoryExpansionBus/4MB_Memory_Module.kicad_sch" (id 1) (at 95.25 136.4746 0)
+    (property "Sheet file" "MemoryExpansionBus/4MB_Memory_Module.kicad_sch" (id 1) (at 69.85 130.1246 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 165.1 49.53) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 130.81 41.91) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid c8c771df-7dcc-45f6-b525-febf6b559971)
-    (property "Sheet name" "Expansion Port Breakouts" (id 0) (at 165.1 48.8184 0)
+    (property "Sheet name" "Expansion Port Breakouts" (id 0) (at 130.81 41.1984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "MemoryExpansionBus/64_to_32_16_8_byte_device_breakout.kicad_sch" (id 1) (at 165.1 64.0846 0)
+    (property "Sheet file" "MemoryExpansionBus/64_to_32_16_8_byte_device_breakout.kicad_sch" (id 1) (at 130.81 56.4646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 200.66 96.52) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 167.64 73.66) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid cc3bbfdf-4c3a-49f1-8abd-c114e88ea070)
-    (property "Sheet name" "W65C51 ACIA RS-232" (id 0) (at 200.66 95.8084 0)
+    (property "Sheet name" "W65C51 ACIA RS-232" (id 0) (at 167.64 72.9484 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "Accessories/ACIA.kicad_sch" (id 1) (at 200.66 111.0746 0)
+    (property "Sheet file" "Accessories/ACIA.kicad_sch" (id 1) (at 167.64 88.2146 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 33.02 121.92) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 19.05 116.84) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid cf475620-7ed0-4b26-9367-ad4d44ead55c)
-    (property "Sheet name" "Dual CPU IRQ Dispatcher" (id 0) (at 33.02 121.2084 0)
+    (property "Sheet name" "Dual CPU IRQ Dispatcher" (id 0) (at 19.05 116.1284 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "DMA/IRQDispatch.kicad_sch" (id 1) (at 33.02 136.4746 0)
+    (property "Sheet file" "DMA/IRQDispatch.kicad_sch" (id 1) (at 19.05 131.3946 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 95.25 147.32) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 69.85 140.97) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid da4391ea-e835-4058-a9cf-70dacb01f4fb)
-    (property "Sheet name" "Two-To-One IRQ Multiplexer" (id 0) (at 95.25 146.6084 0)
+    (property "Sheet name" "Two-To-One IRQ Multiplexer" (id 0) (at 69.85 140.2584 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "DMA/EightToOneIRQMultiplexer.kicad_sch" (id 1) (at 95.25 161.8746 0)
+    (property "Sheet file" "DMA/EightToOneIRQMultiplexer.kicad_sch" (id 1) (at 69.85 155.5246 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 33.02 73.66) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 201.93 73.66) (size 26.67 13.97) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4)
+    (property "Sheet name" "8580 or 6581 SID" (id 0) (at 201.93 72.9484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "Accessories/SID.kicad_sch" (id 1) (at 201.93 88.2146 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
+  (sheet (at 19.05 68.58) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid e79064d8-3d63-448f-a23e-3316e7854f4a)
-    (property "Sheet name" "Vector Pull + Dual Channel DMA Control Shim" (id 0) (at 33.02 72.9484 0)
+    (property "Sheet name" "Vector Pull + Dual Channel DMA Control Shim" (id 0) (at 19.05 67.8684 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "DMA/DMABreakout.kicad_sch" (id 1) (at 33.02 88.2146 0)
+    (property "Sheet file" "DMA/DMABreakout.kicad_sch" (id 1) (at 19.05 83.1346 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
 
-  (sheet (at 95.25 73.66) (size 26.67 13.97) (fields_autoplaced)
+  (sheet (at 69.85 67.31) (size 26.67 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid ed4e59dc-e26e-4739-aa1d-80a767eacd8d)
-    (property "Sheet name" "8 Device Programmable Interrupt Controller" (id 0) (at 95.25 72.9484 0)
+    (property "Sheet name" "8 Device Programmable Interrupt Controller" (id 0) (at 69.85 66.5984 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "MemoryExpansionBus/pic.kicad_sch" (id 1) (at 95.25 88.2146 0)
+    (property "Sheet file" "MemoryExpansionBus/pic.kicad_sch" (id 1) (at 69.85 81.8646 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
@@ -252,6 +268,7 @@
     (path "/92de43a6-3837-4a70-9dd4-4ad733be3add" (page "16"))
     (path "/29762812-026e-4c57-a387-2cd47b8787e4" (page "17"))
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12" (page "18"))
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4" (page "19"))
   )
 
   (symbol_instances
@@ -855,7 +872,7 @@
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/3af58c11-a82b-444b-b625-2438f0722ce9"
       (reference "#PWR0218") (unit 1) (value "GND") (footprint "")
     )
-    (path "/29762812-026e-4c57-a387-2cd47b8787e4/3af58c11-a82b-444b-b625-2438f0722ce9"
+    (path "/29762812-026e-4c57-a387-2cd47b8787e4/eb37a697-b3c7-4bbc-8eec-f805bebc4895"
       (reference "#PWR0218") (unit 1) (value "GND") (footprint "")
     )
     (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/f6342b5f-4e6f-495c-a024-30664a546075"
@@ -864,10 +881,10 @@
     (path "/92de43a6-3837-4a70-9dd4-4ad733be3add/036230b8-4fb5-44e9-809e-ef5e66b05e8b"
       (reference "#PWR0219") (unit 1) (value "VCC") (footprint "")
     )
-    (path "/29762812-026e-4c57-a387-2cd47b8787e4/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
+    (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
       (reference "#PWR0219") (unit 1) (value "VCC") (footprint "")
     )
-    (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/86e8e204-bc5c-4915-99dc-1883f9d5d1da"
+    (path "/29762812-026e-4c57-a387-2cd47b8787e4/ae6fce0a-186e-4fe9-8d98-60bda65fdf5d"
       (reference "#PWR0219") (unit 1) (value "VCC") (footprint "")
     )
     (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/394f25fd-9a25-45c8-b561-f6f2f21c801e"
@@ -933,6 +950,9 @@
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/013ae87a-3f6f-4d33-9ef0-c10f8d4515c2"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/028e86a8-eda2-4f1c-85e9-4f7716d8fb1b"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/05850452-ce47-40cb-a134-664857bb6789"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
     )
@@ -948,6 +968,9 @@
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/18168707-2ede-4316-a306-2ee36d8b5257"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/1af41cb6-fabe-485b-b97d-7491252abe07"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/1d5da02e-6501-44ce-9666-30defc901973/1d77e1b1-8c88-4329-9ca7-bc8d774b1a87"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -962,6 +985,9 @@
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/2a573a28-1a9d-412c-87da-10f884d7903b"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/2f5eae56-b314-4ad1-8919-6ffee295e176"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/3378d41e-1629-4d49-ac2d-595bcf111898"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
@@ -1032,10 +1058,16 @@
     (path "/29762812-026e-4c57-a387-2cd47b8787e4/8c6a3a9e-aac9-4f57-a25e-2d1685aa3605"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/8daea727-be57-413d-8730-e03036223abe"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/8fa27b7a-232a-4783-98f1-c6313db42cb7"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/29762812-026e-4c57-a387-2cd47b8787e4/8fd592fa-f6d6-461d-9a4a-0e42d532475c"
+      (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/9179b753-4d43-4dbc-b6f5-cff5f1d9495f"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/92bf75bf-3a12-41e6-88c3-04ce55d389c3"
@@ -1049,6 +1081,9 @@
     )
     (path "/1d5da02e-6501-44ce-9666-30defc901973/a1d061ce-1ec9-4710-a08b-678a768396f0"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/a4e87b69-67ee-4212-b858-fcef5caaf1b5"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/a8f6465d-cd05-420a-9332-941664f998df"
       (reference "#PWR?") (unit 1) (value "VCC") (footprint "")
@@ -1095,6 +1130,9 @@
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/f0f0b8a6-e6f2-41d6-b47b-044a8dd2501d"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/f159f58c-5f51-4862-9edd-641b55612d69"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/f305e901-6334-4384-bb75-55a49aef4b7f"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -1115,6 +1153,30 @@
     )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/09f8c34a-9430-4af1-9c54-739ee715d0dd"
       (reference "C?") (unit 1) (value "C") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/1d09652f-0ffd-4f04-a311-e68ed8b461cb"
+      (reference "C?") (unit 1) (value "1800 pF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/25536488-a0fe-45a8-b3e1-2824f69b110c"
+      (reference "C?") (unit 1) (value "100nF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/4e163095-18f3-47d5-96e3-7057e86d4fbe"
+      (reference "C?") (unit 1) (value "470 pF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/76e37031-8876-4607-9eba-a8781ee69b04"
+      (reference "C?") (unit 1) (value "10uF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/90bc8bb3-5673-40be-95a4-6014a160c51d"
+      (reference "C?") (unit 1) (value "470 pF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/c1aa1341-06c4-444a-98ef-f590e5a39d98"
+      (reference "C?") (unit 1) (value "1800 pF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/c3ff6fe7-e01e-4636-bcd2-dd5e43efbd4a"
+      (reference "C?") (unit 1) (value "1nF") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/cfb438a5-e246-4289-8484-7d60a1cc46a1"
+      (reference "C?") (unit 1) (value "470pF") (footprint "")
     )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/17b3bad0-c39a-4561-8de6-fb6056e037d1"
       (reference "D?") (unit 1) (value "1N914") (footprint "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal")
@@ -1422,7 +1484,7 @@
     (path "/62ed1553-24d1-4dfa-9198-957c21fb6721/9ae86ee7-1cef-46f9-a150-90a941f533e4"
       (reference "J101") (unit 1) (value "+$00") (footprint "")
     )
-    (path "/29762812-026e-4c57-a387-2cd47b8787e4/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
+    (path "/29762812-026e-4c57-a387-2cd47b8787e4/14564f14-2d13-42c3-9188-1f79159f879d"
       (reference "J102") (unit 1) (value "VIA Port") (footprint "")
     )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/825e6ce8-bc5c-47d3-adb4-e2505c13fa53"
@@ -1455,6 +1517,9 @@
     (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/58335ab6-c579-4822-875e-0d8e67e7b1fd"
       (reference "J?") (unit 1) (value "VIA Port") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/5c160fc9-644e-473b-af0a-ebc05d2fa57b"
+      (reference "J?") (unit 1) (value "Audio Out") (footprint "")
+    )
     (path "/1d5da02e-6501-44ce-9666-30defc901973/5e9cb8ae-8b6d-49fb-aa0a-f398a7553afc"
       (reference "J?") (unit 1) (value "16B") (footprint "")
     )
@@ -1464,8 +1529,17 @@
     (path "/e79064d8-3d63-448f-a23e-3316e7854f4a/6ff8978e-9b3f-48cd-99dc-5e27e6b53efc"
       (reference "J?") (unit 1) (value "VP Bypass") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/73e57a08-5630-4f58-a4af-98ee4158e04a"
+      (reference "J?") (unit 1) (value "$00 (32B)") (footprint "")
+    )
     (path "/cf475620-7ed0-4b26-9367-ad4d44ead55c/74de8ebc-40fe-40e1-b2c1-956121bdd70b"
       (reference "J?") (unit 1) (value "CPU A VP Rewrite Ctrl") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/8f9058c0-2a7a-45e1-a23a-53e0cfcf346a"
+      (reference "J?") (unit 1) (value "+9V/+12V") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/9cb748b1-f576-40dd-9a44-7db714101901"
+      (reference "J?") (unit 1) (value "Audio In") (footprint "")
     )
     (path "/68d08e53-bf1d-4bd4-80f6-7565ca1a852f/a09fa6ea-3961-403e-8ce0-406a65dc6371"
       (reference "J?") (unit 1) (value "IRQ Dispatch Bypass") (footprint "")
@@ -1505,6 +1579,9 @@
     )
     (path "/b26cb0b2-9258-4c88-a063-c7c14fc5646d/2cd5dd62-1b4d-42d2-8322-5dd098673a76"
       (reference "JP2") (unit 1) (value "EEPROM_WR") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/eaf81d6d-3c56-4e72-89d6-05267c9aad90"
+      (reference "Q?") (unit 1) (value "2SC1815") (footprint "Package_TO_SOT_THT:TO-92_Inline")
     )
     (path "/e79064d8-3d63-448f-a23e-3316e7854f4a/77a91b94-4687-4929-9a7b-4f20de15deab"
       (reference "R1") (unit 1) (value "10K") (footprint "")
@@ -1548,10 +1625,22 @@
     (path "/1d5da02e-6501-44ce-9666-30defc901973/48d21483-62ae-4f17-a70e-3ecd701b7953"
       (reference "R?") (unit 1) (value "10K") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/71dbebd8-188c-45f2-a891-0a16f974fae6"
+      (reference "R?") (unit 1) (value "10K") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/76e5b843-1945-4f3b-9f8d-9e83bbaa8102"
+      (reference "R?") (unit 1) (value "1K") (footprint "")
+    )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/7fc15c0e-5589-4b50-a9e9-4cf0f51daf78"
       (reference "R?") (unit 1) (value "33 K") (footprint "")
     )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/9663472a-7db8-47df-9118-b69269cbb628"
+      (reference "R?") (unit 1) (value "100K") (footprint "")
+    )
     (path "/6d2f5bba-0441-4d26-89b8-f88f2d1642ea/b4b91a2d-56fc-4d74-816a-79837d096ce5"
+      (reference "R?") (unit 1) (value "1K") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/b7f9c558-6124-4a7a-8f19-f7cfbe5cdde0"
       (reference "R?") (unit 1) (value "1K") (footprint "")
     )
     (path "/1defbe63-3888-4768-83f8-93e13be4ca60/c704cbbe-e57c-4287-ac30-25735541d498"
@@ -2231,6 +2320,9 @@
     )
     (path "/68d08e53-bf1d-4bd4-80f6-7565ca1a852f/4e438824-3623-44f3-acb2-2d7c39993db3"
       (reference "U?") (unit 1) (value "74LS138") (footprint "")
+    )
+    (path "/e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4/7063d824-1505-49c2-b72e-098a5e28ae0b"
+      (reference "U?") (unit 1) (value "6581_SID") (footprint "Package_DIP:DIP-28_W15.24mm_Socket")
     )
     (path "/9dc3bdfa-2e2a-43bc-a79b-c872557afd12/aaa440ab-c0da-452b-896c-ffee968fe9bf"
       (reference "U?") (unit 1) (value "74HC595") (footprint "")

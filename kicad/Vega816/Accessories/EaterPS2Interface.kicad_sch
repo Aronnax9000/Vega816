@@ -1726,7 +1726,8 @@
     (uuid fffe6071-0da6-408f-aa1d-d97fd10e8b60)
   )
 
-  (text "VIA Port Device\nBen Eater PS/2 Interface\n" (at 16.51 34.29 0)
+  (text "VIA Port Device\nBen Eater PS/2 Interface\nhttps://beneater.net/6502\n"
+    (at 19.05 43.18 0)
     (effects (font (size 5 5)) (justify left bottom))
     (uuid b46c8e2d-1c14-4537-aae8-7bd42729ef88)
   )

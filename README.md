@@ -24,11 +24,14 @@
 * [Devices](#devices)
     * [W65C22 VIA Port](#w65c22-via-port)
     * [W65C51N ACIA (RS-232)](#w65c51n-acia-rs-232)
+    * [8580/6581 SID](#8580-6581-sid)
+
 * [VIA Port Devices](#via-port-devices)
     * [2x16 Character Display and front panel switches](#2x16-character-display-and-front-panel-switches)
     * [System Controller / SPI Controller](#system-controller-spi-controller)
     * [Ben Eater PS/2 Interface](#ben-eater-ps-2-interface)
     * [Commodore 64 CIA (VIA) #1](#commodore-64-cia-via-1)
+
 
     
 ## Functional Description
@@ -330,3 +333,7 @@ Port B provides SPI communication, with SCK, MISO, MOSI lines, and three chip se
 ### Commodore 64 CIA (VIA) #1
 
 ![Commodore 64 CIA (VIA) #1](schematics/Vega816-C64%20CIA%20%28VIA%29%20%231.svg)
+
+### 8580/6581 SID
+
+![8580 or 6581 SID](schematics/Vega816-8580%20or%206581%20SID.svg)

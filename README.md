@@ -15,8 +15,6 @@
     * [IRQ Priority 7 to NMI Option](#irq-priority-7-to-nmi-option)
 * [DMA Controller](#dma-controller)
 * [Quad 64B I/O Bus](#quad-64b-i-o-bus)
-    * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
-   
 * [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
     * [2 Device PIC](#2-device-pic)
     * [Quad 2-Device PIC](#quad-2-device-pic)
@@ -41,7 +39,8 @@
 
 The Vega816 is a modular architecture for implementing symmetrical multiprocessing (SMP) with the Western Design Center W65C816 Microprocessor (aka 65816). The project takes as its starting point the 65816 breakout board designed by Adrien Kohlbecker, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
-The system also includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ interrupts from any device to one or the other connected CPU, at any of 8 different levels of priority (0-7, lower number is higher priority). If multiple interrupts are asserted at once, the interrupt with lowest priority wins.
+The system includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ interrupts from any device to one or the other connected CPU, at any of 8 different levels of priority (0-7, lower number is higher priority). If multiple interrupts are asserted at once, the interrupt with lowest priority wins.
+
 When the target CPU fetches the interrupt vector, the system adds an offset to the low byte of the fetch equal to twice the priority number (since an interrupt vector is two bytes in length).
 
 I/O address decoding is provided on 8-byte boundaries. Devices may span up to eight such 8-byte address ranges, for a maximum device address width of 64 bytes.
@@ -50,9 +49,9 @@ Memory modules are provided to provide RAM and ROM services. ROM can be separate
 
 Single Page I/O Bus boards perform address decoding to provide four 64-byte expansion slots, each provided with four chip select signals on 16 B boundaries. Programmable Interrupt Controllers introduce a further layer of address decoding to 8 byte boundaries.
 
-A Single Page I/O board may be set, via jumper, to occupy any even-numbered page in the lowest 32 KB of its DMA channel's address space (i.e., any even numbered page between page $00 and page $7E). The next higher odd-numbered page is used by one or more programmable interrupt controllers to store programmed IRQ priority levels and CPU targets for each device.
+A Single Page I/O board may be set, via jumper, to occupy any even-numbered page in the lowest 32 KB of Bank Zero of the DMA channel's address space (i.e., any even numbered page between page $00 and page $7E). Register space in the next higher odd-numbered page is reserved for latches maintained by programmable interrupt controllers to store IRQ priority level and CPU target information for each device. The simplest 2-Device PIC uses the low and high nybbles of a single control byte to set this information for two devices.
 
-The Programmable Interrupt Controller performs further subdivision of the 16 byte device granularity of the Expansion Bus into 8 byte device address spaces, such as used by the W65C51 ACIA.
+
 
 Sample devices are provided, such as the ACIA (RS-232 serial port), and a VIA Port exposing the outward-facing pins of a W65C22 VIA in a standard connector format.
 
@@ -255,33 +254,23 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 
 
 ## Quad 64B I/O Bus
-The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with the page above it, which can be used by a programmable interrupt controller to store metadata such as IRQ priority, and which CPU is to receive IRQs from a given device. 
+The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with a corresponding range in the the page immediately above it, for use by I/O devices.
 
-Jumpers are used to locate the I/O address space on any even-numbered page boundary between $0000-$7E00, although, in order to avoid the default page zero and stack areas at $0000 and $01000, it is advisable to avoid these two pages, with $0200-$7E00 being the most acceptable range. This allows for up to 63 choices of I/O page, per DMA channel. A system with two DMA channels could therefore support 2 x 63 x 256 = 32256 bytes of I/O register area, enough for 2,016 VIAs or 4,032 ACIA RS-232 ports, for use in controlling factories or large scale bulletin board system (BBS) installations over dial-up modem.
+Jumpers set the base I/O address space on any even-numbered page boundary between $0000-$7E00. 
 
-Four I/O expansion ports are provided, each spanning 64 bytes of the assigned I/O page. Each port is provided with a chip select signal based on a further decoding of the address, down to a 16 byte resolution, which is the register width of the W65C22 VIA, and double the width of the W65C51 ACIA.
+The odd numbered page immediately above the base page is used by the programmable interrupt controller to store IRQ priority and CPU target information for use in forwarding interrupt requests issued by devices under PIC control.
 
-Boards which use any of the 64-byte expansion ports may perform additional address decoding in order to accommodate more than four 16-byte devices. For example, one port can support not just 4 VIAs, but 3 VIAs and 2 ACIAs, if one of the 16-byte address ranges is further decoded into two eight byte ranges.
+In order to avoid the default page zero and stack areas at $0000 and $01000, it is advisable to avoid setting the I/O base address to page $00, leaving 63 possible pages between $0200-$7E00.
 
-64 bytes was chosen as the granularity for the expansion ports because it is the next whole power of two larger than the widest device used by the Commodore 64, the VIC-II, which has a register width of 47 bytes. (The SID's register width is 29 bytes, giving examples within the C64 of devices requiring (rounding to next whole number power of two) 8, 16, 32, and 64 byte register address spaces
-
-Devices which require more than 16 bytes of address space within a 64 byte range can perform a logical OR on the 16-byte chip select lines. Devices which require more than 64 bytes of register address space may use a similar strategy, bridging across multiple slots. 
-
-Devices which wish to subdivide a 16 byte address space (such as the 8 register ACIA) can further decode address line A5.
+Four I/O expansion ports are provided, each spanning 64 bytes of the assigned I/O page. Each port is provided with a one-in-four chip select signal based on further decoding of the address, into 16 byte ranges areas. 
+Standard connections are provided for adding a CS Decode module which can perform finer and/or coarser grained address decoding into 64, 32, and 8 byte I/O address ranges.
 
 The 16 byte range chip select signals are raised high for both the I/O page within that 16 byte range, as well as for that range in the page immediately above it. E.g., if a device is mapped to $0210-$021F, then the chip select for that device is also active for the range $0310-$031F. This allows access to latches used to store programmable interrupt configuration, and potentially other metadata used in controlling the device.
 
-The IRQ Multiplexer takes the 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs), and multiplexes them for dispatch by the IRQ Dispatch board.
-Vega816-Quad IO Bus + IRQ Multiplexer
+The 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs) are multiplexed via diode logic for dispatch by the IRQ Dispatch board.
+
 ![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%2064B%20IO%20Bus.svg)
 
-### Combining IRQs from Multiple Expansion Bus Controllers
-
-If more than one page of I/O device space is needed per DMA channel, the 16 active low IRQ lines from each controller must be demultiplexed so that any one of the bus controllers may assert any IRQ to either processor. A sample demultiplexer is provided that uses NAND gates to combine the 16-line IRQ output from two expansion boards onto one 16-line IRQ input channel for use by the IRQ Dispatcher. 
-
-Demultiplexers for combining IRQs from more than one expansion bus may be designed using quad input or eight input NAND gates, or the existing dual input demultiplexer circuit may be used as input to another identical two-to-one demultiplexer.
-
-![Dual 16-line IRQ Demultiplxer](schematics/Vega816-Eight-To-One%20IRQ%20Multiplexer.svg)
 ## Programmable Interrupt Controller (PIC)
 
 ### 2 Device PIC

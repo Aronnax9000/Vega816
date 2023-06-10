@@ -396,6 +396,10 @@
     [
       "188a6def-66f4-4ee7-b358-dda63164c91c",
       "PIC (2 IRQ)"
+    ],
+    [
+      "21c33125-dba5-497b-830f-02ea1d5dc0da",
+      "C64 SID+CIAS"
     ]
   ],
   "text_variables": {}

@@ -13,7 +13,7 @@
     * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
 * [Dual DMA Channel to Dual CPU Priority IRQ Dispatcher](#dual-dma-channel-to-dual-cpu-priority-irq-dispatcher)
 * [DMA Controller](#dma-controller)
-* [Single Page I/O Bus](#single-page-i-o-bus)
+* [Quad 64B I/O Bus](#quad-64b-i-o-bus)
     * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
    
 * [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
@@ -225,7 +225,7 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 ![CPU Buffer Board](schematics/Vega816-Dual%20Channel%20DMA%20Controller.svg)
 
 
-## Single Page I/O Bus
+## Quad 64B I/O Bus
 The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with the page above it, which can be used by a programmable interrupt controller to store metadata such as IRQ priority, and which CPU is to receive IRQs from a given device. 
 
 Jumpers are used to locate the I/O address space on any even-numbered page boundary between $0000-$7E00, although, in order to avoid the default page zero and stack areas at $0000 and $01000, it is advisable to avoid these two pages, with $0200-$7E00 being the most acceptable range. This allows for up to 63 choices of I/O page, per DMA channel. A system with two DMA channels could therefore support 2 x 63 x 256 = 32256 bytes of I/O register area, enough for 2,016 VIAs or 4,032 ACIA RS-232 ports, for use in controlling factories or large scale bulletin board system (BBS) installations over dial-up modem.

@@ -11305,21 +11305,25 @@
     (uuid ffff220b-8ee8-4932-a511-d9da51ac490f)
   )
 
+  (text "Provides four I/O device slots of 64 bytes address space each.\n\nDecodes ~{CS} for into 4 16-byte ranges per slot.\n\n\n\n\n"
+    (at 30.48 133.35 0)
+    (effects (font (size 5 5)) (justify left bottom))
+    (uuid 1dafd078-d323-4ba8-b921-6d1617934a0b)
+  )
   (text "Install one jumper maximum\n\n" (at 99.06 170.18 180)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 206fb15c-0e71-4403-a063-272751c7ce3c)
   )
-  (text "Demultiplexes incoming IRQs for IRQ Vector Pull Dispatch\n8 priorities x 2 CPU targets"
-    (at 158.75 125.73 0)
-    (effects (font (size 5 5)) (justify left bottom))
+  (text "Incoming IRQ Multiplex" (at 223.52 127 0)
+    (effects (font (size 3 3)) (justify left bottom))
     (uuid 4a249aea-bf3a-469d-8726-8cfdbca8d761)
   )
-  (text "Quad I/O Bus + IRQ Demux + IO Address Decode" (at 22.86 40.64 0)
+  (text "Quad 64 B IO Bus" (at 22.86 40.64 0)
     (effects (font (size 10 10)) (justify left bottom))
     (uuid 5ca721cd-62e4-4109-9a9a-9c9850def2e8)
   )
-  (text "Jumpers set base address between $0000 and $7E00.\nPage above base page reserved for IRQ metadata.\n\nDecodes ~{CS} for up to 16 devices on 16 byte boundaries.\nProvides four I/O device slots of 64 bytes address space each.\n\n\n\n"
-    (at 26.67 110.49 0)
+  (text "Jumpers set base address to even numbered pages\nbetween $0000 and $7E00.\nPage above base page reserved for PIC configuration.\n\n"
+    (at 30.48 78.74 0)
     (effects (font (size 5 5)) (justify left bottom))
     (uuid 784a8d98-ac73-46de-8a24-9b85642bb2f4)
   )

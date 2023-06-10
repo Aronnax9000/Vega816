@@ -244,7 +244,7 @@ The 16 byte range chip select signals are raised high for both the I/O page with
 
 The IRQ Multiplexer takes the 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs), and multiplexes them for dispatch by the IRQ Dispatch board.
 Vega816-Quad IO Bus + IRQ Multiplexer
-![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%20IO%20Bus%20+%20IRQ%20Multiplexer.svg)
+![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%2064B%20IO%20Bus.svg)
 
 ### Combining IRQs from Multiple Expansion Bus Controllers
 

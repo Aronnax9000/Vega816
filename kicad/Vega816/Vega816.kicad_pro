@@ -347,19 +347,19 @@
     ],
     [
       "68d08e53-bf1d-4bd4-80f6-7565ca1a852f",
-      "Single Page IO Bus"
+      "Quad 64B IO Bus"
     ],
     [
       "ed4e59dc-e26e-4739-aa1d-80a767eacd8d",
-      "4 IRQ Controllers"
+      "Quad PIC (8 IRQ)"
     ],
     [
       "c8c771df-7dcc-45f6-b525-febf6b559971",
-      "32 IO Devices"
+      "64B IO Port"
     ],
     [
       "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "Multiplexing Devices"
+      "Accessories"
     ],
     [
       "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
@@ -374,8 +374,8 @@
       "VIA (W65C22)"
     ],
     [
-      "da4391ea-e835-4058-a9cf-70dacb01f4fb",
-      "Two-To-One IRQ Multiplexer"
+      "1990a3b6-c0e0-4500-8e90-7f3af0eea61b",
+      "VIC-II"
     ],
     [
       "92de43a6-3837-4a70-9dd4-4ad733be3add",
@@ -392,6 +392,10 @@
     [
       "e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4",
       "SID (8580 or 6581)"
+    ],
+    [
+      "188a6def-66f4-4ee7-b358-dda63164c91c",
+      "PIC (2 IRQ)"
     ]
   ],
   "text_variables": {}

@@ -96,7 +96,13 @@ The jumper offers the user a choice of granularity of DMA channel address mappin
 
 ### Vector Pull Rewrite Shim
 
-A 74HC283 adder is used to add an offset to A1-A4 equal to the three bit number provided as input by Y0-Y2. This takes place only when VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector is being fetched by the processor. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
+The Vector Pull Rewrite shim allows the IRQ Dispatcher to alter the fetch address of the processor when it is fetching an IRQ vector. A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
+
+The VPB line is brought active low by the 65C816 during the fetch of any interrupt vector, not just IRQ. However, the standard IRQ vector's address has a unique bit pattern which makes it easy to autodetect, so that the shim will only request a vector pull offset when fetching the IRQ vector, and not for any other kind of interrupt.
+
+When VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector is being fetched by the processor, the shim requests a vector pull offset from the IRQ Dispatcher by asserting VP_REQ (positive logic). Pulldown resistors keep the offset equal to zero when Y0-Y2 are not connected (no IRQ Dispatcher) or in a high impedance state. 
+
+A 74HC283 adder is used to add an offset to A1-A4 equal to the three bit number provided as input to the shim from the IRQ Dispatcher, on pins Y0-Y2. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
 ```
 $00FFEE IRQ 0 
 $00FFF0 IRQ 1 
@@ -111,7 +117,7 @@ Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull control
 
 The connector for the external Vector Pull Rewrite controller provides the E signal from the CPU, so that the Vector Pull Rewrite controller can know which scheme of vector pull (W65C02, W65C816) is being used.
 
-### Exposure of NMI and IRQ
+#### Exposure of NMI and IRQ
 
 The Vector Pull Rewrite shim exposes both IRQ and NMI to the IRQ Dispatcher. 
 
@@ -123,11 +129,11 @@ The exposure of NMI allows a device to raise an  IRQs at a selected IRQ priority
 
 In scenarios where the IRQ Dispatcher is not installed, a jumper on the Quad 64B IO Bus (NMI Dispatch Bypass) can be used to direct IRQA7, IRQB7, both, or neither, to NMI.
 
-### Offset of 7 triggers RESB interrupt handler for W65C816
+#### Offset of 7 triggers RESB interrupt handler for W65C816
 
-Note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode.
+Note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode. Alternatively, IRQ priority 7 may be rerouted to NMI, either through the IRQ Dispatcher, or a jumper on the Quad 64B IO Bus.
 
-### Details of Vector Pull address rewriting
+#### Details of Vector Pull address rewriting
 The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
 ```
 Address Function Last Octet (binary)
@@ -162,7 +168,7 @@ $00FFFC RESET
 ```
 If an offset 0-6 is added to A1-A3, (leaving A0 as found), then the vector fetched will be as shown above, going forward from IRQ0.
 
-### Effect of Vector Pull Rewrite in Emulation (65C02) Mode
+#### Effect of Vector Pull Rewrite in Emulation (65C02) Mode
 The 6502's IRQ vector, like its 65816 counterpart, has 0x111x in the last nybble, so it is detected by the Vector Pull Rewrite Shim. 
 ```
 $FFFA NMI
@@ -187,12 +193,18 @@ $FFFE BRK/IRQ 0
 ```
 ## IRQ Dispatcher
 
-Devices mapped within either DMA channel may issue IRQ against either CPU. The W65C816 supports Vector Pull Rewrite through its VPB line. The dispatcher uses two 74LS348 8-to-3 Priority Encoders to receive IRQs from up to two DMA channels, and routes the IRQ signal to one of two CPUs. If multiple IRQs are asserted against the same processor, the IRQ with the lowest priority wins. 
+Devices mapped within the physical address space of either DMA channel may raise interrupt requests against either CPU. For each CPU, an 8-to-3 priority encoders is used to prioritize eight different levels of IRQ, from 0-7, with lower values meaning higher priority.
 
-The priority is encoded as a three bit number and placed on outputs Y0-Y2, where it may be used to rewrite the address of the vector pull. For example, the Vector Pull Rewrite Shim (described above) will add the offset on Y0-Y2, multiplied by two, to the low byte of the vector pull. 
+The priority is encoded as a three bit offset and offered to the Vector Pull Rewrite shim, on pins Y0-Y2, where it is used to offset the fetch addresses of the CPU's next two-byte IRQ vector pull. 
 
-IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. For DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. 
-![CPU Buffer Board](schematics/Vega816-Dual%20CPU%20IRQ%20Dispatcher.svg)
+IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. 
+
+For IRQs received from DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. This crossover in routing means that the CPU target values in the system's PIC controllers always refer to the same physical CPU. I.e., CPU A is always target 0, and CPU B is always target 1, no matter on which DMA channel a PIC is installed. The crossover is reflected in the connector placement on the IRQ Dispatcher: no crossover cable is needed.
+
+
+
+![IRQ Dispatch](schematics/Vega816-Priority%20IRQ%20Dispatch.svg)
+
 ## DMA Controller
 
 The DMA Controller is intended to control the multiplexing of one or two CPUs (called CPU A and CPU B) onto one or two communication channels (called DMA 0 and DMA 1). The two channels are cross-mapped in address space from the point of view of opposite processors, depending on a selected granularity. For example, if 64 KB (single bank) granularity is selected, when CPU A requests Bank 0, the DMA controller will connect it to DMA channel 0, whereas if CPU A requests Bank 1, the controller will connect it to DMA channel 1. The situation is reversed for CPU B. The controller will direct its requests for Bank 0 to DMA channel 1, and requests for Bank 1 to DMA channel 0.

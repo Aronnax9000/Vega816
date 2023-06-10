@@ -6509,7 +6509,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fb625b61-b99c-4dc8-980f-1bf290536d59)
   )
-  (label "VP" (at 205.74 347.98 0)
+  (label "VP_REQ" (at 205.74 347.98 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid fd80bf0b-033a-43f6-80b0-430449c06bac)
   )

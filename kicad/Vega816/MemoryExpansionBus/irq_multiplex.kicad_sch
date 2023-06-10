@@ -11305,7 +11305,7 @@
     (uuid ffff220b-8ee8-4932-a511-d9da51ac490f)
   )
 
-  (text "Provides four I/O device slots of 64 bytes address space each.\n\nDecodes ~{CS} for into 4 16-byte ranges per slot.\n\n\n\n\n"
+  (text "Provides four I/O device slots of 64 bytes address space each.\n\nDecodes ~{CS} for 4 16-byte ranges per slot.\n\n\n\n\n"
     (at 30.48 133.35 0)
     (effects (font (size 5 5)) (justify left bottom))
     (uuid 1dafd078-d323-4ba8-b921-6d1617934a0b)
@@ -11326,6 +11326,10 @@
     (at 30.48 78.74 0)
     (effects (font (size 5 5)) (justify left bottom))
     (uuid 784a8d98-ac73-46de-8a24-9b85642bb2f4)
+  )
+  (text "Install one jumper maximum\n\n" (at 97.79 204.47 180)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid cc26688a-db49-491b-a81b-5c460d05e638)
   )
 
   (label "D2" (at 374.65 278.13 0)

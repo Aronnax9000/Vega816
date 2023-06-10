@@ -12,6 +12,7 @@
     * [Details of Vector Pull address rewriting](#details-of-vector-pull-address-rewriting)
     * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
 * [IRQ Dispatcher](#irq-dispatcher)
+    * [IRQ Priority 7 to NMI Option](#irq-priority-7-to-nmi-option)
 * [DMA Controller](#dma-controller)
 * [Quad 64B I/O Bus](#quad-64b-i-o-bus)
     * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
@@ -201,7 +202,11 @@ IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed 
 
 For IRQs received from DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. This crossover in routing means that the CPU target values in the system's PIC controllers always refer to the same physical CPU. I.e., CPU A is always target 0, and CPU B is always target 1, no matter on which DMA channel a PIC is installed. The crossover is reflected in the connector placement on the IRQ Dispatcher: no crossover cable is needed.
 
+### IRQ Priority 7 to NMI Option
 
+The combined IRQ signals are diode-NANDed together to drive IRQ on the CPU through the Vector Pull Rewrite shim. IRQ priorities 0-6 are NANDed together first, with priority 7 NANDed to the result unless jumper IRQA7 or IRQB7 are set to direct priority 7 to NMI to CPU A or CPU B.
+
+Rerouting IRQ Priority 7 to NMI is offered elsewhere in the design, as a jumper on the Quad 64B IO Bus, for cases where no IRQ Dispatcher and/or Vector Pull Rewrite shim is installed. See the documentation on the Quad 64B IO Bus.
 
 ![IRQ Dispatch](schematics/Vega816-Priority%20IRQ%20Dispatch.svg)
 

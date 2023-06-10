@@ -55,6 +55,8 @@ Sample devices are provided, such as the ACIA (RS-232 serial port), and a VIA Po
 
 Finally, a reference System Controller based on the VIA Port is presented, allowing software control over system hardware, such as clock speed, CPU, EEPROM banking, and DMA control. 
 
+![Vega 816 Block Diagram](schematics/Vega816.svg)
+
 ### Limitations of the Design
 
 A maximum of two CPUs are supported running against a maximum of two DMA channels. 

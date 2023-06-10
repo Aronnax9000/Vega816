@@ -323,55 +323,55 @@
     ],
     [
       "992038d2-7a0d-4571-a879-69ca48280cef",
-      "Dual Channel DMA Controller"
+      "DMA Controller"
     ],
     [
       "1defbe63-3888-4768-83f8-93e13be4ca60",
-      "CPU Buffer Module"
+      "CPU-DMA Buffer"
     ],
     [
       "cf475620-7ed0-4b26-9367-ad4d44ead55c",
-      "Dual CPU IRQ Dispatcher"
+      "Priority IRQ Dispatch"
     ],
     [
       "e79064d8-3d63-448f-a23e-3316e7854f4a",
-      "Vector Pull + Dual Channel DMA Control Shim"
+      "DMA + VPB Shim"
     ],
     [
       "54837992-108e-4ec4-a58c-85b54747d8e9",
-      "16MB Memory Decoder + Memory Bus"
+      "16MB Memory Bus"
     ],
     [
       "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4 MB RAM + 32 KB ROM Memory Module"
+      "4 MB RAM + EEPROM"
     ],
     [
       "68d08e53-bf1d-4bd4-80f6-7565ca1a852f",
-      "Quad IO Bus + IRQ Multiplexer"
+      "Single Page IO Bus"
     ],
     [
       "ed4e59dc-e26e-4739-aa1d-80a767eacd8d",
-      "8 Device Programmable Interrupt Controller"
+      "4 IRQ Controllers"
     ],
     [
       "c8c771df-7dcc-45f6-b525-febf6b559971",
-      "Expansion Port Breakouts"
+      "32 IO Devices"
     ],
     [
       "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "Single Device Breakouts"
+      "Multiplexing Devices"
     ],
     [
       "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
-      " 2 x 16 Character Display"
+      "Front Panel"
     ],
     [
       "cc3bbfdf-4c3a-49f1-8abd-c114e88ea070",
-      "W65C51 ACIA RS-232"
+      "RS-232 (W65C51)"
     ],
     [
       "1d5da02e-6501-44ce-9666-30defc901973",
-      "W65C22 VIA Port"
+      "VIA (W65C22)"
     ],
     [
       "da4391ea-e835-4058-a9cf-70dacb01f4fb",
@@ -379,19 +379,19 @@
     ],
     [
       "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "System Controller + 8 Channel SPI"
+      "System Controller + SPI"
     ],
     [
       "29762812-026e-4c57-a387-2cd47b8787e4",
-      "C64 CIA (VIA) #1"
+      "C64 CIA #1"
     ],
     [
       "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
-      "Eater PS2 Interface"
+      "Dual PS2"
     ],
     [
       "e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4",
-      "8580 or 6581 SID"
+      "SID (8580 or 6581)"
     ]
   ],
   "text_variables": {}

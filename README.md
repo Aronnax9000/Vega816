@@ -266,7 +266,7 @@ The IRQ bus terminates at the IRQ Dispatcher, where 10K pull-up resistors ensure
 A 64-byte expansion slot may include a programmable interrupt controller. The PIC subdivides the 64 byte address range into eight 8-byte device I/O spaces, two for each of the 16-byte address ranges decoded by the expansion bus controller and supplied to the PIC as chip select lines. 
 
 Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed for each of up to eight devices, by writing to latches which shadow the device I/O space in the next higher page of address space. Four octal latches, at address offsets +$100, +$104, +$108 and +$10C offsets from the corresponding 16 byte I/O address ranges are provided. Each octal latch stores programmable interrupt information for up to two 8 byte devices: the low nybble for an eight byte device at offset +$00 from the base I/O address, and the high nybble for an eight byte device at offset $08 from the base I/O address. The low bit of the nybble determines the target CPU. The high three bits specify the priority from 0-7.
-![PIC (Programmable Interrupt Controller](schematics/Vega816-8%20Device%20Programmable%20Interrupt%20Controller.svg)
+![PIC (Programmable Interrupt Controller](schematics/Vega816-Quad%20PIC%20%288%20IRQ%29.svg)
 
 
 ## 16 MB Memory Decoder and Bus

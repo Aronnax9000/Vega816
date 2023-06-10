@@ -8,10 +8,10 @@
 * [DMA Control and Vector Pull Rewrite Shim](#dma-control-and-vector-pull-rewrite-shim)
     * [DMA Control Shim](#dma-control-shim)
     * [Vector Pull Rewrite Shim](#vector-pull-rewrite-shim)
-    * [CAVEAT: Offset of 7 triggers RESB interrupt handler](#caveat-offset-of-7-triggers-resb-interrupt-handler)
+    * [Offset of 7 triggers RESB interrupt handler for W65C816](#offset-of-7-triggers-resb-interrupt-handler-for-w65c816)
     * [Details of Vector Pull address rewriting](#details-of-vector-pull-address-rewriting)
     * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
-* [Dual DMA Channel to Dual CPU Priority IRQ Dispatcher](#dual-dma-channel-to-dual-cpu-priority-irq-dispatcher)
+* [IRQ Dispatcher](#irq-dispatcher)
 * [DMA Controller](#dma-controller)
 * [Quad 64B I/O Bus](#quad-64b-i-o-bus)
     * [Combining IRQs from Multiple Expansion Bus Controllers](#combining-irqs-from-multiple-expansion-bus-controllers)
@@ -111,9 +111,21 @@ Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull control
 
 The connector for the external Vector Pull Rewrite controller provides the E signal from the CPU, so that the Vector Pull Rewrite controller can know which scheme of vector pull (W65C02, W65C816) is being used.
 
-### CAVEAT: Offset of 7 triggers RESB interrupt handler
+### Exposure of NMI and IRQ
 
-Please note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode.
+The Vector Pull Rewrite shim exposes both IRQ and NMI to the IRQ Dispatcher. 
+
+If the IRQ Dispatcher is not installed, a jumper on the Quad 64 IO Bus (IRQ Dispatch Bypass) should be installed to route IRQs to the common IRQ signal on the CPU via the CPU Buffer's DMA Channel connector.
+
+When the IRQ Dispatcher is installed, the dispatcher takes responsibility for issuing IRQ to the CPU, via the Vector Pull Rewrite shim.
+
+The exposure of NMI allows a device to raise an  IRQs at a selected IRQ priority level (say, IRQ 7) and instead trigger NMI, as the Commodore 64 RESTORE key did. The assertion of NMI is left under the control of the IRQ Dispatcher.
+
+In scenarios where the IRQ Dispatcher is not installed, a jumper on the Quad 64B IO Bus (NMI Dispatch Bypass) can be used to direct IRQA7, IRQB7, both, or neither, to NMI.
+
+### Offset of 7 triggers RESB interrupt handler for W65C816
+
+Note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode.
 
 ### Details of Vector Pull address rewriting
 The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
@@ -173,7 +185,7 @@ $FFFA NMI
 $FFFC RESB
 $FFFE BRK/IRQ 0
 ```
-## Dual DMA Channel to Dual CPU Priority IRQ Dispatcher
+## IRQ Dispatcher
 
 Devices mapped within either DMA channel may issue IRQ against either CPU. The W65C816 supports Vector Pull Rewrite through its VPB line. The dispatcher uses two 74LS348 8-to-3 Priority Encoders to receive IRQs from up to two DMA channels, and routes the IRQ signal to one of two CPUs. If multiple IRQs are asserted against the same processor, the IRQ with the lowest priority wins. 
 

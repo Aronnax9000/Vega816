@@ -399,7 +399,11 @@
     ],
     [
       "21c33125-dba5-497b-830f-02ea1d5dc0da",
-      "C64 SID+CIAS"
+      "C64 SID+CIAS Breakout"
+    ],
+    [
+      "c24a5dc4-83c4-42b6-9bf2-d62d1b2d0c29",
+      "C64 CIA #2"
     ]
   ],
   "text_variables": {}

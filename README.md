@@ -256,7 +256,7 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 ## Quad 64B I/O Bus
 The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with a corresponding range in the the page immediately above it, for use by I/O devices.
 
-Jumpers set the base I/O address space on any even-numbered page boundary between $0000-$7E00. 
+Jumpers set the base I/O address space on any even-numbered page boundary in Bank Zero. The page of address space immediately above the base I/O page is reserved for configuring the programmable interrupt controller (PIC). For example, if the bus is set so that its base address is $0200, then page $0300 is reserved for use by the PIC.
 
 The odd numbered page immediately above the base page is used by the programmable interrupt controller to store IRQ priority and CPU target information for use in forwarding interrupt requests issued by devices under PIC control.
 

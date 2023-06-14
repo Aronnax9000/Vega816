@@ -331,7 +331,7 @@
     ],
     [
       "e79064d8-3d63-448f-a23e-3316e7854f4a",
-      "DMA + VPB Shim"
+      "CPU Shim"
     ],
     [
       "54837992-108e-4ec4-a58c-85b54747d8e9",
@@ -374,28 +374,20 @@
       "System Controller"
     ],
     [
-      "29762812-026e-4c57-a387-2cd47b8787e4",
-      "C64 CIA #1"
-    ],
-    [
       "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
       "Dual PS2"
     ],
     [
-      "e77c13b8-e97e-4fc3-8aa5-349c9b99f1d4",
-      "SID (8580 or 6581)"
-    ],
-    [
       "26de1b6c-b110-46c7-9e66-a605da5207ef",
-      "4 CPU x 4 DMA Controller"
+      "4x4 DMA Controller"
     ],
     [
       "21c33125-dba5-497b-830f-02ea1d5dc0da",
-      "C64 SID+CIAS Breakout"
+      "CIAs + 2xSID"
     ],
     [
-      "c24a5dc4-83c4-42b6-9bf2-d62d1b2d0c29",
-      "C64 CIA #2"
+      "d33f943f-886c-4bc3-ad54-039c415079cd",
+      "SID(x2)"
     ],
     [
       "4d9ac39b-e615-4a56-826b-954bfa4e4725",
@@ -403,11 +395,11 @@
     ],
     [
       "4188efba-9faa-4d03-b950-d71f22f63661",
-      "6510 CPU Registers"
+      "6510 $[01] Regs"
     ],
     [
       "1ad7a1ea-6851-4fb5-8101-6bfe3b7ae765",
-      "C64 IO Decoder"
+      "Address Decode + PLA"
     ],
     [
       "3bda5788-9510-49be-9254-a3217875b7c4",

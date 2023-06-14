@@ -322,12 +322,8 @@
       ""
     ],
     [
-      "992038d2-7a0d-4571-a879-69ca48280cef",
-      "DMA Controller"
-    ],
-    [
       "1defbe63-3888-4768-83f8-93e13be4ca60",
-      "CPU-DMA Buffer"
+      "CPU Buffer"
     ],
     [
       "cf475620-7ed0-4b26-9367-ad4d44ead55c",
@@ -348,10 +344,6 @@
     [
       "68d08e53-bf1d-4bd4-80f6-7565ca1a852f",
       "Quad 64B IO Bus"
-    ],
-    [
-      "ed4e59dc-e26e-4739-aa1d-80a767eacd8d",
-      "Quad PIC (8 IRQ)"
     ],
     [
       "c8c771df-7dcc-45f6-b525-febf6b559971",
@@ -395,7 +387,7 @@
     ],
     [
       "26de1b6c-b110-46c7-9e66-a605da5207ef",
-      "4 Channel DMA Ctrl"
+      "4 CPU x 4 DMA Controller"
     ],
     [
       "21c33125-dba5-497b-830f-02ea1d5dc0da",

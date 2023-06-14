@@ -3812,7 +3812,7 @@
     (effects (font (size 5 5)) (justify left bottom))
     (uuid eb5eae53-2385-4579-b9a8-a8fd98b77740)
   )
-  (text "Programmable Interrupt Controller \n(8 Priority x 4 Target PIC)\n"
+  (text "Programmable Interrupt Controller \n(8 Priority x 4 Target CPUs)\n"
     (at 21.59 53.34 0)
     (effects (font (size 10 10)) (justify left bottom))
     (uuid f1a971cc-70f3-4937-a432-fb1639daee8e)

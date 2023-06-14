@@ -89,7 +89,7 @@ If we assign each DMA channel its own address space, we can use address decoding
 The W65C816's VPB (Vector Pull) line also allows rewriting of the address asserted by the CPU when it is pulling an interrupt vector. It is convenient to provide hardware to intercept and rewrite the vector pull address as part of the same adapter.
 
 Together, the DMA Control Shim and the Vector Pull Rewrite Shim provide facilities for DMA control and Vector Pull Rewrite to be performed by external hardware. 
-![CPU Buffer Board](schematics/Vega816-Vector%20Pull%20+%20Dual%20Channel%20DMA%20Control%20Shim.svg)
+![CPU Shim](schematics/Vega816-DMA%20+%20VPB%20Shim.svg)
 
 ### DMA Control Shim
 

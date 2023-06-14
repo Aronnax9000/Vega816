@@ -253,9 +253,93 @@ The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well
 ![CPU Buffer Board](schematics/Vega816-Dual%20Channel%20DMA%20Controller.svg)
 
 
+### DMA Channels and Address Interleaving
+
+When no request granularity is set for a CPU on the DMA Control Shim, all DMA requests take place against DMA 0.
+
+If only the primary granularity is set, DMA requests will take place against DMA 0 and DMA 2.
+If only the secondary granularity is set, DMA requests will take place against DMA 0 and DMA 1.
+
+If both granularities are set, DMA requests will take place against DMA 0-3. The maximum granularity for four channel DMA is 4 MB, with primary set at 8 MB and secondary set at 4MB. (0x1100 0000). In that case,
+
+```
+Requests for the range 
+(0x00?? ????) go to DMA channel 0
+(0x01?? ????) go to DMA channel 1
+(0x10?? ????) go to DMA channel 2
+(0x11?? ????) go to DMA channel 3
+```
+
+The DMA controller maps requests so that each CPU sees a different DMA channel as its channel 0, with subsequent channels in order. The next CPU's channel 0 is the present CPU's channel 1, and channel 0 for the next CPU after that is channel 2. The order wraps to form a closed ring.
+
+```
+           Requested           Physical
+CPU   A    B      C      D
+      0    1      2      3      DMA 0
+      1    2      3      0      DMA 1
+      2    3      0      1      DMA 2
+      3    0      1      2      DMA 3
+```
+
+From the chart it can be seen that the channel that CPU A sees as DMA 0 is seen by CPU B as DMA channel 3, etc.
+
+
+DMA request granularity may or may not match the largest installed address size.
+
+Since the address bits used to select the DMA channels are suppressed in the address presented to the destination channel, if a CPU's request granularity is set to a smaller value than the installed memory size on any given DMA channel, then a range of that memory will not be accessible to that CPU.
+
+
+
+CPU A has primary DMA on 1M, and secondary DMA set to 512K. 
+CPU A issues requests against Banks 0 to 7.
+
+What DMA channels are addressed?
+
+```
+0x000 Bank 0x000 0 on DMA 0
+0x001 Bank 0x000 0 on DMA 1
+0x010 Bank 0x000 0 on DMA 2
+0x011 Bank 0x000 0 on DMA 3
+0x100 Bank 0x100 4 on DMA 0
+0x101 Bank 0x100 4 on DMA 1
+0x110 Bank 0x100 4 on DMA 2
+0x111 Bank 0x100 4 on DMA 3
+```
+
+### How the DMA Controller routes requests.
+
+Each request enters the DMA controller as a two bit code, representing the two address lines selected by jumper settings on the DMA Control Shim. These two bits are augmented with a third bit, a CPU Priority bit supplied for that CPU. The CPU Priority bit is active low, and pulled high. 
+
+The three bit request is decoded into a one in eight choice, each representing a request for one of four DMA channels, with and without priority. The eight decoded request lines are then routed, together with the decoded request lines from the other CPUs, into priority encoders, one for each of the four DMA channels. The eight request lines entering each DMA channel's priority encoder are wired so that the four priority requests occur with highest priority, followed by the four no-priority request lines. Among the two sets of priority requests, Each DMA channel gives greatest priority to a particular CPU, followed by the others in ring order.
+
+```
+DMA Channel   Order
+     0        ADCB                  
+     1        BADC            
+     2        CBAD
+     3        DCBA            
+```
+
+When more than one CPU requests the same DMA channel, the losing CPU(s) must be informed, since they will not have access to the DMA channel for the duration of the current clock cycle. 
+
+The W65C816 provides two mechanisms for this, the READY signal, and the ABORTB interrupt signal. The READY signal pauses the processor, if pulled low. Releasing the low condition, allowing READY to return high, will cause the CPU to resume processing on the rising edge of the next clock cycle.
+
+Adrien Kohlbecker's BB816 CPU breakout provides the input to the READY signal as RDY_IN. This signal is that which is used by the DMA Controller to pause the CPU.
+
+If the losing CPU is losing access to its Bank Zero channel (due to the winning CPU having priority bit active), the losing CPU is paused, by pulling RDY_IN low. 
+
+Any other losing CPU is informed by pulling the losing CPU's ABORTB low, triggering the losing CPU's ABORT Interrupt handler. In most cases, the handler will simply return control to the interrupted process so that another attempt at access to the DMA channel can be made on the next clock cycle.
+
+
+### DMA Request timing
+
+
+CPU to DMA routing must be complete, with time to spare for the devices on the DMA channel to decode incoming address, before the routing is latched in on the falling edge of the clock. Now latched, the CPU to DMA channel routing persists through the remainder of the clock cycle, until unlatched at the rising edge of the clock at the beginning of the next cycle, so that arbitration may begin again.
+
+
 ## Quad 64B I/O Bus
 The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with a corresponding range in the the page immediately above it, for use by I/O devices.
-
+3
 Jumpers set the base I/O address space on any even-numbered page boundary in Bank Zero. The page of address space immediately above the base I/O page is reserved for configuring the programmable interrupt controller (PIC). For example, if the bus is set so that its base address is $0200, then page $0300 is reserved for use by the PIC.
 
 The odd numbered page immediately above the base page is used by the programmable interrupt controller to store IRQ priority and CPU target information for use in forwarding interrupt requests issued by devices under PIC control.

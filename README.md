@@ -14,6 +14,9 @@
 * [IRQ Dispatcher](#irq-dispatcher)
     * [IRQ Priority 7 to NMI Option](#irq-priority-7-to-nmi-option)
 * [DMA Controller](#dma-controller)
+    * [DMA Channels and Address Interleaving](#dma-channels-and-address-interleaving)
+    * [How the DMA Controller routes requests](#how-the-dma-controller-routes-requests)
+    * [DMA Request timing](#dma-request-timing)
 * [Quad 64B I/O Bus](#quad-64b-i-o-bus)
 * [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
     * [2 Device PIC](#2-device-pic)
@@ -77,7 +80,7 @@ The circuit uses a 74AHCT245 octal bus transceiver for bi-directional communicat
 
 The bus transceiver and buffers' output enable lines are tied together and provided as an active low input called DMAB, so that a single signal suffices to turn communication on and off. A 1K pulldown resistor ensures that the board is active unless DMAB is raised high by external hardware.
 
-![CPU Buffer Board](schematics/CPU%20Buffer.svg)
+![CPU Buffer Board](schematics/Vega816-CPU-DMA%20Buffer.svg)
 
 ## DMA Control and Vector Pull Rewrite Shim
 
@@ -211,6 +214,8 @@ Rerouting IRQ Priority 7 to NMI is offered elsewhere in the design, as a jumper 
 
 ## DMA Controller
 
+
+
 The DMA Controller is intended to control the multiplexing of one or two CPUs (called CPU A and CPU B) onto one or two communication channels (called DMA 0 and DMA 1). The two channels are cross-mapped in address space from the point of view of opposite processors, depending on a selected granularity. For example, if 64 KB (single bank) granularity is selected, when CPU A requests Bank 0, the DMA controller will connect it to DMA channel 0, whereas if CPU A requests Bank 1, the controller will connect it to DMA channel 1. The situation is reversed for CPU B. The controller will direct its requests for Bank 0 to DMA channel 1, and requests for Bank 1 to DMA channel 0.
 
 This permits each CPU to have its Bank 0 lie within the address space of a separate physical DMA channel, so that accesses by each CPU to its own Bank 0 will not normally interfere with the opposite CPU's requests for its own Bank 0.
@@ -250,7 +255,7 @@ Here are the possible scenarios for DMA arbitration:
 
 
 The DMA controller monitors the VA (Valid Address) from one or two CPUs, as well as an additional input, DMA_REQB. If one CPU asserts DMA_REQB, the controller checks the VA line from the opposite CPU. If it is not active, the controller asserts DMA
-![CPU Buffer Board](schematics/Vega816-Dual%20Channel%20DMA%20Controller.svg)
+![DMA Controller](schematics/Vega816-4%20Channel%20DMA%20Ctrl.svg)
 
 
 ### DMA Channels and Address Interleaving
@@ -306,7 +311,7 @@ What DMA channels are addressed?
 0x111 Bank 0x100 4 on DMA 3
 ```
 
-### How the DMA Controller routes requests.
+### How the DMA Controller routes requests
 
 Each request enters the DMA controller as a two bit code, representing the two address lines selected by jumper settings on the DMA Control Shim. These two bits are augmented with a third bit, a CPU Priority bit supplied for that CPU. The CPU Priority bit is active low, and pulled high. 
 

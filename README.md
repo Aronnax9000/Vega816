@@ -3,7 +3,6 @@
 ## Table of Contents
 
 * [Functional Description](#functional-description)
-    * [Limitations of the Design](#limitations-of-the-design)
 * [CPU Buffer Board](#cpu-buffer-board)
 * [DMA Control and Vector Pull Rewrite Shim](#dma-control-and-vector-pull-rewrite-shim)
     * [DMA Control Shim](#dma-control-shim)
@@ -39,36 +38,13 @@
 
     
 ## Functional Description
+![Vega 816 Block Diagram](schematics/Vega816.svg)
 
 The Vega816 is a modular architecture for implementing symmetrical multiprocessing (SMP) with the Western Design Center W65C816 Microprocessor (aka 65816). The project takes as its starting point the 65816 breakout board designed by Adrien Kohlbecker, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
-The system includes a programmable interrupt controller (PIC), which can be configured at runtime to direct IRQ interrupts from any device to one or the other connected CPU, at any of 8 different levels of priority (0-7, lower number is higher priority). If multiple interrupts are asserted at once, the interrupt with lowest priority wins.
-
-When the target CPU fetches the interrupt vector, the system adds an offset to the low byte of the fetch equal to twice the priority number (since an interrupt vector is two bytes in length).
-
-I/O address decoding is provided on 8-byte boundaries. Devices may span up to eight such 8-byte address ranges, for a maximum device address width of 64 bytes.
-
-Memory modules are provided to provide RAM and ROM services. ROM can be separately banked in for read or write, or completely banked out for higher clock speeds.
-
-Single Page I/O Bus boards perform address decoding to provide four 64-byte expansion slots, each provided with four chip select signals on 16 B boundaries. Programmable Interrupt Controllers introduce a further layer of address decoding to 8 byte boundaries.
-
-A Single Page I/O board may be set, via jumper, to occupy any even-numbered page in the lowest 32 KB of Bank Zero of the DMA channel's address space (i.e., any even numbered page between page $00 and page $7E). Register space in the next higher odd-numbered page is reserved for latches maintained by programmable interrupt controllers to store IRQ priority level and CPU target information for each device. The simplest 2-Device PIC uses the low and high nybbles of a single control byte to set this information for two devices.
+Support is provided for up to four bus mastering devices (four CPUs, or three CPUs and a video card) accessing up to four DMA channels, mapped into each CPU's address space.
 
 
-
-Sample devices are provided, such as the ACIA (RS-232 serial port), and a VIA Port exposing the outward-facing pins of a W65C22 VIA in a standard connector format.
-
-Finally, a reference System Controller based on the VIA Port is presented, allowing software control over system hardware, such as clock speed, CPU, EEPROM banking, and DMA control. 
-
-![Vega 816 Block Diagram](schematics/Vega816.svg)
-
-### Limitations of the Design
-
-A maximum of two CPUs are supported running against a maximum of two DMA channels. 
-
-Introducing additional CPUs and DMA channels (say three, or four, of each) also necessarily increases the complexity of not only the DMA controller, but the programmable interrupt controller as well, requiring additional state and logic to route an IRQ among the increased number of CPUs sharing the channel. A benefit of this increase would be to introduce the possibilities of arbitrarily larger multiprocessor topologies in one or two dimensions.
-
-A good deal of signal demultiplexing that is now performed with NAND gates could probably be done more simply using diode logic, perhaps using 1N5817 Schottky diodes.
 
 ## CPU Buffer Board
 

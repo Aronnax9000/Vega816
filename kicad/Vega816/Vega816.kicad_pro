@@ -322,8 +322,12 @@
       ""
     ],
     [
+      "1601fc67-60e1-4c0b-9f7d-ba4fb0008232",
+      "CPU Buffer1"
+    ],
+    [
       "1defbe63-3888-4768-83f8-93e13be4ca60",
-      "CPU Buffer"
+      "CPU Buffer0"
     ],
     [
       "cf475620-7ed0-4b26-9367-ad4d44ead55c",
@@ -343,7 +347,11 @@
     ],
     [
       "68d08e53-bf1d-4bd4-80f6-7565ca1a852f",
-      "Quad 64B IO Bus"
+      "xN Single Page IO Bus"
+    ],
+    [
+      "a5eed049-9a87-4bf8-ad72-0b6618f9909e",
+      "CPU Buffer2"
     ],
     [
       "c8c771df-7dcc-45f6-b525-febf6b559971",
@@ -374,8 +382,16 @@
       "System Controller"
     ],
     [
+      "76abe81d-e604-4d8b-a11d-2204d5facce3",
+      "CPU Buffer3"
+    ],
+    [
       "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
       "Dual PS2"
+    ],
+    [
+      "cb815ae6-d121-490e-80d1-d068091ad88c",
+      "CPU Buffer5"
     ],
     [
       "26de1b6c-b110-46c7-9e66-a605da5207ef",
@@ -404,6 +420,86 @@
     [
       "3bda5788-9510-49be-9254-a3217875b7c4",
       "PIC"
+    ],
+    [
+      "cf73b90c-4c13-4867-90b2-f42b6050b4ab",
+      "CPU Buffer4"
+    ],
+    [
+      "f4725c5e-bb0a-4ac7-9814-a1e80f13da34",
+      "CPU Shim1"
+    ],
+    [
+      "77aa85ab-23ef-4997-b58b-c1328ccadc71",
+      "CPU Buffer7"
+    ],
+    [
+      "64f00814-4ec5-46aa-8410-77b78db21511",
+      "CPU Buffer6"
+    ],
+    [
+      "abe8983d-6cde-4810-a1d4-9ac1ffa7f369",
+      "CPU Buffer9"
+    ],
+    [
+      "2b85a7a8-d727-49d8-8e5d-e17e6c947b14",
+      "CPU Buffer8"
+    ],
+    [
+      "07916246-e596-4c34-9ef9-ebba92e54460",
+      "CPU Shim2"
+    ],
+    [
+      "b0641d28-d291-401e-b2f8-05f1dda96647",
+      "CPU Buffer10"
+    ],
+    [
+      "65e50573-e602-4be8-b7b9-c59f4ceceb4a",
+      "CPU Buffer11"
+    ],
+    [
+      "488ea24e-fade-4631-b4f5-85bed5467a9b",
+      "CPU Buffer14"
+    ],
+    [
+      "8e0bfcc0-bdde-406a-bd0d-a7c7013a924c",
+      "CPU Buffer12"
+    ],
+    [
+      "b831c5b3-2f01-4797-a0cb-50b31aec7ee6",
+      "CPU Shim3"
+    ],
+    [
+      "26b4c7c6-fef9-47b2-9662-3431d7dc6f40",
+      "CPU Buffer13"
+    ],
+    [
+      "29417c0a-cf7a-4bf8-9ee8-fc34ea5b3786",
+      "CPU Buffer15"
+    ],
+    [
+      "d3214eab-b100-45c0-95d4-533353382a88",
+      "16MB Memory Bus1"
+    ],
+    [
+      "344693ac-27df-448f-875f-2288e891ca7d",
+      "xN Single Page IO Bus"
+    ],
+    [
+      "6d188c44-7103-4f4f-8734-eb50cc92a00a",
+      "16MB Memory Bus2"
+    ],
+    [
+      "4a9a942e-9901-4317-b6a2-186f550f0b07",
+      "xN Single Page IO Bus"
+    ],
+    [
+      "15201b89-b196-4289-856b-27ecd5eaace5",
+      "16MB Memory Bus3"
+    ],
+    [
+      "e5cc3a57-6cfb-49e9-a476-191de87645f3",
+      "xN Single Page IO Bus"
     ]
   ],
   "text_variables": {}

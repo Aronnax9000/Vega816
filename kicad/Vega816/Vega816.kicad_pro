@@ -335,19 +335,11 @@
     ],
     [
       "e79064d8-3d63-448f-a23e-3316e7854f4a",
-      "CPU Shim"
-    ],
-    [
-      "54837992-108e-4ec4-a58c-85b54747d8e9",
-      "16MB Memory Bus"
+      "CPU Shim A"
     ],
     [
       "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4 MB RAM + EEPROM"
-    ],
-    [
-      "68d08e53-bf1d-4bd4-80f6-7565ca1a852f",
-      "xN Single Page IO Bus"
+      "4 MB RAM"
     ],
     [
       "a5eed049-9a87-4bf8-ad72-0b6618f9909e",
@@ -359,7 +351,7 @@
     ],
     [
       "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "Accessories"
+      "Device Ports"
     ],
     [
       "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
@@ -395,7 +387,7 @@
     ],
     [
       "26de1b6c-b110-46c7-9e66-a605da5207ef",
-      "4x4 DMA Controller"
+      "DMA Controller"
     ],
     [
       "21c33125-dba5-497b-830f-02ea1d5dc0da",
@@ -427,7 +419,7 @@
     ],
     [
       "f4725c5e-bb0a-4ac7-9814-a1e80f13da34",
-      "CPU Shim1"
+      "CPU Shim B"
     ],
     [
       "77aa85ab-23ef-4997-b58b-c1328ccadc71",
@@ -447,7 +439,7 @@
     ],
     [
       "07916246-e596-4c34-9ef9-ebba92e54460",
-      "CPU Shim2"
+      "CPU Shim C"
     ],
     [
       "b0641d28-d291-401e-b2f8-05f1dda96647",
@@ -467,7 +459,7 @@
     ],
     [
       "b831c5b3-2f01-4797-a0cb-50b31aec7ee6",
-      "CPU Shim3"
+      "CPU Shim D"
     ],
     [
       "26b4c7c6-fef9-47b2-9662-3431d7dc6f40",
@@ -478,28 +470,36 @@
       "CPU Buffer15"
     ],
     [
-      "d3214eab-b100-45c0-95d4-533353382a88",
-      "16MB Memory Bus1"
-    ],
-    [
-      "344693ac-27df-448f-875f-2288e891ca7d",
-      "xN Single Page IO Bus"
-    ],
-    [
-      "6d188c44-7103-4f4f-8734-eb50cc92a00a",
-      "16MB Memory Bus2"
-    ],
-    [
-      "4a9a942e-9901-4317-b6a2-186f550f0b07",
-      "xN Single Page IO Bus"
-    ],
-    [
       "15201b89-b196-4289-856b-27ecd5eaace5",
-      "16MB Memory Bus3"
+      "16MB Memory Bus"
     ],
     [
       "e5cc3a57-6cfb-49e9-a476-191de87645f3",
-      "xN Single Page IO Bus"
+      "Bank0 Single Page IO Buses ($00-$FE)"
+    ],
+    [
+      "e77f7049-9964-4886-b71c-09952ebf7445",
+      "4 MB RAM"
+    ],
+    [
+      "f950af3d-c833-4e8d-9e05-c9c1c1dd7bbb",
+      "4 MB RAM"
+    ],
+    [
+      "4dde2972-f57c-4511-aea9-8f8344721f93",
+      "4 MB RAM"
+    ],
+    [
+      "e91443bd-92df-4adf-b5a1-1f6d75adb822",
+      "Device Port"
+    ],
+    [
+      "06b5b7eb-ed97-42d4-b408-0aee4a7a9bc8",
+      "PIC"
+    ],
+    [
+      "c0fe774c-b998-4bfb-8b58-e7dec5dd0f51",
+      "Device Port"
     ]
   ],
   "text_variables": {}

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "BB816")(type "KiCad")(uri "/home/alan/git/Vega816/kicad/Vega816/BB816.kicad_sym")(options "")(descr ""))
+)

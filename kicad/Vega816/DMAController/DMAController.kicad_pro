@@ -232,7 +232,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "error",
+      "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
@@ -247,7 +247,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Vega816.kicad_pro",
+    "filename": "DMAController.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -312,18 +312,8 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
-    "plot_directory": "../../schematics/",
-    "spice_adjust_passive_values": false,
+    "plot_directory": "",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -334,80 +324,8 @@
   },
   "sheets": [
     [
-      "162a94ce-b5da-40d1-ba41-c7bb68a4398a",
+      "db25484f-289d-43f3-8a27-81238eaafb85",
       ""
-    ],
-    [
-      "cf475620-7ed0-4b26-9367-ad4d44ead55c",
-      "Priority IRQ Dispatch"
-    ],
-    [
-      "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4 MB RAM"
-    ],
-    [
-      "c8c771df-7dcc-45f6-b525-febf6b559971",
-      "64B IO Port"
-    ],
-    [
-      "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "Device Ports"
-    ],
-    [
-      "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
-      "Front Panel"
-    ],
-    [
-      "cc3bbfdf-4c3a-49f1-8abd-c114e88ea070",
-      "RS-232 (W65C51)"
-    ],
-    [
-      "1d5da02e-6501-44ce-9666-30defc901973",
-      "VIA (W65C22)"
-    ],
-    [
-      "1990a3b6-c0e0-4500-8e90-7f3af0eea61b",
-      "VIC-II"
-    ],
-    [
-      "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "System Controller"
-    ],
-    [
-      "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
-      "Dual PS2"
-    ],
-    [
-      "21c33125-dba5-497b-830f-02ea1d5dc0da",
-      "CIAs + 2xSID"
-    ],
-    [
-      "d33f943f-886c-4bc3-ad54-039c415079cd",
-      "SID(x2)"
-    ],
-    [
-      "4d9ac39b-e615-4a56-826b-954bfa4e4725",
-      "Dual SPI"
-    ],
-    [
-      "4188efba-9faa-4d03-b950-d71f22f63661",
-      "6510 $[01] Regs"
-    ],
-    [
-      "1ad7a1ea-6851-4fb5-8101-6bfe3b7ae765",
-      "Address Decode + PLA"
-    ],
-    [
-      "3bda5788-9510-49be-9254-a3217875b7c4",
-      "PIC"
-    ],
-    [
-      "15201b89-b196-4289-856b-27ecd5eaace5",
-      "16MB Memory Bus"
-    ],
-    [
-      "e5cc3a57-6cfb-49e9-a476-191de87645f3",
-      "Bank0 Single Page IO Buses ($00-$FE)"
     ]
   ],
   "text_variables": {}

@@ -1,4 +1,4 @@
-# Vega816 - Dual 65C816 Computer with Vector Pull rewrite
+# Vega816 - Quad 65C816 Computer with Vector Pull rewrite
 
 ## Table of Contents
 
@@ -16,12 +16,12 @@
     * [DMA Channels and Address Interleaving](#dma-channels-and-address-interleaving)
     * [How the DMA Controller routes requests](#how-the-dma-controller-routes-requests)
     * [DMA Request timing](#dma-request-timing)
-* [Quad 64B I/O Bus](#quad-64b-i-o-bus)
 * [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
     * [2 Device PIC](#2-device-pic)
     * [Quad 2-Device PIC](#quad-2-device-pic)
 * [16 MB Memory Decoder and Bus](#16-mb-memory-decoder-and-bus)
 * [4 MB RAM + 32 K EEPROM Module](#4-mb-ram-32-k-eeprom-module)
+* [Quad 64B I/O Bus](#quad-64b-i-o-bus)
 * [Expansion Port to Single Device Ports](#expansion-port-to-single-device)
 * [Single Device Port Breakouts](#single-device-port-breakouts)
 * [Devices](#devices)
@@ -42,9 +42,16 @@
 
 The Vega816 is a modular architecture for implementing symmetrical multiprocessing (SMP) with the Western Design Center W65C816 Microprocessor (aka 65816). The project takes as its starting point the 65816 breakout board designed by Adrien Kohlbecker, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
-Support is provided for up to four bus mastering devices (four CPUs, or three CPUs and a video card) accessing up to four DMA channels, mapped into each CPU's address space.
+Support is provided for up to four bus mastering devices (four CPUs, or three CPUs and a video card) accessing up to four DMA channels. Each DMA channel has full 24 bit addressing and therefore 16 MB of address space.
 
+Through the use of software programmable banking registers, all four CPUs share access to all four 16 MB DMA channels, for a total of 64 MB of shared memory.
 
+The architecture can be extended in a star pattern to form massively parallel networks, by connecting one DMA channel from one node as an input CPU channel on a higher-order node in the hierarchy.
+
+## Modular Design
+
+The design is implemented as a series of pluggable printed circuit modules, each introducing
+one or two important layers of functionality to the basic system. Omitting a module should not interfere with the functioning of the remaining modules, except to omit the specific functionality it provides. Default settings in hardware and software exist to bypass any  undesired features. Interfaces between boards are designed as implementation neutral. For example, the CPU Buffer board takes only four inputs, each of which switches on one DMA channel. A DMA controller must be provided to make effective use of the board, but the choice of DMA controller is not forced, only the format of its required output.
 
 ## CPU Buffer Board
 

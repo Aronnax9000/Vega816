@@ -338,32 +338,20 @@
       ""
     ],
     [
-      "cf475620-7ed0-4b26-9367-ad4d44ead55c",
-      "Priority IRQ Dispatch"
+      "dfb99138-beff-4ba3-a824-62a70b82ad8d",
+      "ACIA Adapter"
     ],
     [
       "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4 MB RAM"
-    ],
-    [
-      "c8c771df-7dcc-45f6-b525-febf6b559971",
-      "64B IO Port"
-    ],
-    [
-      "62ed1553-24d1-4dfa-9198-957c21fb6721",
-      "Device Ports"
+      "4MB RAM"
     ],
     [
       "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
       "Front Panel"
     ],
     [
-      "cc3bbfdf-4c3a-49f1-8abd-c114e88ea070",
-      "RS-232 (W65C51)"
-    ],
-    [
       "1d5da02e-6501-44ce-9666-30defc901973",
-      "VIA (W65C22)"
+      "System IO"
     ],
     [
       "1990a3b6-c0e0-4500-8e90-7f3af0eea61b",
@@ -371,15 +359,23 @@
     ],
     [
       "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "System Controller"
+      "Sysctrl Registers"
     ],
     [
       "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
       "Dual PS2"
     ],
     [
-      "21c33125-dba5-497b-830f-02ea1d5dc0da",
-      "CIAs + 2xSID"
+      "8565d7a4-b9f9-4a2b-8fe3-37948978f1ef",
+      "CPU Buffer"
+    ],
+    [
+      "386106cf-5388-4add-8c44-bee294e227e5",
+      "CPU Shim"
+    ],
+    [
+      "997d394d-79c2-4cab-ae03-82d492b7b72a",
+      "DMA Controller"
     ],
     [
       "d33f943f-886c-4bc3-ad54-039c415079cd",
@@ -403,11 +399,11 @@
     ],
     [
       "15201b89-b196-4289-856b-27ecd5eaace5",
-      "16MB Memory Bus"
+      "Memory Bus"
     ],
     [
       "e5cc3a57-6cfb-49e9-a476-191de87645f3",
-      "Bank0 Single Page IO Buses ($00-$FE)"
+      "IO Bus"
     ]
   ],
   "text_variables": {}

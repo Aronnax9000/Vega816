@@ -232,7 +232,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "error",
+      "pin_to_pin": "warning",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
@@ -247,7 +247,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Vega816.kicad_pro",
+    "filename": "Sysctrl Registers.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -312,18 +312,8 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
-    "plot_directory": "../../schematics/",
-    "spice_adjust_passive_values": false,
+    "plot_directory": "",
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -334,72 +324,8 @@
   },
   "sheets": [
     [
-      "162a94ce-b5da-40d1-ba41-c7bb68a4398a",
+      "27b7e9e7-0463-44db-b97d-540da4a00a69",
       ""
-    ],
-    [
-      "dfb99138-beff-4ba3-a824-62a70b82ad8d",
-      "ACIA Adapter"
-    ],
-    [
-      "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4MB RAM"
-    ],
-    [
-      "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
-      "Front Console"
-    ],
-    [
-      "1d5da02e-6501-44ce-9666-30defc901973",
-      "System Devices"
-    ],
-    [
-      "1990a3b6-c0e0-4500-8e90-7f3af0eea61b",
-      "VIC-II"
-    ],
-    [
-      "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "Sysctrl Registers"
-    ],
-    [
-      "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
-      "Dual PS2"
-    ],
-    [
-      "8565d7a4-b9f9-4a2b-8fe3-37948978f1ef",
-      "CPU Buffer"
-    ],
-    [
-      "386106cf-5388-4add-8c44-bee294e227e5",
-      "CPU Shim"
-    ],
-    [
-      "997d394d-79c2-4cab-ae03-82d492b7b72a",
-      "DMA Controller"
-    ],
-    [
-      "d33f943f-886c-4bc3-ad54-039c415079cd",
-      "SID"
-    ],
-    [
-      "4d9ac39b-e615-4a56-826b-954bfa4e4725",
-      "Dual SPI"
-    ],
-    [
-      "1ad7a1ea-6851-4fb5-8101-6bfe3b7ae765",
-      "Decode + VIA"
-    ],
-    [
-      "3bda5788-9510-49be-9254-a3217875b7c4",
-      "PIC"
-    ],
-    [
-      "15201b89-b196-4289-856b-27ecd5eaace5",
-      "Memory Bus"
-    ],
-    [
-      "e5cc3a57-6cfb-49e9-a476-191de87645f3",
-      "IO Bus"
     ]
   ],
   "text_variables": {}

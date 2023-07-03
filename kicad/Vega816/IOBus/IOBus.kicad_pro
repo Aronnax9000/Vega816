@@ -247,7 +247,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "CPUShim.kicad_pro",
+    "filename": "IOBus.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -324,7 +324,7 @@
   },
   "sheets": [
     [
-      "31c83034-b9b9-4bc3-ac92-7110bdafa26a",
+      "41883d77-795c-4920-9da1-fa2d25179ca0",
       ""
     ]
   ],

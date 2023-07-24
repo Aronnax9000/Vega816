@@ -54,6 +54,40 @@
     (uuid c5c1bc6d-6e05-4a36-adcf-f66383105a75)
   )
 
+  (sheet (at 114.3 119.38) (size 24.13 13.97) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 04b90760-315d-4ab1-a300-7ddcc92d6e47)
+    (property "Sheetname" "XR88C192 UART" (at 114.3 117.8034 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "XR88C192_UART/XR88C192_UART.kicad_sch" (at 114.3 133.9346 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (instances
+      (project "Vega816"
+        (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "19"))
+      )
+    )
+  )
+
+  (sheet (at 83.82 129.54) (size 24.13 5.08)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 0ef47981-eb35-4af3-aa12-7fa7c498edf6)
+    (property "Sheetname" "VIA Port NoConn" (at 85.09 127.9634 0)
+      (effects (font (size 2 2)) (justify left bottom))
+    )
+    (property "Sheetfile" "System Devices/VIAPortNoConn.kicad_sch" (at 83.82 144.0946 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (instances
+      (project "Vega816"
+        (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "9"))
+      )
+    )
+  )
+
   (sheet (at 22.86 95.25) (size 24.13 13.97)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
@@ -109,8 +143,8 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 1d5da02e-6501-44ce-9666-30defc901973)
-    (property "Sheetname" "System Devices" (at 50.8 117.8034 0)
-      (effects (font (size 3 3)) (justify left bottom))
+    (property "Sheetname" "System Devices" (at 54.61 117.8034 0)
+      (effects (font (size 2 2)) (justify left bottom))
     )
     (property "Sheetfile" "System Devices/System Devices.kicad_sch" (at 53.34 133.9346 0)
       (effects (font (size 1.27 1.27)) (justify left top) hide)
@@ -152,6 +186,43 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "26"))
+      )
+    )
+  )
+
+  (sheet (at 83.82 119.38) (size 24.13 5.08)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 421b6474-6767-48dd-b60f-0fc5c6d4285e)
+    (property "Sheetname" "VIA Port Conn" (at 85.09 117.8034 0)
+      (effects (font (size 2 2)) (justify left bottom))
+    )
+    (property "Sheetfile" "System Devices/VIAPort.kicad_sch" (at 83.82 133.9346 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (instances
+      (project "Vega816"
+        (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "8"))
+      )
+    )
+  )
+
+  (sheet (at 233.68 119.38) (size 24.13 13.97)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 46eabcec-fc6d-4346-a22d-66c83f0e7e2e)
+    (property "Sheetname" "ACIA" (at 241.3 117.8034 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "System Devices/ACIA.kicad_sch" (at 233.68 133.9346 0)
+      (effects (font (size 1.27 1.27)) (justify left top) hide)
+    )
+    (instances
+      (project "System Devices"
+        (path "/bc87933a-d9f8-4898-8cff-86eee8396f35" (page "2"))
+      )
+      (project "Vega816"
+        (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "3"))
       )
     )
   )
@@ -279,7 +350,7 @@
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid d33f943f-886c-4bc3-ad54-039c415079cd)
-    (property "Sheetname" "SID" (at 207.01 150.0534 0)
+    (property "Sheetname" "Dual SID" (at 207.01 150.0534 0)
       (effects (font (size 2 2)) (justify left bottom))
     )
     (property "Sheetfile" "C64 Hardware/SID.kicad_sch" (at 207.01 165.6846 0)
@@ -288,23 +359,6 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "22"))
-      )
-    )
-  )
-
-  (sheet (at 100.33 119.38) (size 27.94 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid))
-    (fill (color 0 0 0 0.0000))
-    (uuid dfb99138-beff-4ba3-a824-62a70b82ad8d)
-    (property "Sheetname" "ACIA Adapter" (at 100.33 117.8034 0)
-      (effects (font (size 3 3)) (justify left bottom))
-    )
-    (property "Sheetfile" "Accessories/ACIAAdapter.kicad_sch" (at 100.33 133.9346 0)
-      (effects (font (size 1.27 1.27)) (justify left top) hide)
-    )
-    (instances
-      (project "Vega816"
-        (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a" (page "2"))
       )
     )
   )

@@ -25164,7 +25164,7 @@
     (property "Reference" "J?" (at 660.4 693.42 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "CPU" (at 660.654 558.0888 0)
+    (property "Value" "AUX" (at 660.654 558.0888 0)
       (effects (font (size 3 3)))
     )
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x18_P2.54mm_Vertical" (at 661.67 693.42 0)
@@ -25556,5 +25556,9 @@
         )
       )
     )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
   )
 )

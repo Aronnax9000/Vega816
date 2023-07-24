@@ -326,6 +326,34 @@
     [
       "41883d77-795c-4920-9da1-fa2d25179ca0",
       ""
+    ],
+    [
+      "6fa4b0a6-42fe-4b55-8fb4-15cf765aa17a",
+      "System Devices"
+    ],
+    [
+      "1362571b-4f5e-40dc-b25e-1de5e512f285",
+      "VIA0"
+    ],
+    [
+      "6f414c7a-f6d5-47f3-9703-1bf717493474",
+      "VIA1"
+    ],
+    [
+      "7f98d26a-c07f-45f9-8882-fba459120480",
+      "VIA2"
+    ],
+    [
+      "f30a40f6-7e46-476b-9474-57f1946a5611",
+      "UART3"
+    ],
+    [
+      "13a2ece7-51de-41b5-be62-cf678b074766",
+      "Serial Adapter A"
+    ],
+    [
+      "c433a39c-b420-47e2-9021-78560afb178b",
+      "Serial Adapter A1"
     ]
   ],
   "text_variables": {}

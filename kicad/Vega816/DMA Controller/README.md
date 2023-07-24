@@ -1,88 +1,44 @@
-# Vega816 - DMA Arbitration and VPB Rewrite for BB816 Breakout
+# Vega816 - Quad 65C816 Computer with Vector Pull rewrite
 
-The Vega816 is a SMP (Symmetrical Multiprocessing) architecture for Adrien Kohlbecker's 65816
-Breakout Board, part of Adrien's astonishingly meticulous BB816 project, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
+## Table of Contents
 
-Hereinafter, unless otherwise specified, "CPU" refers to the W65C816S as wrapped 
-in Adrien's W65C816 Breakout Board, or other device (e.g. GPU) made to expose relevant features of
-the same interface. The current schematics reference BB816 Breakout Board Revision A.27.
+* [Functional Description](#functional-description)
+* [CPU Buffer Board](#cpu-buffer-board)
+* [DMA Control and Vector Pull Rewrite Shim](#dma-control-and-vector-pull-rewrite-shim)
+    * [DMA Control Shim](#dma-control-shim)
+    * [Vector Pull Rewrite Shim](#vector-pull-rewrite-shim)
+    * [Offset of 7 triggers RESB interrupt handler for W65C816](#offset-of-7-triggers-resb-interrupt-handler-for-w65c816)
+    * [Details of Vector Pull address rewriting](#details-of-vector-pull-address-rewriting)
+    * [Effect of Vector Pull Rewrite in Emulation (65C02) Mode](#effect-of-vector-pull-rewrite-in-emulation-65c02-mode)
+* [IRQ Dispatcher](#irq-dispatcher)
+    * [IRQ Priority 7 to NMI Option](#irq-priority-7-to-nmi-option)
+* [DMA Controller](#dma-controller)
+    * [DMA Channels and Address Interleaving](#dma-channels-and-address-interleaving)
+    * [How the DMA Controller routes requests](#how-the-dma-controller-routes-requests)
+    * [DMA Request timing](#dma-request-timing)
+* [Programmable Interrupt Controller (PIC)](#programmable-interrupt-controller-pic)
+    * [2 Device PIC](#2-device-pic)
+    * [Quad 2-Device PIC](#quad-2-device-pic)
+* [16 MB Memory Decoder and Bus](#16-mb-memory-decoder-and-bus)
+* [4 MB RAM + 32 K EEPROM Module](#4-mb-ram-32-k-eeprom-module)
+* [Quad 64B I/O Bus](#quad-64b-i-o-bus)
+* [Expansion Port to Single Device Ports](#expansion-port-to-single-device)
+* [Single Device Port Breakouts](#single-device-port-breakouts)
+* [Devices](#devices)
+    * [W65C22 VIA Port](#w65c22-via-port)
+    * [W65C51N ACIA (RS-232)](#w65c51n-acia-rs-232)
+    * [8580/6581 SID](#8580-6581-sid)
 
-<img alt="Vega816 Block Diagram" src="schematics/Schematic.png" width="800" />
-
-
-The Vega816 allows up to four CPUs or other bus mastering devices shared access 
-to up to four DMA channels, designated DMA0 to DMA3. Each DMA channel provides a
-full 16 MB of address space. To ensure that each CPU has its own independent Bank Zero
-at startup, each CPU has an independent physical DMA channel as its own "home" DMA0,
-with the remaining channels numbered in circular fashion. 
-
-As an independent feature, Vector Pull Rewrite is implemented, providing up to 8 separate
-possible IRQ vectors, IRQB0-IRQB7. When an IRQ is asserted on one of the eight provided IRQ inputs,
-a priority encoder calculates a three bit offset, and adds double this number to the address
-being fetched by the CPU when an IRQ Vector Pull is detected (vectors occupy two bytes, accounting
-for the doubled offset used to fetch both bytes). 
-
-The Vector Pull Rewrite Feature works in either Emulation or Native mode.
-
-## CPU Shim
-
-Each CPU is mounted in a "CPU Shim", with identical input and output connectors each wired to 
-the BB816 Breakout Board standard. The CPU Shim provides hardware hooks for connecting a DMA Controller,
-and eight separate IRQ inputs used by the IRQ Priority Vector Pull Rewrite feature, which is 
-also provided by the CPU Shim. 
-
-Both the DMA Control section and the Vector Pull Rewrite section
-may alter input and output between the CPU and the bus. For example, since the DMA process 
-may result in a change to A22-A23, the BANK0B line is recalculated, so that the value on the bus
-reflects whether Bank Zero is being requested on the destination DMA channel.
-
-The DMA control portion of the shim has a header to configure settings, such as whether
-DMA requests are enabled. When DMA requests are not enabled for a particular CPU, the shim will 
-always request DMA0 from the DMA controller. When DMA requests are enabled, A23 and A22 are
-supplied to the DMA controller, encoding the requested channel, together with a priority bit
-which indicates to the DMA controller whether the CPU is permitted to pause other CPUs which
-would otherwise win access to that DMA channel on the current clock cycle.
+* [VIA Port Devices](#via-port-devices)
+    * [2x16 Character Display and front panel switches](#2x16-character-display-and-front-panel-switches)
+    * [System Controller / SPI Controller](#system-controller-spi-controller)
+    * [Ben Eater PS/2 Interface](#ben-eater-ps-2-interface)
+    * [Commodore 64 CIA (VIA) #1](#commodore-64-cia-via-1)
 
 
-## CPU Buffer
-
-The CPU Shim is mounted on the CPU Buffer Board, which buffers access between the CPU and one out of 
-up to four physical DMA channels. Each DMA channel on the buffer board replicates the full 
-BB816 Breakout Board interface. Any hardware built to accept a BB816 Breakout Board 
-as its CPU can be attached to a DMA channel without modification. 
-
-
-The CPU Buffer takes a 1-of-4 input which switches on one of the four physical DMA channel
-buffers. 
-
-When not enabled, each DMA channel is in a high impedance state. This allows the buffer 
-boards to be "stacked": DMA channels from separate boards may be physically connected 
-together so that multiple CPUs share multiple DMA channels. If very long/tall pin headers
-are installed, the boards may be physically stacked one atop another. 
-
-## DMA Controller
-
-
-When DMA requests are enabled for a particular CPU, the lines A23 and A22 are
-decoded as the requested DMA channel and passed to the DMA Controller, along with a priority bit
-setting.  
-
-A four channel DMA Controller accepts requests from up to four CPUs, and uses priority decoding
-logic to assign CPUs to DMA channels on each clock cycle. A CPU which does not
-"win" access to its requested DMA channel is "paused" for one cycle. A pulse is
-applied to that CPU's READY_IN, causing it to pause until the falling edge of the next
-clock cycle.
-
-Under ordinary circumstances, a CPU always wins priority access to the DMA 
-channel that it has designated DMA0. If another CPU (GPU) needs access to
-another CPU's DMA0, it will be paused, unless it also has asserted a "Priority Bit"
-to the DMA Controller. In that case, the CPU whose home DMA0 channel has been
-requested by the visiting CPU will be paused, instead, and the visiting
-CPU will be granted access. This feature supports real time applications 
-such as VIC-II and World's Worst Video Card style DMA.
-
-
+    
 ## Functional Description
+![Vega 816 Block Diagram](schematics/Vega816.svg)
 
 The Vega816 is a modular architecture for implementing symmetrical multiprocessing (SMP) with the Western Design Center W65C816 Microprocessor (aka 65816). The project takes as its starting point the 65816 breakout board designed by Adrien Kohlbecker, documented at [the project's GitHub page](https://github.com/adrienkohlbecker/BB816) as well as [Adrien's YouTube series](https://www.youtube.com/playlist?list=PLdGm_pyUmoII9D16mzw-XsJjHKi3f1kqT).
 
@@ -92,13 +48,41 @@ Through the use of software programmable banking registers, all four CPUs share 
 
 The architecture can be extended in a star pattern to form massively parallel networks, by connecting one DMA channel from one node as an input CPU channel on a higher-order node in the hierarchy.
 
+## Modular Design
+
+The design is implemented as a series of pluggable printed circuit modules, each introducing
+one or two important layers of functionality to the basic system. Omitting a module should not interfere with the functioning of the remaining modules, except to omit the specific functionality it provides. Default settings in hardware and software exist to bypass any  undesired features. Interfaces between boards are designed as implementation neutral. For example, the CPU Buffer board takes only four inputs, each of which switches on one DMA channel. A DMA controller must be provided to make effective use of the board, but the choice of DMA controller is not forced, only the format of its required output.
+
+## CPU Buffer Board
+
+The CPU Buffer board provides two straight-wired connectors for the BB816 CPU breakout board, called "the CPU end", and buffers communications between the two of them and dual output connectors with the same pinout, called "the DMA end".
+
+The extra straight wired connectors are included for ease of stacking the boards, both on the CPU end, and on the DMA end, in a multiplexed configuration, to implement shared memory multiprocessing. 
+
+The circuit uses a 74AHCT245 octal bus transceiver for bi-directional communication for the 8 data lines, and seven 74HC541 octal buffers for the remaining signals provided by the BB816 CPU breakout board, including VPA and VDA. One of the buffers is allocated to CPU inputs (NMIB, IRQB, ABORTB, RDY_IN, etc), buffering signals from the DMA end. The remaining 74HC541s buffer lines from the CPU end onto the DMA end.
+
+The bus transceiver and buffers' output enable lines are tied together and provided as an active low input called DMAB, so that a single signal suffices to turn communication on and off. A 1K pulldown resistor ensures that the board is active unless DMAB is raised high by external hardware.
+
+![CPU Buffer Board](schematics/Vega816-CPU-DMA%20Buffer.svg)
+
+## DMA Control and Vector Pull Rewrite Shim
+
+If we assign each DMA channel its own address space, we can use address decoding in order to select which DMA channel is to be accessed by a particular CPU. In order to do that, we need to intercept the address lines from the CPU, pass decoding information to the DMA controller, and potentially rewrite the address being asserted by the CPU, before granting the CPU buffer access to the correct DMA channel.
+
+The W65C816's VPB (Vector Pull) line also allows rewriting of the address asserted by the CPU when it is pulling an interrupt vector. It is convenient to provide hardware to intercept and rewrite the vector pull address as part of the same adapter.
+
+Together, the DMA Control Shim and the Vector Pull Rewrite Shim provide facilities for DMA control and Vector Pull Rewrite to be performed by external hardware. 
+![CPU Shim](schematics/Vega816-DMA%20+%20VPB%20Shim.svg)
+
+### DMA Control Shim
+
 The DMA Control shim provides movable jumpers for each of the bits A16-A23. Any of the bits may be selected as DMA_REQ. Once the jumper has been set to select one of those lines, it is connected as the DMA_REQ output, and disconnected from output to the DMA end, and is in fact pulled low on the DMA end (10K resistor), in order to map the request into a lower part of the DMA channel's address space.
 
 The jumper offers the user a choice of granularity of DMA channel address mapping, in multiple of 2 increments from 64K (single bank, the minimum granularity) to 4M maximum. This allows for the address space to be contiguous across all DMA channels, depending on installed memory sizes. Ordinarily, this jumper should be set to the size of the maximum address space serviced by the hardware on either DMA channel, e.g. the total installed memory on that channel, or half the total memory across the two channels.
 
-# Vector Pull Rewrite 
+### Vector Pull Rewrite Shim
 
-The Vector Pull Rewrite feature allows the IRQ Dispatcher to alter the fetch address of the processor when it is fetching an IRQ vector. A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
+The Vector Pull Rewrite shim allows the IRQ Dispatcher to alter the fetch address of the processor when it is fetching an IRQ vector. A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
 
 The VPB line is brought active low by the 65C816 during the fetch of any interrupt vector, not just IRQ. However, the standard IRQ vector's address has a unique bit pattern which makes it easy to autodetect, so that the shim will only request a vector pull offset when fetching the IRQ vector, and not for any other kind of interrupt.
 
@@ -197,7 +181,7 @@ $FFFE BRK/IRQ 0
 
 Devices mapped within the physical address space of either DMA channel may raise interrupt requests against either CPU. For each CPU, an 8-to-3 priority encoders is used to prioritize eight different levels of IRQ, from 0-7, with lower values meaning higher priority.
 
-The priority is encoded as a three bit offset, and this value is added to A1-A3, effectively adding double the offset to the address to be pulled. (Double, since each vector occupies two consecutive bytes)
+The priority is encoded as a three bit offset and offered to the Vector Pull Rewrite shim, on pins Y0-Y2, where it is used to offset the fetch addresses of the CPU's next two-byte IRQ vector pull. 
 
 IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. 
 
@@ -205,11 +189,15 @@ For IRQs received from DMA channel 1, the situation is reversed: IRQs which DMA 
 
 ### IRQ Priority 7 to NMI Option
 
-A jumper on the CPU Shim allows IRQ7B to trigger NMIB instead of participating in Vector Pull Rewrite.
-This is intended to support devices such as the RESTORE key on the C64, which expects to be able to
-assert NMIB.
+The combined IRQ signals are diode-NANDed together to drive IRQ on the CPU through the Vector Pull Rewrite shim. IRQ priorities 0-6 are NANDed together first, with priority 7 NANDed to the result unless jumper IRQA7 or IRQB7 are set to direct priority 7 to NMI to CPU A or CPU B.
 
-# DMA Controller
+Rerouting IRQ Priority 7 to NMI is offered elsewhere in the design, as a jumper on the Quad 64B IO Bus, for cases where no IRQ Dispatcher and/or Vector Pull Rewrite shim is installed. See the documentation on the Quad 64B IO Bus.
+
+![IRQ Dispatch](schematics/Vega816-Priority%20IRQ%20Dispatch.svg)
+
+## DMA Controller
+
+
 
 The DMA Controller is intended to control the multiplexing of one or two CPUs (called CPU A and CPU B) onto one or two communication channels (called DMA 0 and DMA 1). The two channels are cross-mapped in address space from the point of view of opposite processors, depending on a selected granularity. For example, if 64 KB (single bank) granularity is selected, when CPU A requests Bank 0, the DMA controller will connect it to DMA channel 0, whereas if CPU A requests Bank 1, the controller will connect it to DMA channel 1. The situation is reversed for CPU B. The controller will direct its requests for Bank 0 to DMA channel 1, and requests for Bank 1 to DMA channel 0.
 
@@ -336,3 +324,118 @@ Any other losing CPU is informed by pulling the losing CPU's ABORTB low, trigger
 
 CPU to DMA routing must be complete, with time to spare for the devices on the DMA channel to decode incoming address, before the routing is latched in on the falling edge of the clock. Now latched, the CPU to DMA channel routing persists through the remainder of the clock cycle, until unlatched at the rising edge of the clock at the beginning of the next cycle, so that arbitration may begin again.
 
+
+## Quad 64B I/O Bus
+The I/O bus board decodes a selected page (256 bytes) of address space for device I/O, together with a corresponding range in the the page immediately above it, for use by I/O devices.
+3
+Jumpers set the base I/O address space on any even-numbered page boundary in Bank Zero. The page of address space immediately above the base I/O page is reserved for configuring the programmable interrupt controller (PIC). For example, if the bus is set so that its base address is $0200, then page $0300 is reserved for use by the PIC.
+
+The odd numbered page immediately above the base page is used by the programmable interrupt controller to store IRQ priority and CPU target information for use in forwarding interrupt requests issued by devices under PIC control.
+
+In order to avoid the default page zero and stack areas at $0000 and $01000, it is advisable to avoid setting the I/O base address to page $00, leaving 63 possible pages between $0200-$7E00.
+
+Four I/O expansion ports are provided, each spanning 64 bytes of the assigned I/O page. Each port is provided with a one-in-four chip select signal based on further decoding of the address, into 16 byte ranges areas. 
+Standard connections are provided for adding a CS Decode module which can perform finer and/or coarser grained address decoding into 64, 32, and 8 byte I/O address ranges.
+
+The 16 byte range chip select signals are raised high for both the I/O page within that 16 byte range, as well as for that range in the page immediately above it. E.g., if a device is mapped to $0210-$021F, then the chip select for that device is also active for the range $0310-$031F. This allows access to latches used to store programmable interrupt configuration, and potentially other metadata used in controlling the device.
+
+The 16 IRQ output lines from each expansion port (8 priorities destined for one of up to two CPUs) are multiplexed via diode logic for dispatch by the IRQ Dispatch board.
+
+![Quad 64-byte Expansion Bus and IRQ Multiplexer](schematics/Vega816-Quad%2064B%20IO%20Bus.svg)
+
+## Programmable Interrupt Controller (PIC)
+
+### 2 Device PIC
+The programmable interrupt controller accepts active low IRQ inputs from up to two sources. For each source, the PIC generates an interrupt signal at one of eight pre-selectable priorities (0-7), and directs the interrupt to a preselected one of two target CPUs. The PIC uses diode logic so that interrupts generated by multiple PICs may be placed on the same IRQ bus. 
+
+The IRQ bus terminates at the IRQ Dispatcher, where 10K pull-up resistors ensure that lines on the IRQ bus are held high, unless pulled low by an interrupt signal originating at a PIC.
+
+![2 IRQ PIC](schematics/Vega816-PIC%20%282%20IRQ%29.svg)
+
+### Quad 2-Device PIC
+A 64-byte expansion slot may include a programmable interrupt controller. The PIC subdivides the 64 byte address range into eight 8-byte device I/O spaces, two for each of the 16-byte address ranges decoded by the expansion bus controller and supplied to the PIC as chip select lines. 
+
+Both IRQ priority (0-7) and CPU destination (CPU A or CPU B) can be programmed for each of up to eight devices, by writing to latches which shadow the device I/O space in the next higher page of address space. Four octal latches, at address offsets +$100, +$104, +$108 and +$10C offsets from the corresponding 16 byte I/O address ranges are provided. Each octal latch stores programmable interrupt information for up to two 8 byte devices: the low nybble for an eight byte device at offset +$00 from the base I/O address, and the high nybble for an eight byte device at offset $08 from the base I/O address. The low bit of the nybble determines the target CPU. The high three bits specify the priority from 0-7.
+![PIC (Programmable Interrupt Controller](schematics/Vega816-Quad%20PIC%20%288%20IRQ%29.svg)
+
+
+## 16 MB Memory Decoder and Bus
+
+![16 MB Memory Decoder and Bus](schematics/Vega816-16MB%20Memory%20Decoder%20+%20Memory%20Bus.svg)
+
+## 4 MB RAM + 32 K EEPROM Module
+
+![4 MB RAM + 32 K EEPROM Module](schematics/Vega816-4%20MB%20RAM%20+%2032%20KB%20ROM%20Memory%20Module.svg)
+
+## Expansion Port to Single Device
+
+The 64-byte expansion slots provided by the Expansion Bus may be broken out into individual device I/O ports spanning 64, 32, 16, or 8 bytes of address space. The four 16-byte chip select lines are further decoded by the programmable interrupt controller down to two 8-byte chip select lines per 16 byte range.
+
+These sample breakouts show a complete breakout of one port into 1x64, 2x32, 4x16 and 8x8 byte device ports. Also shown is a reduction of this most general breakout into a sample breakout capable of supporting 3 VIAs and 2 ACIAs.
+
+![Expansion Port to 64, 32, 16, 8 bit device ports](schematics/Vega816-Expansion%20Port%20to%2064,%2032,%2016,%208%20bit%20device%20ports.svg)
+
+## Single Device Port Breakouts
+A single 64, 32, or 16 byte device port may be further adapted to serve multiple devices of smaller address range. This approach introduces an extra address decoding delay compared with the above approach of adapting expansion bus directly.
+
+![Device Port External Breakouts](schematics/Vega816-64%20->%2032,%2016,%208%20byte%20External%20Device%20Breakouts.svg)
+
+## Devices
+
+### W65C22 VIA Port
+
+This device presents the 20 outward facing lines of a VIA port, plus power and ground.
+
+![VIA Port](schematics/Vega816-W65C22%20VIA%20Port.svg)
+
+### W65C51N ACIA (RS-232)
+
+This device supplies an RS-232 serial port.
+
+![ACIA Port](schematics/Vega816-W65C51%20ACIA%20RS-232.svg)
+
+## VIA Port Devices
+
+### 2x16 Character Display and front panel switches
+
+![2x16 Character Display](schematics/Vega816-%202%20x%2016%20Character%20Display.svg)
+
+### System Controller / SPI Controller
+
+The System Controller / SPI Controller is a VIA port device providing software control over system hardware.
+
+Port A controls clock speed, CPU B RDY_IN and DMA priority control, and EEPROM banking on each of the DMA channels.
+
+On system reset:
+
+* CPU B is paused
+* both CPUs are set to slow clock
+* CPU B DMA Priority is turned off. CPU B will not be able to unilaterally deassert RDY_IN on CPU A for DMA operations.
+* EEPROM on DMA 0 is set to read, with writes to the ROM area taking place against underlying RAM.
+* EEPROM on DMA 1 is set to read, with writes to the ROM area taking place against underlying RAM.
+
+A typical startup sequence would consist of these steps:
+
+* CPU A copies EEPROM on DMA 0 to underlying RAM.
+* CPU A copies EEPROM on DMA 1 to underlying RAM, or otherwise populates RAM underlying the DMA 1 ROM area.
+* CPU A banks out EEPROMs for both read and write
+* CPU A sets high clock speed for CPU A and CPU B
+* If desired, CPU B is given DMA priority (e. g. for video processing).
+* CPU A asserts RDY_IN on CPU B, permitting CPU B to start processing with CPU B's RESET vector.
+
+
+Port B provides SPI communication, with SCK, MISO, MOSI lines, and three chip select lines, which in turn drive a 74AHC138 3-to-8 controller to select one of eight external SPI devices. PB6 and PB7 are reserved for pulse generation and pulse counting purposes (see W65C22 datasheet).
+
+![System and SPI Controller](schematics/Vega816-System%20Controller.svg)
+
+### Ben Eater PS/2 Interface
+
+![Ben Eater PS/2 Interface](schematics/Vega816-Eater%20PS2%20Interface.svg)
+
+### Commodore 64 CIA (VIA) #1
+
+![Commodore 64 CIA (VIA) #1](schematics/Vega816-C64%20CIA%20%28VIA%29%20%231.svg)
+
+### 8580/6581 SID
+
+![8580 or 6581 SID](schematics/Vega816-8580%20or%206581%20SID.svg)

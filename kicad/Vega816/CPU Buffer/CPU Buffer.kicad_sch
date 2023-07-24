@@ -19505,6 +19505,11 @@
           (reference "U?") (unit 5)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 5)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U1") (unit 5)
@@ -19535,6 +19540,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR021") (unit 1)
@@ -19562,6 +19572,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR076") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR076") (unit 1)
         )
       )
@@ -19614,6 +19629,11 @@
           (reference "U34") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U34") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U34") (unit 1)
@@ -19641,6 +19661,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -19674,6 +19699,11 @@
           (reference "#PWR062") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR062") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR062") (unit 1)
@@ -19704,6 +19734,11 @@
           (reference "#PWR081") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR081") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR081") (unit 1)
@@ -19731,6 +19766,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR070") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR070") (unit 1)
         )
       )
@@ -19765,6 +19805,11 @@
           (reference "C13") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C13") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C13") (unit 1)
@@ -19793,6 +19838,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C9") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C9") (unit 1)
         )
       )
@@ -19826,6 +19876,11 @@
           (reference "#PWR075") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR075") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR075") (unit 1)
@@ -19854,6 +19909,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C14") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C14") (unit 1)
         )
       )
@@ -19906,6 +19966,11 @@
           (reference "U29") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U29") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U29") (unit 1)
@@ -19934,6 +19999,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "J4") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "J4") (unit 1)
         )
       )
@@ -19967,6 +20037,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR014") (unit 1)
@@ -19994,6 +20069,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR029") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR029") (unit 1)
         )
       )
@@ -20027,6 +20107,11 @@
           (reference "#PWR031") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR031") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR031") (unit 1)
@@ -20054,6 +20139,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR067") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR067") (unit 1)
         )
       )
@@ -20106,6 +20196,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U6") (unit 1)
@@ -20134,6 +20229,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C6") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C6") (unit 1)
         )
       )
@@ -20246,6 +20346,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J10") (unit 1)
@@ -20295,6 +20400,11 @@
           (reference "U14") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U14") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U14") (unit 1)
@@ -20322,6 +20432,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR010") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR010") (unit 1)
         )
       )
@@ -20355,6 +20470,11 @@
           (reference "#PWR039") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR039") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR039") (unit 1)
@@ -20382,6 +20502,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR053") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR053") (unit 1)
         )
       )
@@ -20434,6 +20559,11 @@
           (reference "U24") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U24") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U24") (unit 1)
@@ -20480,6 +20610,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "U12") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "U12") (unit 1)
         )
       )
@@ -20532,6 +20667,11 @@
           (reference "U16") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U16") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U16") (unit 1)
@@ -20562,6 +20702,11 @@
           (reference "#PWR060") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR060") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR060") (unit 1)
@@ -20589,6 +20734,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -20641,6 +20791,11 @@
           (reference "U30") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U30") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U30") (unit 1)
@@ -20671,6 +20826,11 @@
           (reference "#PWR068") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR068") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR068") (unit 1)
@@ -20698,6 +20858,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR084") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR084") (unit 1)
         )
       )
@@ -20750,6 +20915,11 @@
           (reference "U31") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U31") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U31") (unit 1)
@@ -20793,6 +20963,11 @@
           (reference "U28") (unit 5)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U28") (unit 5)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U28") (unit 5)
@@ -20820,6 +20995,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR043") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR043") (unit 1)
         )
       )
@@ -20854,6 +21034,11 @@
           (reference "C12") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C12") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C12") (unit 1)
@@ -20881,6 +21066,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR078") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR078") (unit 1)
         )
       )
@@ -20914,6 +21104,11 @@
           (reference "#PWR025") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR025") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR025") (unit 1)
@@ -20944,6 +21139,11 @@
           (reference "#PWR066") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR066") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR066") (unit 1)
@@ -20971,6 +21171,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR037") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR037") (unit 1)
         )
       )
@@ -21005,6 +21210,11 @@
           (reference "C5") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C5") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C5") (unit 1)
@@ -21033,6 +21243,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "J14") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "J14") (unit 1)
         )
       )
@@ -21066,6 +21281,11 @@
           (reference "#PWR045") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR045") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR045") (unit 1)
@@ -21093,6 +21313,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR047") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR047") (unit 1)
         )
       )
@@ -21126,6 +21351,11 @@
           (reference "#PWR083") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR083") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR083") (unit 1)
@@ -21156,6 +21386,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR05") (unit 1)
@@ -21183,6 +21418,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#FLG02") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#FLG02") (unit 1)
         )
       )
@@ -21235,6 +21475,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U3") (unit 1)
@@ -21262,6 +21507,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR027") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR027") (unit 1)
         )
       )
@@ -21314,6 +21564,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U5") (unit 1)
@@ -21342,6 +21597,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C16") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C16") (unit 1)
         )
       )
@@ -21394,6 +21654,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U7") (unit 1)
@@ -21443,6 +21708,11 @@
           (reference "U20") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U20") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U20") (unit 1)
@@ -21470,6 +21740,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR038") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR038") (unit 1)
         )
       )
@@ -21522,6 +21797,11 @@
           (reference "U19") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U19") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U19") (unit 1)
@@ -21549,6 +21829,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR058") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR058") (unit 1)
         )
       )
@@ -21601,6 +21886,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U2") (unit 1)
@@ -21628,6 +21918,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR061") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR061") (unit 1)
         )
       )
@@ -21661,6 +21956,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR015") (unit 1)
@@ -21688,6 +21988,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR054") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR054") (unit 1)
         )
       )
@@ -21721,6 +22026,11 @@
           (reference "#PWR048") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR048") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR048") (unit 1)
@@ -21748,6 +22058,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -21782,6 +22097,11 @@
           (reference "C2") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C2") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C2") (unit 1)
@@ -21809,6 +22129,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR03") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR03") (unit 1)
         )
       )
@@ -21840,6 +22165,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "J17") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "J17") (unit 1)
         )
       )
@@ -21892,6 +22222,11 @@
           (reference "U26") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U26") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U26") (unit 1)
@@ -21919,6 +22254,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR051") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR051") (unit 1)
         )
       )
@@ -22031,6 +22371,11 @@
           (reference "J5") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J5") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J5") (unit 1)
@@ -22058,6 +22403,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -22092,6 +22442,11 @@
           (reference "J1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J1") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J1") (unit 1)
@@ -22119,6 +22474,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#FLG01") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#FLG01") (unit 1)
         )
       )
@@ -22152,6 +22512,11 @@
           (reference "#PWR052") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR052") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR052") (unit 1)
@@ -22182,6 +22547,11 @@
           (reference "#PWR028") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR028") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR028") (unit 1)
@@ -22209,6 +22579,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR063") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR063") (unit 1)
         )
       )
@@ -22261,6 +22636,11 @@
           (reference "U32") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U32") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U32") (unit 1)
@@ -22288,6 +22668,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR055") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR055") (unit 1)
         )
       )
@@ -22322,6 +22707,11 @@
           (reference "C7") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C7") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C7") (unit 1)
@@ -22352,6 +22742,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR07") (unit 1)
@@ -22379,6 +22774,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR056") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR056") (unit 1)
         )
       )
@@ -22491,6 +22891,11 @@
           (reference "J2") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J2") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J2") (unit 1)
@@ -22518,6 +22923,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR065") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR065") (unit 1)
         )
       )
@@ -22570,6 +22980,11 @@
           (reference "U23") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U23") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U23") (unit 1)
@@ -22597,6 +23012,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR064") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR064") (unit 1)
         )
       )
@@ -22630,6 +23050,11 @@
           (reference "H1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "H1") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "H1") (unit 1)
@@ -22657,6 +23082,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR069") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR069") (unit 1)
         )
       )
@@ -22690,6 +23120,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR011") (unit 1)
@@ -22717,6 +23152,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR032") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR032") (unit 1)
         )
       )
@@ -22750,6 +23190,11 @@
           (reference "#PWR040") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR040") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR040") (unit 1)
@@ -22780,6 +23225,11 @@
           (reference "#PWR036") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR036") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR036") (unit 1)
@@ -22807,6 +23257,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR035") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR035") (unit 1)
         )
       )
@@ -22859,6 +23314,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U9") (unit 1)
@@ -22886,6 +23346,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR082") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR082") (unit 1)
         )
       )
@@ -22919,6 +23384,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR019") (unit 1)
@@ -22949,6 +23419,11 @@
           (reference "#PWR050") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR050") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR050") (unit 1)
@@ -22976,6 +23451,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -23028,6 +23508,11 @@
           (reference "U13") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U13") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U13") (unit 1)
@@ -23058,6 +23543,11 @@
           (reference "#PWR077") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR077") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR077") (unit 1)
@@ -23085,6 +23575,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR04") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR04") (unit 1)
         )
       )
@@ -23119,6 +23614,11 @@
           (reference "C8") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C8") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C8") (unit 1)
@@ -23146,6 +23646,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR074") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR074") (unit 1)
         )
       )
@@ -23179,6 +23684,11 @@
           (reference "#PWR057") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR057") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR057") (unit 1)
@@ -23209,6 +23719,11 @@
           (reference "#PWR033") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR033") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR033") (unit 1)
@@ -23236,6 +23751,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR085") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR085") (unit 1)
         )
       )
@@ -23348,6 +23868,11 @@
           (reference "J15") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J15") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J15") (unit 1)
@@ -23394,6 +23919,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "U33") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "U33") (unit 1)
         )
       )
@@ -23462,6 +23992,11 @@
           (reference "J16") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J16") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J16") (unit 1)
@@ -23489,6 +24024,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR079") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR079") (unit 1)
         )
       )
@@ -23541,6 +24081,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U4") (unit 1)
@@ -23568,6 +24113,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR042") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR042") (unit 1)
         )
       )
@@ -23601,6 +24151,11 @@
           (reference "#PWR071") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR071") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR071") (unit 1)
@@ -23628,6 +24183,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -23661,6 +24221,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR017") (unit 1)
@@ -23688,6 +24253,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR044") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR044") (unit 1)
         )
       )
@@ -23719,6 +24289,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C10") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C10") (unit 1)
         )
       )
@@ -23831,6 +24406,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J7") (unit 1)
@@ -23859,6 +24439,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "J?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "J?") (unit 1)
         )
       )
@@ -23893,6 +24478,11 @@
           (reference "C3") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C3") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C3") (unit 1)
@@ -23923,6 +24513,11 @@
           (reference "#PWR072") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR072") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR072") (unit 1)
@@ -23950,6 +24545,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR080") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR080") (unit 1)
         )
       )
@@ -24015,6 +24615,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "J?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "J?") (unit 1)
         )
       )
@@ -24127,6 +24732,11 @@
           (reference "J18") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J18") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J18") (unit 1)
@@ -24154,6 +24764,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR030") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR030") (unit 1)
         )
       )
@@ -24222,6 +24837,11 @@
           (reference "J3") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J3") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J3") (unit 1)
@@ -24252,6 +24872,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR023") (unit 1)
@@ -24279,6 +24904,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "H2") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "H2") (unit 1)
         )
       )
@@ -24331,6 +24961,11 @@
           (reference "U15") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U15") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U15") (unit 1)
@@ -24358,6 +24993,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR08") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR08") (unit 1)
         )
       )
@@ -24391,6 +25031,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR012") (unit 1)
@@ -24421,6 +25066,11 @@
           (reference "#PWR041") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR041") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR041") (unit 1)
@@ -24448,6 +25098,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR024") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR024") (unit 1)
         )
       )
@@ -24497,6 +25152,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "U25") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "U25") (unit 1)
         )
       )
@@ -24565,6 +25225,11 @@
           (reference "J19") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J19") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J19") (unit 1)
@@ -24611,6 +25276,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "U27") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "U27") (unit 1)
         )
       )
@@ -24663,6 +25333,11 @@
           (reference "U11") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U11") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U11") (unit 1)
@@ -24690,6 +25365,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR059") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR059") (unit 1)
         )
       )
@@ -24723,6 +25403,11 @@
           (reference "#PWR049") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR049") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR049") (unit 1)
@@ -24750,6 +25435,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR046") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR046") (unit 1)
         )
       )
@@ -24802,6 +25492,11 @@
           (reference "U21") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U21") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U21") (unit 1)
@@ -24829,6 +25524,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -24862,6 +25562,11 @@
           (reference "#PWR026") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR026") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR026") (unit 1)
@@ -24892,6 +25597,11 @@
           (reference "#PWR034") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "#PWR034") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "#PWR034") (unit 1)
@@ -24919,6 +25629,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR01") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR01") (unit 1)
         )
       )
@@ -24959,6 +25674,11 @@
           (reference "J20") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J20") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J20") (unit 1)
@@ -24987,6 +25707,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C17") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C17") (unit 1)
         )
       )
@@ -25039,6 +25764,11 @@
           (reference "U22") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U22") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U22") (unit 1)
@@ -25088,6 +25818,11 @@
           (reference "U17") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U17") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U17") (unit 1)
@@ -25119,6 +25854,11 @@
           (reference "C15") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C15") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C15") (unit 1)
@@ -25147,6 +25887,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C4") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C4") (unit 1)
         )
       )
@@ -25215,6 +25960,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J8") (unit 1)
@@ -25246,6 +25996,11 @@
           (reference "C1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "C1") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "C1") (unit 1)
@@ -25274,6 +26029,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "C11") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "C11") (unit 1)
         )
       )
@@ -25326,6 +26086,11 @@
           (reference "U10") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U10") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U10") (unit 1)
@@ -25372,6 +26137,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "U18") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "U18") (unit 1)
         )
       )
@@ -25440,6 +26210,11 @@
           (reference "J12") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J12") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J12") (unit 1)
@@ -25489,6 +26264,11 @@
           (reference "U?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "U?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "U8") (unit 1)
@@ -25516,6 +26296,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/8565d7a4-b9f9-4a2b-8fe3-37948978f1ef"
+          (reference "#PWR073") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
           (reference "#PWR073") (unit 1)
         )
       )
@@ -25550,15 +26335,16 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/d66f425a-52de-451f-9f8a-67a1b251783b"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Buffer"
         (path "/2539c581-51f1-4463-93f2-aa86bfa4c3a5"
           (reference "J9") (unit 1)
         )
       )
     )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
   )
 )

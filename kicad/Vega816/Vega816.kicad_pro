@@ -322,7 +322,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "schematics",
+    "plot_directory": "schematics/",
     "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
@@ -334,184 +334,24 @@
   },
   "sheets": [
     [
-      "162a94ce-b5da-40d1-ba41-c7bb68a4398a",
+      "1828759c-7f1d-4e81-af8a-55f5d7dc600f",
       ""
     ],
     [
-      "8366ae7a-9506-47bd-86b7-e5da3504d6b2",
-      "VIA1"
-    ],
-    [
-      "46eabcec-fc6d-4346-a22d-66c83f0e7e2e",
-      "ACIA"
-    ],
-    [
-      "8366ae7a-9506-47bd-86b7-e5da3504d6b2",
-      "VIA1"
-    ],
-    [
-      "970ea256-6041-4575-9884-4df496eeffd3",
-      "VIA2"
-    ],
-    [
-      "970ea256-6041-4575-9884-4df496eeffd3",
-      "VIA2"
-    ],
-    [
-      "b26cb0b2-9258-4c88-a063-c7c14fc5646d",
-      "4MB RAM"
-    ],
-    [
-      "421b6474-6767-48dd-b60f-0fc5c6d4285e",
-      "VIA Port Conn"
-    ],
-    [
-      "0ef47981-eb35-4af3-aa12-7fa7c498edf6",
-      "VIA Port NoConn"
-    ],
-    [
-      "095d415a-3f6a-43d9-a904-f60edab80415",
-      "Dual PS2"
-    ],
-    [
-      "095d415a-3f6a-43d9-a904-f60edab80415",
-      "Dual PS2"
-    ],
-    [
-      "6d2f5bba-0441-4d26-89b8-f88f2d1642ea",
-      "Front Console"
-    ],
-    [
-      "de481842-4fab-4f5a-9203-d8ca049ca9d1",
-      "Dual SPI"
-    ],
-    [
-      "1d5da02e-6501-44ce-9666-30defc901973",
-      "System Devices"
-    ],
-    [
-      "1990a3b6-c0e0-4500-8e90-7f3af0eea61b",
-      "VIC-II"
-    ],
-    [
-      "92de43a6-3837-4a70-9dd4-4ad733be3add",
-      "Sysctrl Registers"
-    ],
-    [
-      "de481842-4fab-4f5a-9203-d8ca049ca9d1",
-      "Dual SPI"
-    ],
-    [
-      "9dc3bdfa-2e2a-43bc-a79b-c872557afd12",
-      "Dual PS2"
-    ],
-    [
-      "04b90760-315d-4ab1-a300-7ddcc92d6e47",
-      "XR88C192 UART"
-    ],
-    [
-      "8565d7a4-b9f9-4a2b-8fe3-37948978f1ef",
-      "CPU Buffer"
-    ],
-    [
-      "386106cf-5388-4add-8c44-bee294e227e5",
+      "f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa",
       "CPU Shim"
     ],
     [
-      "997d394d-79c2-4cab-ae03-82d492b7b72a",
+      "d66f425a-52de-451f-9f8a-67a1b251783b",
+      "CPU Buffer"
+    ],
+    [
+      "5975c1fb-574b-496c-bc9c-0ddc7737ef70",
       "DMA Controller"
     ],
     [
-      "d33f943f-886c-4bc3-ad54-039c415079cd",
-      "Dual SID"
-    ],
-    [
-      "4d9ac39b-e615-4a56-826b-954bfa4e4725",
-      "Dual SPI"
-    ],
-    [
-      "970ea256-6041-4575-9884-4df496eeffd3",
-      "VIA2"
-    ],
-    [
-      "1ad7a1ea-6851-4fb5-8101-6bfe3b7ae765",
-      "Decode + VIA"
-    ],
-    [
-      "3bda5788-9510-49be-9254-a3217875b7c4",
-      "PIC"
-    ],
-    [
-      "d96bab11-7cee-47cd-8112-621cf6d38f2a",
-      "VIA3"
-    ],
-    [
-      "c6e502df-f02a-4886-b28b-4daa9864e83d",
-      "VIA0"
-    ],
-    [
-      "bbb5115a-dbd2-4443-abca-02cf161e2132",
-      "VIA1"
-    ],
-    [
-      "55f55443-15c4-47a8-aaf5-f62deb126e09",
-      "Front Console"
-    ],
-    [
-      "08048f5c-d199-40ad-9e87-b5ef3f5d3be9",
-      "Quad VIA"
-    ],
-    [
-      "0d6dffb5-2d69-4a6c-a548-2546ef70d4a5",
-      "Dual SID"
-    ],
-    [
-      "15201b89-b196-4289-856b-27ecd5eaace5",
-      "Memory Bus"
-    ],
-    [
-      "e5cc3a57-6cfb-49e9-a476-191de87645f3",
-      "IO Bus"
-    ],
-    [
-      "6fa4b0a6-42fe-4b55-8fb4-15cf765aa17a",
-      "System Devices"
-    ],
-    [
-      "1362571b-4f5e-40dc-b25e-1de5e512f285",
-      "VIA0"
-    ],
-    [
-      "f30a40f6-7e46-476b-9474-57f1946a5611",
-      "UART"
-    ],
-    [
-      "13a2ece7-51de-41b5-be62-cf678b074766",
-      "Serial Adapter A"
-    ],
-    [
-      "c433a39c-b420-47e2-9021-78560afb178b",
-      "Serial Adapter A1"
-    ],
-    [
-      "55f55443-15c4-47a8-aaf5-f62deb126e09",
-      "Front Console"
-    ],
-    [
-      "f30a40f6-7e46-476b-9474-57f1946a5611",
-      "UART"
-    ],
-    [
-      "13a2ece7-51de-41b5-be62-cf678b074766",
-      "Serial Adapter A"
-    ],
-    [
-      "c433a39c-b420-47e2-9021-78560afb178b",
-      "Serial Adapter A1"
-    ],
-    [
-      "1362571b-4f5e-40dc-b25e-1de5e512f285",
-      "VIA0"
+      "a74cb1e1-fc2f-4e4b-9a34-aca4719dd257",
+      "Sysctrl Registers"
     ]
   ],
   "text_variables": {}

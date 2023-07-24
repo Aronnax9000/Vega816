@@ -7945,6 +7945,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR04") (unit 1)
@@ -7987,6 +7992,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U89") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U89") (unit 1)
         )
       )
@@ -8055,6 +8065,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J11") (unit 1)
@@ -8082,6 +8097,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -8128,6 +8148,11 @@
           (reference "U4") (unit 2)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U4") (unit 2)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U1") (unit 2)
@@ -8171,6 +8196,11 @@
           (reference "U3") (unit 2)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U3") (unit 2)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U7") (unit 2)
@@ -8199,6 +8229,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R21") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R21") (unit 1)
         )
       )
@@ -8232,6 +8267,11 @@
           (reference "#PWR0174") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR0174") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR06") (unit 1)
@@ -8259,6 +8299,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -8290,6 +8335,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R14") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R14") (unit 1)
         )
       )
@@ -8336,6 +8386,11 @@
           (reference "U2") (unit 2)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U2") (unit 2)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U9") (unit 2)
@@ -8367,6 +8422,11 @@
           (reference "R3") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "R3") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "R3") (unit 1)
@@ -8394,6 +8454,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -8440,6 +8505,11 @@
           (reference "U1") (unit 3)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U1") (unit 3)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U6") (unit 3)
@@ -8468,6 +8538,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R9") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R9") (unit 1)
         )
       )
@@ -8501,6 +8576,11 @@
           (reference "#PWR0139") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR0139") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR0139") (unit 1)
@@ -8528,6 +8608,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR0137") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR0137") (unit 1)
         )
       )
@@ -8571,6 +8656,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U3") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U3") (unit 1)
         )
       )
@@ -8683,6 +8773,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J2") (unit 1)
@@ -8711,6 +8806,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "J?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "J?") (unit 1)
         )
       )
@@ -8744,6 +8844,11 @@
           (reference "#PWR?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR02") (unit 1)
@@ -8771,6 +8876,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -8817,6 +8927,11 @@
           (reference "U1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U1") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U6") (unit 1)
@@ -8845,6 +8960,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R20") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R20") (unit 1)
         )
       )
@@ -8891,6 +9011,11 @@
           (reference "U4") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U4") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U1") (unit 1)
@@ -8931,6 +9056,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U4") (unit 3)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U4") (unit 3)
         )
       )
@@ -8976,6 +9106,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "J6") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "J6") (unit 1)
         )
       )
@@ -9088,6 +9223,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J10") (unit 1)
@@ -9118,6 +9258,11 @@
           (reference "#PWR0173") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR0173") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR07") (unit 1)
@@ -9145,6 +9290,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -9191,6 +9341,11 @@
           (reference "U2") (unit 2)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U2") (unit 2)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U9") (unit 2)
@@ -9222,6 +9377,11 @@
           (reference "R1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "R1") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "R1") (unit 1)
@@ -9250,6 +9410,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R13") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R13") (unit 1)
         )
       )
@@ -9296,6 +9461,11 @@
           (reference "U3") (unit 4)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U3") (unit 4)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U3") (unit 1)
@@ -9327,6 +9497,11 @@
           (reference "R?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "R?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "R5") (unit 1)
@@ -9355,6 +9530,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R22") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R22") (unit 1)
         )
       )
@@ -9403,6 +9583,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J7") (unit 1)
@@ -9435,6 +9620,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -9478,6 +9668,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U2") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U2") (unit 1)
         )
       )
@@ -9526,6 +9721,11 @@
           (reference "U9") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U9") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U2") (unit 1)
@@ -9560,6 +9760,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "J8") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "J8") (unit 1)
         )
       )
@@ -9608,6 +9813,11 @@
           (reference "J37") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J37") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J37") (unit 1)
@@ -9638,6 +9848,11 @@
           (reference "#PWR0138") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "#PWR0138") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "#PWR0138") (unit 1)
@@ -9665,6 +9880,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR0136") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR0136") (unit 1)
         )
       )
@@ -9705,6 +9925,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J4") (unit 1)
@@ -9732,6 +9957,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR?") (unit 1)
         )
       )
@@ -9766,6 +9996,11 @@
           (reference "R23") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "R23") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "R23") (unit 1)
@@ -9794,6 +10029,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R10") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R10") (unit 1)
         )
       )
@@ -9837,6 +10077,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U4") (unit 3)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U4") (unit 3)
         )
       )
@@ -9887,6 +10132,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "U8") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "U8") (unit 1)
         )
       )
@@ -9955,6 +10205,11 @@
           (reference "J?") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J3") (unit 1)
@@ -9983,6 +10238,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R?") (unit 1)
         )
       )
@@ -10016,6 +10276,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "J5") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "J5") (unit 1)
         )
       )
@@ -10062,6 +10327,11 @@
           (reference "U10") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U10") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U10") (unit 1)
@@ -10095,6 +10365,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R15") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R15") (unit 1)
         )
       )
@@ -10141,6 +10416,11 @@
           (reference "U1") (unit 4)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U1") (unit 4)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U1") (unit 4)
@@ -10175,6 +10455,11 @@
           (reference "D1") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "D?") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "D?") (unit 1)
@@ -10202,6 +10487,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "#PWR0177") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "#PWR0177") (unit 1)
         )
       )
@@ -10233,6 +10523,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "J?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "J?") (unit 1)
         )
       )
@@ -10279,6 +10574,11 @@
           (reference "U1") (unit 2)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "U1") (unit 2)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "U6") (unit 2)
@@ -10311,6 +10611,11 @@
         )
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
           (reference "D2") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "D?") (unit 1)
         )
       )
       (project "CPU Shim"
@@ -10346,6 +10651,11 @@
           (reference "J31") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "J31") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "J5") (unit 1)
@@ -10374,6 +10684,11 @@
     (instances
       (project "Vega816"
         (path "/162a94ce-b5da-40d1-ba41-c7bb68a4398a/386106cf-5388-4add-8c44-bee294e227e5"
+          (reference "R?") (unit 1)
+        )
+      )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
           (reference "R?") (unit 1)
         )
       )
@@ -10408,15 +10723,16 @@
           (reference "R8") (unit 1)
         )
       )
+      (project "Vega816"
+        (path "/1828759c-7f1d-4e81-af8a-55f5d7dc600f/f08c9ff7-caf0-4e34-b1a7-ba0b9b1188fa"
+          (reference "R8") (unit 1)
+        )
+      )
       (project "CPU Shim"
         (path "/31c83034-b9b9-4bc3-ac92-7110bdafa26a"
           (reference "R8") (unit 1)
         )
       )
     )
-  )
-
-  (sheet_instances
-    (path "/" (page "1"))
   )
 )

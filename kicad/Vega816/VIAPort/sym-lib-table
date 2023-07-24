@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name "Vega816")(type "KiCad")(uri "/home/alan/Vega816/kicad/Vega816/Vega816.kicad_sym")(options "")(descr ""))
-  (lib (name "BB816")(type "KiCad")(uri "/home/alan/Vega816/kicad/Vega816/BB816.kicad_sym")(options "")(descr ""))
-)

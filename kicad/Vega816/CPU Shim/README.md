@@ -26,48 +26,49 @@ when no extenal DMA Controller is supplied.
 
 ## Vector Pull Rewrite 
 
-The Vector Pull Rewrite feature allows the IRQ Dispatcher to alter the fetch address of the processor when it is fetching an IRQ vector. A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
+The CPU shim passes incoming IRQs from the bus to the CPU. However, it also provides eight independent IRQ inputs, IRQ0B to IRQ7B,
+connected to a priority-based Vector Pull Rewrite feature.
 
-The VPB line is brought active low by the 65C816 during the fetch of any interrupt vector, not just IRQ. However, the standard IRQ vector's address has a unique bit pattern which makes it easy to autodetect, so that the shim will only request a vector pull offset when fetching the IRQ vector, and not for any other kind of interrupt.
+The Vector Pull Rewrite feature alters the fetch address of the CPU when it fetches an IRQ vector, 
+by adding an offset to the fetch address equal to twice the winning IRQ's order number:
+
+```
+Native Mode Offsets
+
+IRQ
+#
+0    $00FFEE IRQ 0 
+1    $00FFF0 IRQ 1 
+2    $00FFF2 IRQ 2 
+3    $00FFF4 IRQ 3 
+4    $00FFF6 IRQ 4 
+5    $00FFF8 IRQ 5 
+6    $00FFFA IRQ 6 
+7    $00FFFC RESET 
+```
+
+
+
+0 for IRQ0
+A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
+
+The VPB line is brought active low by the 65C816 during the fetch of any interrupt vector, not just IRQ. However, the standard IRQ vector's address has a unique bit pattern which makes it easy to detect, so that an offset when fetching an IRQ vector, and not for any other kind of interrupt.
 
 When VPB is active (low) and A1-A3 are all high, indicating that an interrupt vector is being fetched by the processor, the shim requests a vector pull offset from the IRQ Dispatcher by asserting VP_REQ (positive logic). Pulldown resistors keep the offset equal to zero when Y0-Y2 are not connected (no IRQ Dispatcher) or in a high impedance state. 
 
 A 74HC283 adder is used to add an offset to A1-A4 equal to the three bit number provided as input to the shim from the IRQ Dispatcher, on pins Y0-Y2. This has the effect of altering the fetch of the IRQ vector at $FFEE to a fetch of a vector at one of the following eight addresses: 
 
-```
-$00FFEE IRQ 0 
-$00FFF0 IRQ 1 
-$00FFF2 IRQ 2 
-$00FFF4 IRQ 3 
-$00FFF6 IRQ 4 
-$00FFF8 IRQ 5 
-$00FFFA IRQ 6 
-$00FFFC RESET 
-```
 
 Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull controller is connected. Bypass jumpers are also provided for A1-A4, in case the 74HC283 adder and supporting logic are not installed.
 
-The connector for the external Vector Pull Rewrite controller provides the E signal from the CPU, so that the Vector Pull Rewrite controller can know which scheme of vector pull (W65C02, W65C816) is being used.
 
-#### Exposure of NMI and IRQ
-
-The Vector Pull Rewrite shim exposes both IRQ and NMI to the IRQ Dispatcher. 
-
-If the IRQ Dispatcher is not installed, a jumper on the Quad 64 IO Bus (IRQ Dispatch Bypass) should be installed to route IRQs to the common IRQ signal on the CPU via the CPU Buffer's DMA Channel connector.
-
-When the IRQ Dispatcher is installed, the dispatcher takes responsibility for issuing IRQ to the CPU, via the Vector Pull Rewrite shim.
-
-The exposure of NMI allows a device to raise an  IRQs at a selected IRQ priority level (say, IRQ 7) and instead trigger NMI, as the Commodore 64 RESTORE key did. The assertion of NMI is left under the control of the IRQ Dispatcher.
-
-In scenarios where the IRQ Dispatcher is not installed, a jumper on the Quad 64B IO Bus (NMI Dispatch Bypass) can be used to direct IRQA7, IRQB7, both, or neither, to NMI.
-
-#### Offset of 7 triggers RESB interrupt handler for W65C816
-
-Note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode. Alternatively, IRQ priority 7 may be rerouted to NMI, either through the IRQ Dispatcher, or a jumper on the Quad 64B IO Bus.
 
 #### Details of Vector Pull address rewriting
-The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC
+The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC, when the processor is in Native mode:
+
 ```
+Native Mode Interrupt Vector Table (datasheet)
+
 Address Function Last Octet (binary)
 $00FFE4 COP      0x1110 0100
 $00FFE6 BRK      0x1110 0110
@@ -76,6 +77,7 @@ $00FFEA NMI      0x1110 1010
 $00FFEE IRQ      0x1110 1110
 $00FFFC RESET    0x1111 1100
 ```
+
 The datasheet also specifies that when the 65C816 is addressing an interrupt vector, it pulls its VPB line low. This is to allow the system to override the fetched interrupt vector with any other. 
 
 VPB is pulled low for any interrupt vector fetch, not just IRQ, but the present design purposefully limits Vector Pull rewriting to only those cases when IRQ is the vector being fetched.
@@ -85,6 +87,8 @@ Note that the last nybble of each of the standard interrupt vectors is unique, w
 Note also the gap of 12 bytes between the IRQ vector and the RESET vector. Since each vector occupies two bytes, this gap provides sufficient space to specify six (6) additional vectors. 
 
 ```
+Native Mode Interrupt Vector Table (with IRQ0-7)
+
 $00FFE4 COP	
 $00FFE6 BRK
 $00FFE8 ABORT 
@@ -98,19 +102,46 @@ $00FFF8 IRQ 5
 $00FFFA IRQ 6 
 $00FFFC RESET 
 ```
-If an offset 0-6 is added to A1-A3, (leaving A0 as found), then the vector fetched will be as shown above, going forward from IRQ0.
 
-#### Effect of Vector Pull Rewrite in Emulation (65C02) Mode
+While an IRQ vector is being pulled, if an offset [0..7]*2 is added to the address asserted on the bus, then the vector fetched will be as shown above, going forward from IRQ0.
+
+## IRQ Priority Dispatch
+
+The Vector Pull Rewrite portion of the CPU shim exposes eight inputs, active low, as IRQ0B-IRQ7B. Devices connected to any DMA channel may direct an IRQ to the CPU, by asserting one of these inputs. 
+
+An 8-to-3 priority encoder is used to prioritize eight different levels of IRQ, from 0-7 (lowest value wins).
+
+The priority is encoded as a three bit offset, and this value is added to A1-A3, effectively adding double the offset to the address to be pulled. (Double, since each vector occupies two consecutive bytes)
+
+## Native Mode: IRQ7 triggers RESET interrupt handler 
+
+Note that, when the 65816 is running in native mode, if an IRQ priority of 7 (0x111) is asserted on Y0-Y2, the vector offset will result in the RESET vector being pulled. Since no actual hardware reset has occurred, if the reset handler relies on a hardware reset having taken place, unpredictable state may occur. It is generally advised to avoid the use of IRQ priority 7 when the CPU is in native mode. Alternatively, IRQ priority 7 may be rerouted to NMI.
+
+## IRQ Priority 7 to NMI Option
+
+A jumper on the CPU Shim allows IRQ7 to trigger an NMI instead of participating in Vector Pull Rewrite.
+This is intended to support devices such as the RESTORE key on the C64, which expects to be able to
+assert NMIB. Another motivation is to provide a useful alternative to the default effect of asserting
+IRQ7 within the rewrite scheme, which is to force the pull of the RESET vector.
+
+## Effect of Vector Pull Rewrite in Emulation (65C02) Mode
 The 6502's IRQ vector, like its 65816 counterpart, has 0x111x in the last nybble, so it is detected by the Vector Pull Rewrite Shim. 
+
 ```
+Emulation Mode Interrupt Vector Table  (datasheet)
+
 $FFFA NMI
 $FFFC RESB
 $FFFE BRK/IRQ 
 ```
+
 Unlike the 65816's IRQ vector, the 6502 IRQ vector occurs at the very top of its page, so additions of 1-7 to the bits may force A4 to overflow to 0 (no carry). In particular, $FFFE + $02 = $FFE0, etc. This means the augmented
 IRQ vector map for the 6502 looks like this:
 
+
 ```
+Emulation Mode Interrupt Vector Table (with IRQ0-7)
+
 $FFE0 BRK/IRQ 1
 $FFE2 BRK/IRQ 2
 $FFE4 BRK/IRQ 3
@@ -123,19 +154,6 @@ $FFFA NMI
 $FFFC RESB
 $FFFE BRK/IRQ 0
 ```
-## IRQ Dispatcher
 
-Devices mapped within the physical address space of either DMA channel may raise interrupt requests against either CPU. For each CPU, an 8-to-3 priority encoders is used to prioritize eight different levels of IRQ, from 0-7, with lower values meaning higher priority.
 
-The priority is encoded as a three bit offset, and this value is added to A1-A3, effectively adding double the offset to the address to be pulled. (Double, since each vector occupies two consecutive bytes)
-
-IRQs received from DMA channel 0 and intended for CPU A or CPU B will be routed to those CPUs. 
-
-For IRQs received from DMA channel 1, the situation is reversed: IRQs which DMA channel 1 intended for CPU A will be routed to CPU B, and vice versa. This crossover in routing means that the CPU target values in the system's PIC controllers always refer to the same physical CPU. I.e., CPU A is always target 0, and CPU B is always target 1, no matter on which DMA channel a PIC is installed. The crossover is reflected in the connector placement on the IRQ Dispatcher: no crossover cable is needed.
-
-### IRQ Priority 7 to NMI Option
-
-A jumper on the CPU Shim allows IRQ7B to trigger NMIB instead of participating in Vector Pull Rewrite.
-This is intended to support devices such as the RESTORE key on the C64, which expects to be able to
-assert NMIB.
 

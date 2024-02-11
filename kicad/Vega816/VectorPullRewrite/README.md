@@ -1,29 +1,44 @@
 ## Vector Pull Rewrite 
 
-The CPU shim passes incoming IRQs from the bus to the CPU. However, it also provides eight independent IRQ inputs, IRQ0B to IRQ7B,
-connected to a priority-based Vector Pull Rewrite feature.
-
-The Vector Pull Rewrite feature alters the fetch address of the CPU when it fetches an IRQ vector, 
-by adding an offset to the fetch address equal to twice the winning IRQ's order number:
+The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC, when the processor is in Native mode:
 
 ```
-Native Mode Offsets
+Native Mode (65C816) Interrupt Vector Table (datasheet)
 
-IRQ
-#
-0    $00FFEE IRQ 0 
-1    $00FFF0 IRQ 1 
-2    $00FFF2 IRQ 2 
-3    $00FFF4 IRQ 3 
-4    $00FFF6 IRQ 4 
-5    $00FFF8 IRQ 5 
-6    $00FFFA IRQ 6 
-7    $00FFFC RESET 
+
+$FFE4 COP      
+$FFE6 BRK      
+$FFE8 ABORT    
+$FFEA NMI      
+$FFEE IRQ      
+$FFFC RESET    
+```
+Note that in native mode, between the addresses for the IRQ and RESET vectors, there are six vectors' (twelve bytes) worth of unused addresses, $FFF0-$FFFB. 
+This strongly suggests the possibility of using the vector pull line to up to add additional six different IRQ vectors, by rewriting the address of the vector to be pulled. The feature described here alters the addresses fetched by the CPU when it fetches an IRQ vector. The result is the following expanded table of interrupts.
+
+```
+Native Mode (65C816) Interrupt Vector Table (after rewrite)
+
+$FFE4 COP      
+$FFE6 BRK      
+$FFE8 ABORT    
+$FFEA NMI      
+$FFEE IRQ 0 
+$FFF0 IRQ 1 
+$FFF2 IRQ 2 
+$FFF4 IRQ 3 
+$FFF6 IRQ 4 
+$FFF8 IRQ 5 
+$FFFA IRQ 6 
+$FFFC RESET    
 ```
 
+## Theory of operation
+
+When VPB goes low (active) and E goes low (native mode), the high three bits of the low order nybble of the address are examined. 
 
 
-0 for IRQ0
+
 A three bit number between 0-7 is added to the least significant bits (but one) of the fetch address, A1-A3, with carry into A4.
 
 The VPB line is brought active low by the 65C816 during the fetch of any interrupt vector, not just IRQ. However, the standard IRQ vector's address has a unique bit pattern which makes it easy to detect, so that an offset when fetching an IRQ vector, and not for any other kind of interrupt.
@@ -38,19 +53,6 @@ Y0-Y2 are pulled low by 10K resistors, for cases in which no Vector Pull control
 
 
 #### Details of Vector Pull address rewriting
-The W65C816 datasheet gives this table of interrupt vectors which lie between $00FFE4 and $00FFFC, when the processor is in Native mode:
-
-```
-Native Mode Interrupt Vector Table (datasheet)
-
-Address Function Last Octet (binary)
-$00FFE4 COP      0x1110 0100
-$00FFE6 BRK      0x1110 0110
-$00FFE8 ABORT    0x1110 1000
-$00FFEA NMI      0x1110 1010
-$00FFEE IRQ      0x1110 1110
-$00FFFC RESET    0x1111 1100
-```
 
 The datasheet also specifies that when the 65C816 is addressing an interrupt vector, it pulls its VPB line low. This is to allow the system to override the fetched interrupt vector with any other. 
 

@@ -17,7 +17,7 @@ Note that in native mode, between the addresses for the IRQ and RESET vectors, t
 This strongly suggests the possibility of using the vector pull line to up to add additional six different IRQ vectors, by rewriting the address of the vector to be pulled. The feature described here alters the addresses fetched by the CPU when it fetches an IRQ vector. The result is the following expanded table of interrupts.
 
 ```
-Native Mode (65C816) Interrupt Vector Table (after rewrite)
+W65C816 Native Interrupt Vector Table (after rewrite)
 
 $FFE4 COP      
 $FFE6 BRK      
@@ -30,12 +30,18 @@ $FFF4 IRQ 3
 $FFF6 IRQ 4 
 $FFF8 IRQ 5 
 $FFFA IRQ 6 
-$FFFC RESET    
+$FFFC RESET
+
 ```
 
 ## Theory of operation
+The circuit has 7 input lines, active low, designated IRQ0B through IRQ6B. While one or more of them is asserted low, IRQ on the processor is pulled low. A priorty encoder encodes the number of the lowest-numbered active input. Twice this number is offered to a 4-bit adder added to the low order byte of the vector pull.
+When
+The circuit detects vector pulls to the IRQ vector, $FFEE, and rewrites the low order byte of the fetch.
 
-When VPB goes low (active) and E goes low (native mode), the high three bits of the low order nybble of the address are examined. 
+When E is low (native mode), and VPB goes low (active), the CPU is in native mode and asserting the address of an interrupt vector on the address lines. The current memory access fetches the low byte of the vector, and the next memory access fetches the high byte. Since the 
+
+and the high three bits of the low order nybble of the address are examined. 
 
 
 
